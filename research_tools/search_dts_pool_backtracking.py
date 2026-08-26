@@ -49,11 +49,12 @@ def build_pool(
     limit: int,
     radius: int,
     pool_size: int,
+    attempt_limit: int,
     deadline: float,
 ) -> tuple[list[tuple[int, list[int]]], int, int]:
     pool: dict[int, list[int]] = {}
     attempts = 0
-    while len(pool) < pool_size and time.monotonic() < deadline:
+    while len(pool) < pool_size and attempts < attempt_limit and time.monotonic() < deadline:
         attempts += 1
         row = make_row(rng, center, limit, radius)
         mask = mask_for(row, limit)
@@ -62,7 +63,7 @@ def build_pool(
     return list(pool.items()), attempts, len(pool)
 
 
-def run(seed: int, seconds: float, limit: int, radius: int, pool_size: int, node_limit: int) -> dict[str, object]:
+def run(seed: int, seconds: float, limit: int, radius: int, pool_size: int, node_limit: int, pool_seconds: float, pool_attempt_limit: int) -> dict[str, object]:
     rng = random.Random(seed)
     deadline = time.monotonic() + seconds
     fixed_mask = 0
@@ -75,12 +76,11 @@ def run(seed: int, seconds: float, limit: int, radius: int, pool_size: int, node
     pools: dict[int, list[tuple[int, list[int]]]] = {}
     pool_attempts: dict[int, int] = {}
     for index in VARIABLE_ROWS:
-        pool, attempts, _unique = build_pool(rng, START_ROWS[index], fixed_mask, limit, radius, pool_size, deadline)
+        pool_deadline = min(deadline, time.monotonic() + pool_seconds)
+        pool, attempts, _unique = build_pool(rng, START_ROWS[index], fixed_mask, limit, radius, pool_size, pool_attempt_limit, pool_deadline)
         rng.shuffle(pool)
         pools[index] = pool
         pool_attempts[index] = attempts
-        if time.monotonic() >= deadline:
-            break
 
     order = sorted((index for index in VARIABLE_ROWS if index in pools), key=lambda index: len(pools[index]))
     nodes = 0
@@ -124,12 +124,14 @@ def main() -> int:
     parser.add_argument("--limit", type=int, default=111)
     parser.add_argument("--radius", type=int, default=25)
     parser.add_argument("--pool-size", type=int, default=5000)
+    parser.add_argument("--pool-seconds", type=float, default=5.0)
+    parser.add_argument("--pool-attempt-limit", type=int, default=200000)
     parser.add_argument("--node-limit", type=int, default=500000)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
-    runs = [run(seed, args.seconds_per_seed, args.limit, args.radius, args.pool_size, args.node_limit) for seed in args.seed]
+    runs = [run(seed, args.seconds_per_seed, args.limit, args.radius, args.pool_size, args.node_limit, args.pool_seconds, args.pool_attempt_limit) for seed in args.seed]
     best = max(runs, key=lambda item: (item["target_reached"], item["best_depth"], -item["nodes"]))
-    payload = {"method": "compatibility-indexed-candidate-pool-backtracking", "limit": args.limit, "radius": args.radius, "pool_size": args.pool_size, "node_limit": args.node_limit, "seconds_per_seed": args.seconds_per_seed, "runs": runs, "best_run": best, "target_reached": bool(best["target_reached"])}
+    payload = {"method": "compatibility-indexed-candidate-pool-backtracking", "limit": args.limit, "radius": args.radius, "pool_size": args.pool_size, "pool_seconds": args.pool_seconds, "pool_attempt_limit": args.pool_attempt_limit, "node_limit": args.node_limit, "seconds_per_seed": args.seconds_per_seed, "runs": runs, "best_run": best, "target_reached": bool(best["target_reached"])}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps({"target_reached": payload["target_reached"], "best_depth": best["best_depth"], "pool_sizes": best["pool_sizes"], "output": str(args.output)}))
