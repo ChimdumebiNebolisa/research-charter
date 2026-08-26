@@ -22,16 +22,16 @@ def add_lexicographic_leq(model: cp_model.CpModel, left: list[cp_model.IntVar], 
     for index, (left_value, right_value) in enumerate(zip(left, right)):
         equal = model.new_bool_var(f"{label}_equal_{index}")
         model.add(left_value == right_value).only_enforce_if(equal)
-        model.add(left_value != right_value).only_enforce_if(equal.not_())
+        model.add(left_value != right_value).only_enforce_if(equal.Not())
         model.add_bool_and([prefixes[index], equal]).only_enforce_if(prefixes[index + 1])
-        model.add_bool_or([prefixes[index].not_(), equal.not_()]).only_enforce_if(prefixes[index + 1].not_())
+        model.add_bool_or([prefixes[index].Not(), equal.Not()]).only_enforce_if(prefixes[index + 1].Not())
 
         less = model.new_bool_var(f"{label}_less_{index}")
         model.add(left_value < right_value).only_enforce_if(less)
-        model.add(left_value >= right_value).only_enforce_if(less.not_())
+        model.add(left_value >= right_value).only_enforce_if(less.Not())
         term = model.new_bool_var(f"{label}_term_{index}")
         model.add_bool_and([prefixes[index], less]).only_enforce_if(term)
-        model.add_bool_or([prefixes[index].not_(), less.not_()]).only_enforce_if(term.not_())
+        model.add_bool_or([prefixes[index].Not(), less.Not()]).only_enforce_if(term.Not())
         terms.append(term)
     model.add_bool_or(terms + [prefixes[-1]])
 
