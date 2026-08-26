@@ -17,13 +17,13 @@
   "compute_budget": {"wall_time_seconds": 30, "cpu": "single process"},
   "kill_condition": "Stop if either independent validator rejects the source witness or reports a non-112 scope.",
   "output_artifacts": ["experiments/dts_7_5/raw/dts_scope112.json.txt", "artifacts/baselines/dts_validator_primary.json", "artifacts/baselines/dts_validator_independent.json"],
-  "raw_result": {"status": "planned"},
+  "raw_result": {"status": "completed", "primary_validator": {"valid": true, "difference_count": 105, "unique_difference_count": 105, "duplicate_set": [], "scope": 112}, "independent_validator": {"valid": true, "difference_count": 105, "unique_difference_count": 105, "duplicates": [], "scope": 112}},
   "baseline_comparison": {"frozen_scope": 112, "expected_relation": "equal"},
   "previous_best_comparison": {"previous_published_upper_bound": 113, "expected_improvement": "none; reproduction only"},
-  "evidence_level": 0,
-  "interpretation": "Pre-registered baseline reproduction; no strict improvement is being claimed.",
+  "evidence_level": 2,
+  "interpretation": "Baseline reproduced: both independent integer validators accept exactly 105 globally unique differences and scope 112. This is not a strict improvement.",
   "failure_mode": null,
-  "what_was_learned": "Pending execution.",
+  "what_was_learned": "The source-transcribed witness is valid and the two validator implementations agree; the remaining DTS gap is exactly one scope unit.",
   "recommended_next_action": "Execute both validators and, if they agree, implement a meaningfully different scope-111 search.",
   "repetition_justification": null
 }
