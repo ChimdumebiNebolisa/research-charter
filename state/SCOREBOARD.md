@@ -4,9 +4,9 @@ This is a derived summary, not the source of scientific truth. It is intentional
 
 | Problem | Frozen baseline | Target | Foundation status |
 | --- | --- | --- | --- |
-| `dts_7_5` | scope `112` | scope `<=111` | baseline independently verified; no improving candidate; search PAUSED |
+| `dts_7_5` | scope `112` | scope `<=111` | baseline independently verified; no improving candidate; direct CP-SAT UNKNOWN on Windows/Linux; search PAUSED |
 | `heilbronn_n12` | source-faithful `0.032598858691819698...` | certified minimum area strictly greater | search BLOCKED: protected Markdown transcription yields zero area |
-| `kserver_k4_circle` | reported `3` violations on pinned `circle_taxi_k4_m6.pickle` | fewer than `3` | search BLOCKED: native Windows evaluator multiprocessing failure |
+| `kserver_k4_circle` | reported `3` violations on pinned `circle_taxi_k4_m6.pickle` | fewer than `3` | evaluator operational in WSL; available parametrized baseline scores `17`; reported 3-vector/search workspace absent |
 
 ## Phase 2 evidence after ten substantive experiments
 
@@ -19,4 +19,7 @@ This is a derived summary, not the source of scientific truth. It is intentional
 - DTS CP-SAT: native OR-Tools crashed before status, including a three-variable control model (runtime blocker; no feasibility inference).
 - DTS upstream-inspired block deletion: all three seeds reached five rows/75 unique differences with no full trial; this is partial proxy movement only.
 - No true-objective movement has been verified.
-- Current allocation: all active research paused; no hedge; Heilbronn `BLOCKED_FOUNDATION_INTEGRITY`, k-server `BLOCKED_RUNTIME`, DTS paused pending a new runtime or representation.
+- k-server fork-compatible primary evaluator: exact pinned parametrized example scores `17` violations, matching the upstream human-designed baseline (Level 2 primary-evaluator measurement); the reported 3-violation candidate is not present in the pinned checkout.
+- DTS Linux CP-SAT capability probe: unchanged scope-111 model returns `UNKNOWN` after `120.147` seconds under WSL2 OR-Tools `9.15.6755`, with no candidate or bound (Level 1 solver evidence).
+- No true-objective movement has been verified.
+- Current allocation: `WAITING_FOR_CAPABILITY`; no primary or hedge. Heilbronn `BLOCKED_FOUNDATION_INTEGRITY`; DTS direct CP-SAT paused; k-server evaluator operational but candidate provenance/search workspace missing.
