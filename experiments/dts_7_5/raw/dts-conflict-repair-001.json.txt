@@ -1,0 +1,356 @@
+{
+  "best_run": {
+    "accepted": 34683,
+    "best_rows": [
+      [
+        0,
+        11,
+        58,
+        75,
+        98,
+        111
+      ],
+      [
+        0,
+        12,
+        32,
+        50,
+        103,
+        111
+      ],
+      [
+        0,
+        22,
+        41,
+        89,
+        104,
+        110
+      ],
+      [
+        0,
+        28,
+        52,
+        83,
+        108,
+        109
+      ],
+      [
+        0,
+        13,
+        62,
+        72,
+        105,
+        107
+      ],
+      [
+        0,
+        9,
+        16,
+        60,
+        102,
+        106
+      ],
+      [
+        0,
+        27,
+        30,
+        66,
+        95,
+        100
+      ]
+    ],
+    "best_score": [
+      100,
+      100,
+      0,
+      0
+    ],
+    "iterations": 98115,
+    "seed": 21,
+    "target_reached": false,
+    "verification": {
+      "difference_count": 105,
+      "duplicate_set": [
+        13,
+        36,
+        53,
+        100,
+        111
+      ],
+      "errors": [
+        "duplicate positive differences: [13, 36, 53, 100, 111]"
+      ],
+      "row_count": 7,
+      "scope": 111,
+      "unique_difference_count": 100,
+      "valid": false
+    }
+  },
+  "limit": 111,
+  "method": "conflict-directed-two-mark-and-row-replacement-annealing",
+  "runs": [
+    {
+      "accepted": 34683,
+      "best_rows": [
+        [
+          0,
+          11,
+          58,
+          75,
+          98,
+          111
+        ],
+        [
+          0,
+          12,
+          32,
+          50,
+          103,
+          111
+        ],
+        [
+          0,
+          22,
+          41,
+          89,
+          104,
+          110
+        ],
+        [
+          0,
+          28,
+          52,
+          83,
+          108,
+          109
+        ],
+        [
+          0,
+          13,
+          62,
+          72,
+          105,
+          107
+        ],
+        [
+          0,
+          9,
+          16,
+          60,
+          102,
+          106
+        ],
+        [
+          0,
+          27,
+          30,
+          66,
+          95,
+          100
+        ]
+      ],
+      "best_score": [
+        100,
+        100,
+        0,
+        0
+      ],
+      "iterations": 98115,
+      "seed": 21,
+      "target_reached": false,
+      "verification": {
+        "difference_count": 105,
+        "duplicate_set": [
+          13,
+          36,
+          53,
+          100,
+          111
+        ],
+        "errors": [
+          "duplicate positive differences: [13, 36, 53, 100, 111]"
+        ],
+        "row_count": 7,
+        "scope": 111,
+        "unique_difference_count": 100,
+        "valid": false
+      }
+    },
+    {
+      "accepted": 31634,
+      "best_rows": [
+        [
+          0,
+          11,
+          58,
+          75,
+          98,
+          111
+        ],
+        [
+          0,
+          12,
+          32,
+          50,
+          103,
+          111
+        ],
+        [
+          0,
+          22,
+          41,
+          89,
+          104,
+          110
+        ],
+        [
+          0,
+          28,
+          52,
+          83,
+          108,
+          109
+        ],
+        [
+          0,
+          13,
+          62,
+          72,
+          105,
+          107
+        ],
+        [
+          0,
+          9,
+          16,
+          60,
+          102,
+          106
+        ],
+        [
+          0,
+          27,
+          30,
+          66,
+          95,
+          100
+        ]
+      ],
+      "best_score": [
+        100,
+        100,
+        0,
+        0
+      ],
+      "iterations": 90109,
+      "seed": 22,
+      "target_reached": false,
+      "verification": {
+        "difference_count": 105,
+        "duplicate_set": [
+          13,
+          36,
+          53,
+          100,
+          111
+        ],
+        "errors": [
+          "duplicate positive differences: [13, 36, 53, 100, 111]"
+        ],
+        "row_count": 7,
+        "scope": 111,
+        "unique_difference_count": 100,
+        "valid": false
+      }
+    },
+    {
+      "accepted": 33951,
+      "best_rows": [
+        [
+          0,
+          11,
+          58,
+          75,
+          98,
+          111
+        ],
+        [
+          0,
+          12,
+          32,
+          50,
+          103,
+          111
+        ],
+        [
+          0,
+          22,
+          41,
+          89,
+          104,
+          110
+        ],
+        [
+          0,
+          28,
+          52,
+          83,
+          108,
+          109
+        ],
+        [
+          0,
+          13,
+          62,
+          72,
+          105,
+          107
+        ],
+        [
+          0,
+          9,
+          16,
+          60,
+          102,
+          106
+        ],
+        [
+          0,
+          27,
+          30,
+          66,
+          95,
+          100
+        ]
+      ],
+      "best_score": [
+        100,
+        100,
+        0,
+        0
+      ],
+      "iterations": 96188,
+      "seed": 23,
+      "target_reached": false,
+      "verification": {
+        "difference_count": 105,
+        "duplicate_set": [
+          13,
+          36,
+          53,
+          100,
+          111
+        ],
+        "errors": [
+          "duplicate positive differences: [13, 36, 53, 100, 111]"
+        ],
+        "row_count": 7,
+        "scope": 111,
+        "unique_difference_count": 100,
+        "valid": false
+      }
+    }
+  ],
+  "seconds_per_seed": 30.0,
+  "target_reached": false
+}
