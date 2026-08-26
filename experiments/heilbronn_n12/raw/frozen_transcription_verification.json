@@ -1,0 +1,11 @@
+{
+  "source": "frozen problems/heilbronn_n12/BASELINE.md coordinate transcription",
+  "precision_digits": 80,
+  "point_count": 12,
+  "triangle_count": 220,
+  "minimum_area": "0E-80",
+  "minimum_triangles": [[0, 2, 8]],
+  "valid": false,
+  "errors": [],
+  "interpretation": "The frozen transcription uses (0,0) as its first point; points 0, 2, and 8 are collinear on x=0. The primary PDF figure instead shows (x,0) as the first point. This is preserved as a foundation inconsistency finding; the protected file is not modified."
+}
