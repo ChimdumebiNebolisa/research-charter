@@ -1,0 +1,21 @@
+Experiment: dts-z3-001
+Command exit code: 0
+Command: /root/research-charter-kserver-venv/bin/python /mnt/c/Users/Chimdumebi/Desktop/research-charter/research_tools/search_dts_z3.py --limit 111 --seconds 120 --seed 20260826 --output /mnt/c/Users/Chimdumebi/Desktop/research-charter/artifacts/dts-z3-001.json
+Runtime: WSL2 Ubuntu 26.04, Python 3.14, z3-solver 5.1.0.0
+
+Evaluator stdout:
+{"status": "unknown", "target_reached": false, "elapsed_seconds": 120.017, "output": "/mnt/c/Users/Chimdumebi/Desktop/research-charter/artifacts/dts-z3-001.json"}
+
+Output artifact SHA256: 8CB3F1B4F5FDBEC3245711ECD37E85026AE87F922D19C5878F4A4EF470A5B84F
+
+Selected output fields:
+status = unknown
+limit = 111
+seconds = 120.0
+seed = 20260826
+elapsed_seconds = 120.01663833300002
+rows = []
+verification = {"valid": false, "scope": null}
+target_reached = false
+
+Interpretation: Z3 completed the exact integer model within the configured timeout but returned unknown without a candidate. This is solver evidence only and is not mathematical infeasibility.
