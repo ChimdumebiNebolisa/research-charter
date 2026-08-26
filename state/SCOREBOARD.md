@@ -4,7 +4,7 @@ This is a derived summary, not the source of scientific truth. It is intentional
 
 | Problem | Frozen baseline | Target | Foundation status |
 | --- | --- | --- | --- |
-| `dts_7_5` | scope `112` | scope `<=111` | baseline independently verified; no improving candidate; direct CP-SAT UNKNOWN on Windows/Linux; search PAUSED |
+| `dts_7_5` | scope `112` | scope `<=111` | baseline independently verified; no improving candidate; direct solvers/local/global exact-cover searches unresolved; search PAUSED |
 | `heilbronn_n12` | source-faithful `0.032598858691819698...` | certified minimum area strictly greater | search BLOCKED: protected Markdown transcription yields zero area |
 | `kserver_k4_circle` | reported `3` violations on pinned `circle_taxi_k4_m6.pickle` | fewer than `3` | evaluator operational in WSL; available parametrized baseline scores `17`; reported 3-vector/search workspace absent |
 
@@ -21,5 +21,9 @@ This is a derived summary, not the source of scientific truth. It is intentional
 - No true-objective movement has been verified.
 - k-server fork-compatible primary evaluator: exact pinned parametrized example scores `17` violations, matching the upstream human-designed baseline (Level 2 primary-evaluator measurement); the reported 3-violation candidate is not present in the pinned checkout.
 - DTS Linux CP-SAT capability probe: unchanged scope-111 model returns `UNKNOWN` after `120.147` seconds under WSL2 OR-Tools `9.15.6755`, with no candidate or bound (Level 1 solver evidence).
+- DTS Z3 direct model: `unknown` after `120.017` seconds, with no candidate or bound (Level 1 solver evidence).
+- DTS coordinated radius-3 neighborhood: 48,100 valid row masks; Python exact-cover DFS reached depth 5 before 5,000,000 nodes, candidate-level CP-SAT returned `UNKNOWN`, and Glucose4 timed out (Level 1 finite-family evidence only).
+- DTS global uniform catalog: 250,000 valid row masks; rare-difference branching reached depth 4 before 2,000,000 nodes (Level 1 finite sampled-family evidence only).
+- Heilbronn source-faithful SLSQP: 12 starts returned to the published minimum within float64 noise; no certification or improvement claim.
 - No true-objective movement has been verified.
-- Current allocation: `WAITING_FOR_CAPABILITY`; no primary or hedge. Heilbronn `BLOCKED_FOUNDATION_INTEGRITY`; DTS direct CP-SAT paused; k-server evaluator operational but candidate provenance/search workspace missing.
+- Current allocation: `WAITING_FOR_CAPABILITY`; no primary or hedge. Heilbronn `BLOCKED_FOUNDATION_INTEGRITY`; DTS requires a structural decomposition; k-server evaluator is operational but candidate provenance/search workspace is missing.
