@@ -5,7 +5,7 @@
   "target_id": "kserver_circle_taxi_m6_violations_lt_3",
   "timestamp": "2026-08-26T20:45:00Z",
   "parent_experiment_ids": [],
-  "git_commit_sha": "83fb10a8c2e35d33eba137f6b7a1423b2f297c9b",
+  "git_commit_sha": "c7aaf5cf3014f3851a69778479abd003fb575f21",
   "hypothesis": "The pinned upstream evaluator can be executed without modifying its code or metric data in this Windows environment, at least on the smaller pinned circle-k4-m6 metric.",
   "rationale": "Exact baseline reproduction and any later candidate claim require the unmodified evaluator contract; environment incompatibilities must be identified before search allocation.",
   "expected_information_gain": "Determines whether the local environment can run the pinned evaluator and records any OS/runtime blocker separately from scientific evidence.",

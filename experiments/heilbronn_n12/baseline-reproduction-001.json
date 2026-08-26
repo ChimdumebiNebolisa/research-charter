@@ -5,7 +5,7 @@
   "target_id": "heilbronn_n12_min_area_gt_comellas_yebra",
   "timestamp": "2026-08-26T20:45:00Z",
   "parent_experiment_ids": [],
-  "git_commit_sha": "83fb10a8c2e35d33eba137f6b7a1423b2f297c9b",
+  "git_commit_sha": "c7aaf5cf3014f3851a69778479abd003fb575f21",
   "hypothesis": "The source-faithful page-7 coordinates, whose first point is (x,0), reproduce the Comellas-Yebra minimum area exactly, while the frozen Markdown transcription with (0,0) does not.",
   "rationale": "The frozen baseline must be independently checked against all 220 triangles before any optimization; a transcription error would invalidate comparison and must be surfaced rather than silently corrected.",
   "expected_information_gain": "Distinguishes a source/baseline inconsistency from a genuine failure of the published construction and identifies whether Heilbronn can enter the tournament.",

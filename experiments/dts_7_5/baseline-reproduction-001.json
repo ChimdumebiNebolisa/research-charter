@@ -5,7 +5,7 @@
   "target_id": "dts_scope_leq_111",
   "timestamp": "2026-08-26T20:45:00Z",
   "parent_experiment_ids": [],
-  "git_commit_sha": "83fb10a8c2e35d33eba137f6b7a1423b2f297c9b",
+  "git_commit_sha": "c7aaf5cf3014f3851a69778479abd003fb575f21",
   "hypothesis": "The Appendix A (7,5)-DTS witness at scope 112 is valid under two logically independent integer validators.",
   "rationale": "A strict improvement is interpretable only after the frozen published construction is reproduced and the exact difference contract is independently checked.",
   "expected_information_gain": "Establishes a trustworthy scope-112 baseline and tests whether the local validators agree on all 105 positive differences.",
