@@ -1,0 +1,189 @@
+{
+  "best_run": {
+    "attempts": 753000,
+    "best_rows": [
+      [
+        0,
+        7,
+        35,
+        52,
+        107,
+        111
+      ],
+      [
+        0,
+        47,
+        57,
+        60,
+        80,
+        110
+      ],
+      [
+        0,
+        24,
+        65,
+        66,
+        91,
+        105
+      ],
+      [
+        0,
+        5,
+        11,
+        48,
+        75,
+        97
+      ]
+    ],
+    "best_unique": 60,
+    "restarts": 61,
+    "seed": 11,
+    "target_reached": false,
+    "verification": {
+      "scope": 111,
+      "valid": false
+    }
+  },
+  "limit": 111,
+  "method": "from-scratch-randomized-greedy-disjoint-golomb-rulers",
+  "pool_per_level": 3000,
+  "runs": [
+    {
+      "attempts": 753000,
+      "best_rows": [
+        [
+          0,
+          7,
+          35,
+          52,
+          107,
+          111
+        ],
+        [
+          0,
+          47,
+          57,
+          60,
+          80,
+          110
+        ],
+        [
+          0,
+          24,
+          65,
+          66,
+          91,
+          105
+        ],
+        [
+          0,
+          5,
+          11,
+          48,
+          75,
+          97
+        ]
+      ],
+      "best_unique": 60,
+      "restarts": 61,
+      "seed": 11,
+      "target_reached": false,
+      "verification": {
+        "scope": 111,
+        "valid": false
+      }
+    },
+    {
+      "attempts": 1017000,
+      "best_rows": [
+        [
+          0,
+          4,
+          13,
+          40,
+          108,
+          111
+        ],
+        [
+          0,
+          20,
+          21,
+          49,
+          103,
+          110
+        ],
+        [
+          0,
+          17,
+          33,
+          35,
+          67,
+          105
+        ],
+        [
+          0,
+          14,
+          26,
+          69,
+          74,
+          99
+        ]
+      ],
+      "best_unique": 60,
+      "restarts": 83,
+      "seed": 12,
+      "target_reached": false,
+      "verification": {
+        "scope": 111,
+        "valid": false
+      }
+    },
+    {
+      "attempts": 684000,
+      "best_rows": [
+        [
+          0,
+          25,
+          58,
+          62,
+          110,
+          111
+        ],
+        [
+          0,
+          11,
+          28,
+          55,
+          101,
+          109
+        ],
+        [
+          0,
+          30,
+          36,
+          50,
+          97,
+          107
+        ],
+        [
+          0,
+          16,
+          39,
+          42,
+          51,
+          80
+        ]
+      ],
+      "best_unique": 60,
+      "restarts": 55,
+      "seed": 13,
+      "target_reached": false,
+      "verification": {
+        "scope": 111,
+        "valid": false
+      }
+    }
+  ],
+  "seconds_per_seed": 20.0,
+  "target_reached": false
+}
