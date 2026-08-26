@@ -1,0 +1,18 @@
+{
+  "phase": "foundation",
+  "phase_2_authorized": false,
+  "foundation_status": "awaiting_human_review",
+  "experiments_run": 0,
+  "novel_research_started": false,
+  "allowed_problem_ids": ["dts_7_5", "heilbronn_n12", "kserver_k4_circle"],
+  "baseline_status": {
+    "dts_7_5": "RESOLVED_PUBLISHED_UPPER_BOUND",
+    "heilbronn_n12": "RESOLVED_CREDIBLE_CONSTRUCTION_NOT_GLOBAL_OPTIMUM",
+    "kserver_k4_circle": "RESOLVED_REPORTED_PRIMARY_EVALUATOR_RESULT"
+  },
+  "notes": [
+    "No novel research experiment has been run.",
+    "The scoreboard is derived; evidence remains in append-oriented records and raw artifacts.",
+    "Future agents must not start Phase 2 without explicit human authorization."
+  ]
+}

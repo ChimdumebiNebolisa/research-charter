@@ -1,0 +1,110 @@
+{
+  "lock_version": 1,
+  "retrieved_at": "2026-08-26",
+  "notes": [
+    "This lock records the primary sources, record indexes, and upstream code revisions used to establish the Foundation Phase baselines.",
+    "A null commit_sha means the item is a paper, web record, or release whose exact revision is represented by its release field.",
+    "No external runtime dependency is vendored by this foundation. Future benchmark code must add an exact lock entry before scientific comparison."
+  ],
+  "sources": [
+    {
+      "id": "dts-jcd-2026",
+      "kind": "journal_article",
+      "url": "https://doi.org/10.1002/jcd.22009",
+      "release": "Journal of Combinatorial Designs 34(1), 2026, pages 37-50",
+      "commit_sha": null,
+      "retrieved_at": "2026-08-26",
+      "relevant_paths": ["Section 2", "Table 1", "Appendix A"],
+      "purpose": "Primary definition and published (7,5)-DTS scope-112 construction; previous upper bound 113.",
+      "authoritative": true
+    },
+    {
+      "id": "dts-arxiv-2502-19517-v2",
+      "kind": "preprint",
+      "url": "https://arxiv.org/abs/2502.19517v2",
+      "release": "arXiv v2, 2025-06-09",
+      "commit_sha": null,
+      "retrieved_at": "2026-08-26",
+      "relevant_paths": ["full paper"],
+      "purpose": "Accessible prepublication copy of the DTS results.",
+      "authoritative": true
+    },
+    {
+      "id": "dts-search-hdl",
+      "kind": "upstream_repository",
+      "url": "https://github.com/applecoffeecake/dts-search-hdl",
+      "release": null,
+      "commit_sha": "2ccff8e767c3fe6390fd3af056dfda11847011fc",
+      "retrieved_at": "2026-08-26",
+      "relevant_paths": ["repository root", "search HDL and software"],
+      "purpose": "Upstream search provenance cited by the DTS paper; not used as the final validator.",
+      "authoritative": false
+    },
+    {
+      "id": "heilbronn-comellas-yebra-2002",
+      "kind": "journal_article",
+      "url": "https://doi.org/10.37236/1623",
+      "release": "Electronic Journal of Combinatorics 9(1), R6, 2002-02-02",
+      "commit_sha": null,
+      "retrieved_at": "2026-08-26",
+      "relevant_paths": ["Section 1", "Section 3", "PDF page 7"],
+      "purpose": "Primary definition of H_n and explicit 12-point construction with H12 >= 0.032599; source disclaims an optimality proof for n=12.",
+      "authoritative": true
+    },
+    {
+      "id": "heilbronn-certification-2026",
+      "kind": "preprint",
+      "url": "https://arxiv.org/abs/2603.11107",
+      "release": "arXiv v1, 2026-03-11",
+      "commit_sha": null,
+      "retrieved_at": "2026-08-26",
+      "relevant_paths": ["Section 1.4", "Appendix A"],
+      "purpose": "Current primary status review: n=9 certified, n=10 and n=12 remain best-known heuristic configurations; identifies reproducibility repository.",
+      "authoritative": true
+    },
+    {
+      "id": "heilbronn-reproducibility-repository",
+      "kind": "upstream_repository",
+      "url": "https://github.com/spiralulam/heilbronn",
+      "release": null,
+      "commit_sha": "4e725664b35a6e5640876e56b1cd0ec3aeeef6e5",
+      "retrieved_at": "2026-08-26",
+      "relevant_paths": ["repository root", "source code", "input data", "solution files"],
+      "purpose": "Public reproducibility code and data cited by the 2026 certification paper; not used to alter the frozen n=12 target.",
+      "authoritative": false
+    },
+    {
+      "id": "heilbronn-record-index",
+      "kind": "record_index",
+      "url": "https://erich-friedman.github.io/packing/heilbronn/",
+      "release": "page retrieved 2026-08-26; page states updated 2026-08-21",
+      "commit_sha": null,
+      "retrieved_at": "2026-08-26",
+      "relevant_paths": ["12-point entry"],
+      "purpose": "Current public record index corroborating the approximately 0.03260 n=12 listing and attribution to Comellas and Yebra; not a proof of optimality.",
+      "authoritative": false
+    },
+    {
+      "id": "kserver-bench-paper-2026",
+      "kind": "preprint",
+      "url": "https://arxiv.org/abs/2604.07240",
+      "release": "arXiv v1, 2026-04-08",
+      "commit_sha": null,
+      "retrieved_at": "2026-08-26",
+      "relevant_paths": ["Section 3.2", "Table 1", "Table 3"],
+      "purpose": "Primary report of the public k=4 circle formulation and the 3-violation candidate on the (k=4,m=6) augmented instance; explains sound-but-incomplete evaluation.",
+      "authoritative": true
+    },
+    {
+      "id": "kserver-bench-upstream",
+      "kind": "upstream_repository",
+      "url": "https://github.com/kibrq/k-server-bench",
+      "release": null,
+      "commit_sha": "aea64346b846c967e4448f098d4b8b1748504d27",
+      "retrieved_at": "2026-08-26",
+      "relevant_paths": ["README.md", "docs/concepts.md", "tasks/hints/metrics/k4_general_task/README.md", "tools/evaluator/evaluate.py", "metrics/circle_taxi_k4_m6.pickle", "examples/search_n7_async_pipeline/"],
+      "purpose": "Pinned public evaluator, metric contract, source-described 17-violation human baseline, and source-described 3-violation candidate.",
+      "authoritative": true
+    }
+  ]
+}

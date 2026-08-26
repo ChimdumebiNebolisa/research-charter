@@ -1,0 +1,41 @@
+name: Research integrity
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out all history and tags
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate experiment records
+        run: python scripts/validate_experiment.py --path experiments
+
+      - name: Validate candidate records
+        run: python scripts/validate_candidate.py --path experiments
+
+      - name: Check research drift
+        run: python scripts/check_drift.py --path experiments
+
+      - name: Validate decision log
+        run: python scripts/validate_decision.py
+
+      - name: Check foundation lock
+        run: python scripts/check_foundation_lock.py
+
+      - name: Run foundation tests
+        run: python -m unittest discover -s tests -v

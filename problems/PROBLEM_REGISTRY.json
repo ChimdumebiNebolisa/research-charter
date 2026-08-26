@@ -1,0 +1,116 @@
+{
+  "registry_version": 1,
+  "phase": "foundation",
+  "allowed_problem_ids": [
+    "dts_7_5",
+    "heilbronn_n12",
+    "kserver_k4_circle"
+  ],
+  "problems": [
+    {
+      "problem_id": "dts_7_5",
+      "title": "Minimum-scope (7,5) Difference Triangle Set",
+      "objective": "Construct seven normalized rows of six nonnegative integers whose 105 positive within-row differences are all globally distinct, minimizing the maximum entry (scope).",
+      "true_objective": "Find a valid (7,5)-DTS with scope no greater than 111.",
+      "direction": "minimize",
+      "target_id": "dts_scope_leq_111",
+      "target": {
+        "metric": "scope",
+        "operator": "<=",
+        "value": 111,
+        "units": "integer scope"
+      },
+      "baseline_status": "RESOLVED_PUBLISHED_UPPER_BOUND",
+      "baseline": {
+        "metric": "scope",
+        "value": 112,
+        "meaning": "Published valid construction; not asserted here to be globally optimal unless independently proved.",
+        "previous_best_upper_bound": 113
+      },
+      "evaluator": {
+        "type": "independent_integer_validator",
+        "contract": "Check seven rows, six entries per row, first entry zero, strict row order, global uniqueness of all 105 positive within-row differences, and maximum entry.",
+        "source_paths": [
+          "problems/dts_7_5/VERIFICATION.md",
+          "governance/VERIFICATION_POLICY.md"
+        ]
+      }
+    },
+    {
+      "problem_id": "heilbronn_n12",
+      "title": "12-point Heilbronn configuration in the unit square",
+      "objective": "Place 12 points in [0,1]^2 to maximize the minimum area of the 220 triangles determined by triples of points.",
+      "true_objective": "Produce a rigorously defensible 12-point configuration with minimum triangle area strictly greater than the frozen Comellas-Yebra baseline.",
+      "direction": "maximize",
+      "target_id": "heilbronn_n12_min_area_gt_comellas_yebra",
+      "target": {
+        "metric": "minimum triangle area",
+        "operator": ">",
+        "value_reference": "comellas_yebra_2002_exact_baseline",
+        "units": "unit-square area"
+      },
+      "baseline_status": "RESOLVED_CREDIBLE_CONSTRUCTION_NOT_GLOBAL_OPTIMUM",
+      "baseline": {
+        "metric": "minimum triangle area",
+        "value_exact": "(x/4) + (x*y/2) - (x^2/2)",
+        "parameters": {
+          "x": "1 - ((27 + 3*sqrt(57))^(2/3) + 6)/(6*(27 + 3*sqrt(57))^(1/3))",
+          "y": "2*x^2 - 3*x + 1/2"
+        },
+        "value_approx": 0.032599,
+        "meaning": "Published lower bound from an explicit 12-point construction. The source states that optimality was not proved; current record listings continue to treat it as best known."
+      },
+      "evaluator": {
+        "type": "independent_exact_or_certified_geometry_validator",
+        "contract": "Check 12 points in the closed unit square and all 220 triangle determinants; compare the minimum area to the exact baseline using exact or certified arithmetic.",
+        "source_paths": [
+          "problems/heilbronn_n12/VERIFICATION.md",
+          "governance/VERIFICATION_POLICY.md"
+        ]
+      }
+    },
+    {
+      "problem_id": "kserver_k4_circle",
+      "title": "k=4 circle k-server potential discovery",
+      "objective": "Discover a potential function for the public k=4 circle/circle-taxi work-function formulation satisfying the required competitiveness inequalities.",
+      "true_objective": "Find a mathematically valid potential for the k=4 circle formulation, with finite benchmark progress treated as evidence toward the conjecture rather than as a proof of the full conjecture.",
+      "direction": "minimize",
+      "target_id": "kserver_circle_taxi_m6_violations_lt_3",
+      "target": {
+        "metric": "violations_k",
+        "operator": "<",
+        "value": 3,
+        "primary_metric_file": "circle_taxi_k4_m6.pickle"
+      },
+      "baseline_status": "RESOLVED_REPORTED_PRIMARY_EVALUATOR_RESULT",
+      "baseline": {
+        "metric": "violations_k",
+        "value": 3,
+        "inequalities_checked": 7000602,
+        "metric_file": "circle_taxi_k4_m6.pickle",
+        "meaning": "Reported best candidate under the pinned public formulation. A 17-violation human-designed baseline is also recorded in the upstream README."
+      },
+      "evaluator": {
+        "type": "pinned_upstream_evaluator",
+        "repository": "https://github.com/kibrq/k-server-bench",
+        "commit": "aea64346b846c967e4448f098d4b8b1748504d27",
+        "entrypoint": "tools/evaluator/evaluate.py",
+        "primary_metric_files": [
+          "circle_taxi_k4_m6.pickle"
+        ],
+        "general_metric_files": [
+          "circle_k4_m6.pickle",
+          "circle_k4_m8.pickle",
+          "circle_taxi_k4_m6.pickle",
+          "circle_taxi_k4_m8.pickle"
+        ],
+        "contract": "The evaluator instantiates the candidate Potential and counts violations_k over the pinned precomputed instance; candidate code may propose potential_kwargs but may not redefine scoring or metric data.",
+        "limitations": [
+          "The finite evaluator is sound for refuting a candidate on checked inequalities but incomplete as a proof of the full conjecture.",
+          "A zero count on one finite instance is not a proof and must not be reported as solving the conjecture.",
+          "The 3-violation result is reported upstream; this foundation does not run the multi-million-edge evaluator."
+        ]
+      }
+    }
+  ]
+}

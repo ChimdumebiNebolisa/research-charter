@@ -1,0 +1,16 @@
+{
+  "record_type": "candidate",
+  "candidate_id": "fixture-foundation-candidate",
+  "problem_id": "dts_7_5",
+  "target_id": "dts_scope_leq_111",
+  "created_at": "2026-08-26T00:00:00Z",
+  "source_experiment_id": "fixture-foundation-check",
+  "git_commit_sha": "0000000000000000000000000000000000000000",
+  "artifact_paths": ["tests/fixtures/valid_candidate.json"],
+  "evaluator": {"type": "fixture"},
+  "claimed_result": {"status": "not_applicable"},
+  "validation_status": "unverified",
+  "evidence_level": 0,
+  "provenance": {"fixture": true},
+  "limitations": ["Fixture only; not a research candidate."]
+}
