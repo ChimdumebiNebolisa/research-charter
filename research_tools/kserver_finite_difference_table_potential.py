@@ -17,9 +17,12 @@ TABLE_PATH = Path(__file__).resolve().parents[1] / "artifacts" / "kserver-finite
 
 def row_key(row) -> bytes:
     values = np.asarray(row, dtype=float)
-    rounded = np.rint(values).astype(np.int8)
-    if not np.allclose(values, rounded):
-        raise ValueError("finite table adapter received a nonintegral work-function row")
+    if values.ndim != 1 or not np.all(np.isfinite(values)):
+        return b"__auxiliary__"
+    rounded = np.rint(values)
+    if not np.allclose(values, rounded) or np.any(rounded < -64) or np.any(rounded > 64):
+        return b"__auxiliary__"
+    rounded = rounded.astype(np.int8)
     return rounded.tobytes()
 
 
