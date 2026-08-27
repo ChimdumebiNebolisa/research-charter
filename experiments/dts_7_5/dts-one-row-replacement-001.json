@@ -1,0 +1,57 @@
+{
+  "record_type": "experiment",
+  "experiment_id": "dts-one-row-replacement-001",
+  "problem_id": "dts_7_5",
+  "target_id": "dts_scope_leq_111",
+  "timestamp": "2026-08-27T09:17:31Z",
+  "parent_experiment_ids": ["baseline-reproduction-001", "dts-window-exact-001", "dts-local-perturbation-001"],
+  "git_commit_sha": "d8795e539f45716683491c097599a8821b63e999",
+  "hypothesis": "The published scope-112 construction may admit a scope-111 DTS by replacing exactly one row while leaving the other six rows fixed after clamping its sole over-limit entry.",
+  "rationale": "Existing local repair tested only a radius-10 neighborhood for row 0 and existing pool work did not exhaustively enumerate a full compatible replacement. The fixed-six decomposition reduces the question to an exact finite search over every normalized six-mark row with all 15 differences in the complement of the fixed rows.",
+  "expected_information_gain": "A compatible row is an independently checkable scope-111 witness after reinsertion. Exhausting the finite complement without a row closes the strongest one-row replacement family around the published witness and distinguishes local repair failure from the need for coordinated multi-row change.",
+  "method": "Clamp the published row with scope 112 to [0,11,58,75,98,111]. For each of the seven possible omitted row indices, retain the other six clamped rows, reject fixed sets that already contain internal or cross-row difference collisions, and exhaustively enumerate increasing normalized six-mark rows with maximum entry <=111. Extend marks in increasing order and accept a partial row only when every new difference is an unused member of the fixed-six complement. Independently validate any completed seven-row assignment with research_tools/verify_dts_independent.py.",
+  "metric": "fixed-six consistency, exact enumeration nodes, complete compatible replacement rows, stopped status, and independent DTS validity",
+  "metric_relation_to_true_objective": "A completed replacement accepted by the independent integer verifier is exactly a scope<=111 true-objective witness. A zero-row exhaustive result is finite evidence only for this one-row-replacement family and is not a global impossibility proof.",
+  "configuration": {
+    "scope_limit": 111,
+    "baseline_rows": "published scope-112 witness with row 0 endpoint clamped from 112 to 111",
+    "omission_indices": [0, 1, 2, 3, 4, 5, 6],
+    "enumeration": "all increasing normalized six-mark rows under scope 111 compatible with the fixed-six difference complement",
+    "arithmetic": "integer bit masks for differences 1..111",
+    "node_limit": 1000000000,
+    "wall_seconds": 120,
+    "verifier": "research_tools/verify_dts_independent.py"
+  },
+  "random_seeds": [],
+  "compute_budget": {
+    "wall_time_seconds": 120,
+    "cpu": "single native C++ process",
+    "memory_intent": "constant-size integer masks and depth-six recursion"
+  },
+  "kill_condition": "Stop at the first independently validated replacement, at the declared wall or node budget, or after all consistent fixed-six cases are exhausted. Do not infer global infeasibility from this finite family.",
+  "output_artifacts": [
+    "experiments/dts_7_5/raw/dts-one-row-replacement-001.txt",
+    "artifacts/dts-one-row-replacement-001.json",
+    "research_tools/search_dts_one_row_replacement.cpp"
+  ],
+  "raw_result": {
+    "status": "preregistered",
+    "target_reached": false
+  },
+  "baseline_comparison": {
+    "frozen_scope": 112,
+    "target_scope": 111,
+    "expected_relation": "strict improvement only if complete and validator-valid"
+  },
+  "previous_best_comparison": {
+    "published_scope": 112,
+    "radius10_one_row_search": "no compatible row in the tested local neighborhood",
+    "expected_relation": "global one-row replacement enumeration strictly extends the prior local window"
+  },
+  "evidence_level": 0,
+  "interpretation": "Preregistered exact finite decomposition; no execution result is claimed in this record until raw output is recorded.",
+  "failure_mode": null,
+  "what_was_learned": "Pending execution.",
+  "recommended_next_action": "Execute once, validate any returned witness independently, then close or promote only this one-row replacement family according to the finite result.",
+  "repetition_justification": "This is not a repeat of the radius-10 window: it exhausts the full scope-111 row domain against the fixed-six complement and also checks every possible omitted row index for fixed-set consistency."
+}
