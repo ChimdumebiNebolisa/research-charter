@@ -15,6 +15,14 @@ import numpy as np
 TABLE_PATH = Path(__file__).resolve().parents[1] / "artifacts" / "kserver-finite-difference-relaxation-001-drop_none.npz"
 
 
+def row_key(row) -> bytes:
+    values = np.asarray(row, dtype=float)
+    rounded = np.rint(values).astype(np.int8)
+    if not np.allclose(values, rounded):
+        raise ValueError("finite table adapter received a nonintegral work-function row")
+    return rounded.tobytes()
+
+
 class Potential:
     def __init__(self, context):
         del context
@@ -23,11 +31,11 @@ class Potential:
         values = np.asarray(payload["potential"], dtype=np.int64)
         if rows.ndim != 2 or values.shape != (len(rows),):
             raise ValueError("invalid finite table artifact")
-        self._lookup = {row.tobytes(): int(value) for row, value in zip(rows, values, strict=True)}
+        self._lookup = {row_key(row): int(value) for row, value in zip(rows, values, strict=True)}
 
     def __call__(self, wf):
-        row = np.ascontiguousarray(np.asarray(wf, dtype=float))
+        key = row_key(wf)
         try:
-            return self._lookup[row.tobytes()]
+            return self._lookup[key]
         except KeyError as exc:
             raise KeyError("primary evaluator requested an unrecorded work-function row") from exc
