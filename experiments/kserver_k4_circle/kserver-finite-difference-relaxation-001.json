@@ -5,7 +5,7 @@
   "target_id": "kserver_circle_taxi_m6_violations_lt_3",
   "timestamp": "2026-08-27T15:00:00Z",
   "parent_experiment_ids": ["kserver-finite-difference-feasibility-001", "kserver-known3-reproduction-001"],
-  "git_commit_sha": "961c251075bb867b93eb137ca25b302e97172877",
+  "git_commit_sha": "cbd1792ba2561673c3241cfcfe003c7c0ddb6f17",
   "hypothesis": "A direct longest-path relaxation can resolve the finite taxi difference-constraint systems that generic sparse LP could not resolve within budget, yielding either a positive-cycle obstruction or a finite potential table.",
   "rationale": "The preceding five sparse LP models all timed out before returning a primal solution. Difference constraints have a specialized feasibility criterion: the system is feasible exactly when no directed cycle has positive total required potential increase. Integer relaxation can therefore provide an auditable certificate or a converged finite potential without introducing an objective, coefficient bounds, or a new candidate family.",
   "expected_information_gain": "A positive directed cycle would certify finite-graph infeasibility for the corresponding residual-edge exclusion pattern. Convergence would produce a table that can be independently checked on every frozen taxi edge and, only if it has fewer than three violations after the audit, sent to the primary evaluator. A wall/pass limit remains inconclusive and closes the route operationally after this one rescue.",
