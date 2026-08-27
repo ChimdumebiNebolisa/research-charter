@@ -1,0 +1,64 @@
+{
+  "record_type": "experiment",
+  "experiment_id": "dts-ondemand-pair-completion-001",
+  "problem_id": "dts_7_5",
+  "target_id": "dts_scope_leq_111",
+  "timestamp": "2026-08-27T09:33:22Z",
+  "parent_experiment_ids": ["dts-ondemand-constrained-001", "dts-one-row-replacement-001"],
+  "git_commit_sha": "afdf24834163edb3ce1d6221853e5dede4be2783",
+  "hypothesis": "A state-conditioned five-row prefix that is dead under sampled sixth-row branching may still admit a compatible pair of final rows; exact two-row completion at every visited depth-five prefix will expose such a witness if the first-five search reaches its neighborhood.",
+  "rationale": "The prior on-demand search reached depth six on two seeds, but exact completion of those saved six-row states found no seventh row. The remaining uncertainty is whether the sixth-row sampler discarded the right sixth-row branch. Enumerating all compatible rows for the final two positions and checking pairwise disjointness directly attacks that uncertainty while retaining state-conditioned generation for the first five rows.",
+  "expected_information_gain": "A verified seven-row assignment is target progress. A large number of exact final-row candidates with no disjoint pairs quantifies the pair bottleneck. A bounded search with no pair closes this two-row completion policy and requires a broader multi-row or structural mechanism; no finite outcome implies global infeasibility.",
+  "method": "Run the existing state-conditioned DFS for three fixed seeds with exact-pair mode enabled. At depth five, form the forbidden mask from all used and explicitly gapped differences, exhaustively enumerate increasing normalized six-mark rows under scope 111 up to a 30000-node per-prefix budget, and test every unordered pair for disjoint difference masks. Preserve the deepest partial state and independently validate any seven-row output with research_tools/verify_dts_independent.py.",
+  "metric": "target reach, deepest sampled prefix, DFS nodes, incremental generator nodes, exact-completion nodes, exact compatible final rows, pair checks, generated rows, and elapsed time per seed",
+  "metric_relation_to_true_objective": "Only a complete seven-row assignment accepted by the independent integer verifier is a scope<=111 true-objective witness. Exact final-row counts and prefix depth are finite search evidence only.",
+  "configuration": {
+    "scope_limit": 111,
+    "seeds": [20260920, 20260924, 20260925],
+    "seconds_per_seed": 60,
+    "anchor_probe": 4,
+    "samples_per_anchor": 32,
+    "row_node_budget": 5000,
+    "exact_pair": true,
+    "exact_pair_node_budget_per_prefix": 30000,
+    "node_limit": 100000,
+    "gap_budget": 6,
+    "verifier": "research_tools/verify_dts_independent.py"
+  },
+  "random_seeds": [20260920, 20260924, 20260925],
+  "compute_budget": {
+    "wall_time_seconds": 180,
+    "cpu": "one native C++ process per seed, sequential",
+    "memory_intent": "bounded final-row vector per depth-five prefix and two-word masks"
+  },
+  "kill_condition": "Stop a seed at 60 seconds, 100000 DFS nodes, or a complete independently validated witness; cap each depth-five exact completion at 30000 enumeration nodes; stop after the three declared seeds. Do not infer infeasibility from these finite prefixes or budgets.",
+  "output_artifacts": [
+    "experiments/dts_7_5/raw/dts-ondemand-pair-completion-001-seed-20260920.txt",
+    "experiments/dts_7_5/raw/dts-ondemand-pair-completion-001-seed-20260924.txt",
+    "experiments/dts_7_5/raw/dts-ondemand-pair-completion-001-seed-20260925.txt",
+    "artifacts/dts-ondemand-pair-completion-001-seed-20260920.json",
+    "artifacts/dts-ondemand-pair-completion-001-seed-20260924.json",
+    "artifacts/dts-ondemand-pair-completion-001-seed-20260925.json",
+    "research_tools/search_dts_ondemand.cpp"
+  ],
+  "raw_result": {
+    "status": "preregistered",
+    "target_reached": false
+  },
+  "baseline_comparison": {
+    "frozen_scope": 112,
+    "target_scope": 111,
+    "expected_relation": "strict improvement only if complete and validator-valid"
+  },
+  "previous_best_comparison": {
+    "on_demand_depth": 6,
+    "saved_six_row_completion": "zero compatible seventh rows in two exact checks",
+    "expected_relation": "replace sampled sixth/seventh branching with exact pair completion after the same five-row state-conditioned prefix search"
+  },
+  "evidence_level": 0,
+  "interpretation": "Preregistered bounded exact-completion experiment; no execution result is claimed until raw outputs are recorded.",
+  "failure_mode": null,
+  "what_was_learned": "Pending execution.",
+  "recommended_next_action": "Run the three declared seeds, independently validate any witness, and close this pair-completion policy if no disjoint final pair is found.",
+  "repetition_justification": "This changes the terminal search operation from sampled row generation to exhaustive two-row completion over each visited depth-five prefix; it is not a seed or budget repeat of dts-ondemand-constrained-001."
+}
