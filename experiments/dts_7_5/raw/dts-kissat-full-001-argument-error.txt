@@ -1,0 +1,1 @@
+kissat: error: invalid argument in '--time=120.0' (try '-h')
