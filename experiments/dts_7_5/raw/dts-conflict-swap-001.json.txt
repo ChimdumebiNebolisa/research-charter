@@ -1,0 +1,15 @@
+Experiment dts-conflict-swap-001 execution record
+
+The run generated a 100,000-mask library from 162,936 uniform mark samples,
+then performed 15,950 conflict-directed row swaps with 30 restarts. The best
+state covered 97 unique differences and had scope 111. The independent
+verifier rejected it for duplicate differences [4, 10, 20, 23, 24, 26, 47,
+80]. No target witness was found.
+
+The preserved artifact is artifacts/dts-conflict-swap-001.json with SHA-256:
+  62DE77E89616F83EE57F8D9B06BF5F5CA1022206B0B99FA3508D0F735DEC40CF
+
+Interpretation: explicit duplicate-conflict targeting did not improve the
+prior 100/105 coordinate-search proxy. Together with the generic library
+packing result, this closes the tested row-library packing family; further
+work requires algebraic construction or a new exact decomposition.

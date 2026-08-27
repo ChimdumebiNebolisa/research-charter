@@ -1,0 +1,282 @@
+{
+  "candidate_count": 30,
+  "edges": 6006,
+  "elapsed_s": 1.0310964584350586,
+  "metric": "circle_k4_m6.pickle",
+  "nodes": 1001,
+  "results": [
+    {
+      "candidate_id": "max_unifying_-4",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "max",
+      "offset": -4,
+      "variant": "unifying",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "max_unifying_-2",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "max",
+      "offset": -2,
+      "variant": "unifying",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "max_unifying_+0",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "max",
+      "offset": 0,
+      "variant": "unifying",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "max_unifying_+2",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "max",
+      "offset": 2,
+      "variant": "unifying",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "max_unifying_+4",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "max",
+      "offset": 4,
+      "variant": "unifying",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "min_unifying_-4",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "min",
+      "offset": -4,
+      "variant": "unifying",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "min_unifying_-2",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "min",
+      "offset": -2,
+      "variant": "unifying",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "min_unifying_+0",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "min",
+      "offset": 0,
+      "variant": "unifying",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "min_unifying_+2",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "min",
+      "offset": 2,
+      "variant": "unifying",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "min_unifying_+4",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "min",
+      "offset": 4,
+      "variant": "unifying",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "max_kplus1_-4",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "max",
+      "offset": -4,
+      "variant": "kplus1",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "max_kplus1_-2",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "max",
+      "offset": -2,
+      "variant": "kplus1",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "max_kplus1_+0",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "max",
+      "offset": 0,
+      "variant": "kplus1",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "max_kplus1_+2",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "max",
+      "offset": 2,
+      "variant": "kplus1",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "max_kplus1_+4",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "max",
+      "offset": 4,
+      "variant": "kplus1",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "min_kplus1_-4",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "min",
+      "offset": -4,
+      "variant": "kplus1",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "min_kplus1_-2",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "min",
+      "offset": -2,
+      "variant": "kplus1",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "min_kplus1_+0",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "min",
+      "offset": 0,
+      "variant": "kplus1",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "min_kplus1_+2",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "min",
+      "offset": 2,
+      "variant": "kplus1",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "min_kplus1_+4",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "min",
+      "offset": 4,
+      "variant": "kplus1",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "max_shinka_-4",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "max",
+      "offset": -4,
+      "variant": "shinka",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "max_shinka_-2",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "max",
+      "offset": -2,
+      "variant": "shinka",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "max_shinka_+0",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "max",
+      "offset": 0,
+      "variant": "shinka",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "max_shinka_+2",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "max",
+      "offset": 2,
+      "variant": "shinka",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "max_shinka_+4",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "max",
+      "offset": 4,
+      "variant": "shinka",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "min_shinka_-4",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "min",
+      "offset": -4,
+      "variant": "shinka",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "min_shinka_-2",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "min",
+      "offset": -2,
+      "variant": "shinka",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "min_shinka_+0",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "min",
+      "offset": 0,
+      "variant": "shinka",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "min_shinka_+2",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "min",
+      "offset": 2,
+      "variant": "shinka",
+      "violations_k": 0
+    },
+    {
+      "candidate_id": "min_shinka_+4",
+      "first_violated_edge_indexes": [],
+      "min_slack": 0.0,
+      "mode": "min",
+      "offset": 4,
+      "variant": "shinka",
+      "violations_k": 0
+    }
+  ],
+  "status": "completed",
+  "workers": 8
+}
+artifacts/kserver-envelope-switching-001-circle.json

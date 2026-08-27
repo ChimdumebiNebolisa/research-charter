@@ -1,0 +1,6 @@
+Experiment kserver-n7-index-matrix-screen-001 execution record
+Metric: /home/kserver/k-server-bench/metrics/circle_k4_m6.pickle; nodes=1001 edges=6006
+Variants tested: 20
+Scores: [["base_control", 0], ["row0_uniform_-6", 204], ["row0_uniform_+2", 222], ["row0_uniform_+3", 222], ["row0_uniform_+4", 222], ["row0_uniform_+6", 222], ["row0_uniform_+7", 222], ["row0_uniform_-2", 222], ["row0_uniform_-3", 222], ["row0_uniform_-4", 222], ["row0_uniform_-5", 222], ["row0_uniform_-7", 222], ["row0_uniform_+5", 240], ["row0_uniform_+1", 348], ["global_cyclic_relabel_5", 768], ["global_cyclic_relabel_3", 924], ["global_cyclic_relabel_2", 960], ["global_cyclic_relabel_4", 1002], ["global_cyclic_relabel_6", 1002], ["global_cyclic_relabel_1", 1038]]
+Circle-feasible variants: ["base_control"]
+Artifact SHA256: 2975D63CDB5EAE92213CC27D1111D95B44F994DA0AF4880750EE6E0E5A613993

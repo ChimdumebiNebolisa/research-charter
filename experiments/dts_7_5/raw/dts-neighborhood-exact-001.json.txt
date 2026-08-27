@@ -1,0 +1,25 @@
+Experiment: dts-neighborhood-exact-001
+Command exit code: 0
+Command: /root/research-charter-kserver-venv/bin/python /mnt/c/Users/Chimdumebi/Desktop/research-charter/research_tools/search_dts_neighborhood_exact.py --radius 3 --limit 111 --seconds 120 --node-limit 5000000 --output /mnt/c/Users/Chimdumebi/Desktop/research-charter/artifacts/dts-neighborhood-exact-001.json
+Runtime: WSL2 Ubuntu 26.04, Python 3.14
+
+Evaluator stdout:
+{"target_reached": false, "best_depth": 5, "pool_sizes": [4783, 7499, 7499, 3206, 9369, 9454, 6290], "output": "/mnt/c/Users/Chimdumebi/Desktop/research-charter/artifacts/dts-neighborhood-exact-001.json"}
+
+Output artifact SHA256: 0700BD99438DEE44AB3E54F4B50B4662BAAED18F4259533BADF45C7A6B558822
+
+Selected output fields:
+radius = 3
+limit = 111
+pool_attempts = [16807, 16807, 16807, 16807, 16807, 16807, 16807]
+pool_sizes = [4783, 7499, 7499, 3206, 9369, 9454, 6290]
+row_order = [3, 0, 6, 1, 2, 4, 5]
+nodes = 5000000
+best_depth = 5
+search_complete = false
+rows = []
+verification = {"valid": false, "scope": null}
+target_reached = false
+elapsed_seconds = 1.9854463119999997
+
+Interpretation: exhaustive radius-3 row enumeration produced large valid pools, but the simple fixed-order DFS hit its 5,000,000-node cap at depth 5. The neighborhood was not exhausted and no DTS candidate was produced.

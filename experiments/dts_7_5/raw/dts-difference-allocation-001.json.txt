@@ -1,0 +1,23 @@
+Experiment dts-difference-allocation-001 execution record
+
+Command:
+  python research_tools/search_dts_difference_allocation.py --limit 111
+    --rows-per-anchor 400 --seconds 120 --node-limit 2000000
+    --anchor-probe 24 --seed 20260828
+
+The run completed its finite budget with no target assignment. It generated
+70,168 conditional-generation attempts, 44,400 valid rows, and 44,378
+deduplicated difference masks. Every difference 1..111 received its requested
+400 valid generated rows before exact-cover search. The search examined 8,054
+nodes, reached maximum assembled depth 5, and used six gaps; the best trace of
+scarcity anchors was [110, 101, 93, 89, 100, 111, 96, 106, 99, 90, 97].
+
+The independent verifier received no complete assignment. The preserved
+artifact is artifacts/dts-difference-allocation-001.json with SHA-256:
+  322E34CD82F868B90541F85B5CD0D814FC54CD529ECC5767619D288D7CDC0C05
+
+Interpretation: conditioning each generated row on one allocated difference
+did not exceed the prior depth-five ceiling within the tested finite family.
+This is not an infeasibility result. The likely remaining limitation is that
+single-anchor rows do not jointly prioritize multiple constrained differences;
+a multi-anchor row-allocation test is the only justified nearby follow-up.

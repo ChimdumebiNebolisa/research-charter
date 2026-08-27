@@ -1,0 +1,29 @@
+Experiment kserver-n7-pipeline-005 execution record
+
+The first invocation exposed a wrapper-only module-registration error in
+Python 3.14: dynamically executed dataclasses could not resolve the module
+because it was absent from sys.modules. It failed before controller startup
+and is not treated as a search result. The corrected runner registered a real
+module object before executing the pinned source.
+
+The corrected invocation used one fast worker, one stage-C worker, one
+stage-D worker, one nested process per heavy worker, and controller n-cpus=2.
+It reached:
+
+  spawned fast worker count=1 target=1
+  spawned heavy worker worker_id=stage_c_0 stage=stage_c n_cpus=1
+  spawned heavy worker worker_id=stage_d_0 stage=stage_d n_cpus=1
+  controller started timeout_s=1800.0 n_cpus=2 ...
+
+The WSL service became unresponsive before any worker completed. The runner
+exited with code 1 after approximately 90 seconds of startup; subsequent
+``wsl -- echo alive`` calls did not respond until the instance was restarted
+with ``wsl.exe --shutdown``. No stage-A/B/C/D result and no final JSON were
+preserved. The console output showed six stage-A tasks initially in flight,
+but zero completed. No post-restart kernel diagnostic was retained, so this
+is reported as a repeated WSL worker-initialization capability failure, not
+as a specific OOM claim.
+
+Result: blocked before useful candidate scoring. No candidate or baseline
+comparison is claimed. This route is paused pending a more capable runtime or
+the missing reported 3-violation candidate workspace.

@@ -1,0 +1,13 @@
+Experiment dts-affine-gaps-001 execution record
+
+The three deterministic 40-second runs completed without a target witness.
+The best feasible state used seed 20260903 and achieved 89/105 unique
+differences at scope 110. Its independent verification failed because of
+duplicate differences. The other seeds achieved 85 and 86 unique
+differences.
+
+The preserved artifact is artifacts/dts-affine-gaps-001.json with SHA-256:
+  C5A21CB7389579BB4CC2EB20CCD2C87C80252689211DDCA009D8FA22F5C2BE47
+
+This closes the tested affine-gap family as finite negative evidence only; it
+does not establish infeasibility of the frozen target.

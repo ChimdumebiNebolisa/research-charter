@@ -1,0 +1,7 @@
+Experiment dts-cpp-exact-cover-001 execution record
+Method: 64-bit exact difference masks, deduplicated random Golomb catalogue, rare compatible-difference branching
+Catalog size: 1000000; attempts: 1648323; valid generated: 1012959
+Search nodes: 16521; best depth: 4; best gaps: 6
+Target reached: false
+Rows: []
+Elapsed seconds: 360.001456878

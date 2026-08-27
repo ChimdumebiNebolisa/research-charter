@@ -1,0 +1,16 @@
+Experiment dts-library-packing-001 execution record
+
+The run generated a 100,000-mask library from 162,936 uniform mark samples,
+then performed 27,830 row-library best-response iterations with 38 restarts.
+The best seven-row state had 96 unique differences and scope 110. The
+independent verifier rejected it for duplicate differences
+[7, 8, 10, 13, 14, 16, 83, 107]. No target witness was found.
+
+The preserved artifact is artifacts/dts-library-packing-001.json with
+SHA-256:
+  2AA31DA76E5DEA0C83E0F7053E8013DA7B8CD034E14232C4222E465E3F581C67
+
+Interpretation: direct row-mask best-response swaps did not improve the prior
+100/105 coordinate-search proxy. The library packing family is low-yield in
+this configuration; any follow-up must target duplicate-conflict removal
+explicitly rather than simply increasing the library or runtime.

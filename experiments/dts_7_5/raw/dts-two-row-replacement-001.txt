@@ -1,0 +1,7 @@
+Experiment dts-two-row-replacement-001 execution record
+Method: exhaustive enumeration of every compatible row pair after fixing five clamped published rows
+Consistent cases: 6; inconsistent cases: 15; nodes: 2940; complete compatible rows: 16; pair checks: 20
+Target reached: false
+Omitted pair: [-1,-1]
+Rows: 
+Elapsed seconds: 0.001271000001

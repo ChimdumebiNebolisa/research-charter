@@ -1,0 +1,40 @@
+Experiment kserver-n7-pipeline-004 execution record
+
+There was one invalid preflight invocation before the valid run: the wrapper
+patched the runpy return dictionary, but the loaded functions retained a
+separate __globals__ dictionary. That invocation therefore spawned the
+default six fast workers and was stopped before any result; it is not treated
+as a bounded search result.
+
+After correcting the wrapper and updating the preregistration, the valid run
+used the intended settings: one fast worker, one CPU passed to each of the two
+stage-C workers and one stage-D worker, and n-cpus=4 in the controller. It
+reached:
+
+  spawned fast worker count=1 target=1
+  spawned heavy worker worker_id=stage_c_0 stage=stage_c n_cpus=1
+  spawned heavy worker worker_id=stage_c_1 stage=stage_c n_cpus=1
+  spawned heavy worker worker_id=stage_d_0 stage=stage_d n_cpus=1
+  controller started timeout_s=1800.0 n_cpus=4 ...
+
+The WSL service then terminated with Wsl/Service/E_UNEXPECTED during worker
+initialization. No worker completed, no stage result was produced, and no
+final JSON was written. The preserved checkpoint reports elapsed_s=0.00673485,
+6 stage-A tasks submitted, 0 completed, 6 unique candidates, and no stage-B,
+C, or D result. The WSL instance had to be restarted with wsl.exe --shutdown;
+the post-restart kernel log no longer retained an OOM diagnostic, so this is
+reported as a WSL worker-initialization failure rather than asserting a second
+specific OOM kill.
+
+Preserved generated artifacts and SHA-256 hashes:
+
+  artifacts/kserver-n7-pipeline-reproduce_n7_codex_bounded/n7_async_pipeline_reproduce_n7_codex_bounded.log
+    722B1EB787843F19FDD883CFDCA9266D70E1DA1A880729E2006E444CFAB55A44
+  artifacts/kserver-n7-pipeline-reproduce_n7_codex_bounded/n7_async_pipeline_reproduce_n7_codex_bounded.checkpoint.json
+    B5068E39E66A91417F5386AEAA914677D968695966C95CF8C633E765A2FB3A8B
+  artifacts/kserver-n7-pipeline-reproduce_n7_codex_bounded/n7_async_pipeline_reproduce_n7_codex_bounded.events.jsonl
+    B7A149C98730E2FC74DE0C886AEFF31605744BBB1326208A1DE602DDC2999AA9
+
+Result: blocked before useful candidate scoring. No candidate or baseline
+comparison is claimed. A subsequent test would need to reduce the number of
+heavy worker processes themselves, not only their nested CPU count.

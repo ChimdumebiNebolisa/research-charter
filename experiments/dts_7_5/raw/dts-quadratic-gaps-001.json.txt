@@ -1,0 +1,14 @@
+Experiment dts-quadratic-gaps-001 execution record
+
+All three deterministic 40-second quadratic-gap runs completed without a
+target witness. The best feasible state achieved 79/105 unique differences
+at scope 111 (seed 20260906); its independent verification failed on
+duplicate differences. The other seeds also achieved 79 and 77 unique
+differences.
+
+The preserved artifact is artifacts/dts-quadratic-gaps-001.json with
+SHA-256:
+  186D1AE603701C4645229374E30DC1F944DC6A07E3409F7CB627E82E265F9338
+
+This closes the tested low-degree polynomial gap family as finite negative
+evidence only; it does not establish infeasibility of the frozen target.

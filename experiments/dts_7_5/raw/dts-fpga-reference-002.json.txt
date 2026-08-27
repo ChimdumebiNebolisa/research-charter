@@ -1,0 +1,18 @@
+Experiment dts-fpga-reference-002 execution record
+
+The transformed C reference compiled successfully and completed all 100
+training trials at TRAINING_M=152. Training scopes were 144--152; the learned
+normalized mark means were [0.14726, 0.35638, 0.60028, 0.79176, 0.92805].
+The main M=111 search then ran until the 120-second wall budget. It printed
+11 target-search statuses, each with i=6 populated rows and best_scope still
+INT_MAX; no seven-row decode was produced and the independent verifier had no
+candidate to check.
+
+The preserved artifact is artifacts/dts-fpga-reference-002.json with
+SHA-256:
+  BA59A82090D14B4EE8928A7B75B50608A807DDE9D1E7FFC9853AD5999FAF6689
+
+This is not infeasibility evidence. It establishes that the public reference
+algorithm reaches main phase and repeatedly fails at the seventh-row
+completion under its default 100-mark-attempt block threshold and
+200,000-iteration DTS threshold.

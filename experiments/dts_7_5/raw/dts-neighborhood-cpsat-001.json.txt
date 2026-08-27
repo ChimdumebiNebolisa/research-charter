@@ -1,0 +1,23 @@
+Experiment: dts-neighborhood-cpsat-001
+Command exit code: 0
+Command: /root/research-charter-kserver-venv/bin/python /mnt/c/Users/Chimdumebi/Desktop/research-charter/research_tools/search_dts_neighborhood_cpsat.py --radius 3 --limit 111 --seconds 120 --workers 8 --seed 20260827 --output /mnt/c/Users/Chimdumebi/Desktop/research-charter/artifacts/dts-neighborhood-cpsat-001.json
+Runtime: WSL2 Ubuntu 26.04, Python 3.14, OR-Tools 9.15.6755
+
+Evaluator stdout:
+{"status": "UNKNOWN", "target_reached": false, "elapsed_seconds": 121.657, "candidate_count": 48100, "output": "/mnt/c/Users/Chimdumebi/Desktop/research-charter/artifacts/dts-neighborhood-cpsat-001.json"}
+
+Output artifact SHA256: 38D29245F65FDA736AF1255734B121C395617F20D5A353A5FF55EB9E895D5AC9
+
+Selected output fields:
+status = UNKNOWN
+status_code = 0
+radius = 3
+limit = 111
+candidate_count = 48100
+pool_sizes = [4783, 7499, 7499, 3206, 9369, 9454, 6290]
+elapsed_seconds = 121.65670505700001
+rows = []
+verification = {"valid": false, "scope": null}
+target_reached = false
+
+Interpretation: candidate-level CP-SAT exact-cover propagation did not produce an assignment or bound within the budget. The finite radius-3 neighborhood remains unresolved; UNKNOWN is not infeasibility.

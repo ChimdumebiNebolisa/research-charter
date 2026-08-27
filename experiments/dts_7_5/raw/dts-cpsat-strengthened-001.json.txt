@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 120.93700000000536,
+  "limit": 111,
+  "method": "cp-sat-strengthened-mark-alldifferent-and-lex-row-symmetry",
+  "objective_bound": null,
+  "rows": [],
+  "seconds": 120.0,
+  "seed": 20260826,
+  "status": "UNKNOWN",
+  "status_code": 0,
+  "target_reached": false,
+  "verification": {
+    "scope": null,
+    "valid": false
+  },
+  "workers": 8
+}

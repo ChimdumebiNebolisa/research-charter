@@ -60,11 +60,16 @@ class FoundationTests(unittest.TestCase):
         self.run_check("check_drift.py", "--path", fixture_dir)
         self.run_check("validate_decision.py")
 
-    def test_phase_is_still_locked(self) -> None:
+    def test_phase_status_matches_authorization(self) -> None:
         status = json.loads((ROOT / "state" / "RESEARCH_STATUS.json").read_text(encoding="utf-8"))
-        self.assertFalse(status["phase_2_authorized"])
-        self.assertEqual(status["experiments_run"], 0)
-        self.assertFalse(status["novel_research_started"])
+        if status["phase_2_authorized"]:
+            self.assertEqual(status["phase"], "phase2")
+            self.assertGreater(status["experiments_run"], 0)
+            self.assertTrue(status["novel_research_started"])
+        else:
+            self.assertEqual(status["phase"], "foundation")
+            self.assertEqual(status["experiments_run"], 0)
+            self.assertFalse(status["novel_research_started"])
 
 
 if __name__ == "__main__":

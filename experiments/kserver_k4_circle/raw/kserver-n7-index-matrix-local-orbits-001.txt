@@ -1,0 +1,6 @@
+Experiment kserver-n7-index-matrix-local-orbits-001 execution record
+Metric: /home/kserver/k-server-bench/metrics/circle_k4_m6.pickle; nodes=1001 edges=6006
+Variants tested: 29
+Scores: [["base_control", 0], ["row4_cyclic_relabel_4", 24], ["row4_cyclic_relabel_1", 54], ["row4_cyclic_relabel_5", 84], ["row2_cyclic_relabel_6", 96], ["row4_cyclic_relabel_6", 252], ["row4_sign_flip", 348], ["row3_sign_flip", 354], ["row1_sign_flip", 360], ["row2_sign_flip", 372], ["row2_cyclic_relabel_3", 462], ["row4_cyclic_relabel_3", 486], ["row3_cyclic_relabel_2", 504], ["row3_cyclic_relabel_3", 504], ["row3_cyclic_relabel_4", 522], ["row4_cyclic_relabel_2", 522], ["row2_cyclic_relabel_5", 528], ["row2_cyclic_relabel_2", 534], ["row1_cyclic_relabel_1", 546], ["row2_cyclic_relabel_1", 546], ["row1_cyclic_relabel_4", 588], ["row2_cyclic_relabel_4", 624], ["row3_cyclic_relabel_1", 624], ["row1_cyclic_relabel_6", 630], ["row1_cyclic_relabel_2", 636], ["row1_cyclic_relabel_3", 642], ["row1_cyclic_relabel_5", 714], ["row3_cyclic_relabel_6", 738], ["row3_cyclic_relabel_5", 984]]
+Circle-feasible variants: ["base_control"]
+Artifact SHA256: 47E1EE332E2724AA412B1B7861F37113E45D8925D3923329FD065157DB1701DE

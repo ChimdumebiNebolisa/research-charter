@@ -1,0 +1,8 @@
+{
+  "difference_count": 105,
+  "duplicates": [],
+  "scope": 112,
+  "shape_ok": true,
+  "unique_difference_count": 105,
+  "valid": true
+}

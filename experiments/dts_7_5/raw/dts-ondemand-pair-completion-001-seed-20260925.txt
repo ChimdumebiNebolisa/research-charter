@@ -1,0 +1,10 @@
+Experiment dts-ondemand-constrained-rows-001 execution record
+Method: dynamically generate rows from the current unused-difference mask; reject conflicts while adding marks; branch on sampled scarce anchors
+Seed: 20260925; anchor probes: 4; samples per anchor: 32
+Search nodes: 3709; generator nodes: 10470682; generated rows: 16069
+Exact-pair mode: true; exact-pair nodes: 297879; exact-pair rows: 4; exact-pair checks: 6
+Best depth: 5; best gaps: 6; gap branches: 1568
+Target reached: false
+Rows: [[0,1,9,43,84,111],[0,3,15,21,54,109],[0,7,32,79,103,108],[0,17,36,40,62,99],[0,14,30,78,80,91]]
+Anchor trace: 111,109,108,107,99,105,104,100,98,97,91
+Elapsed seconds: 60.0061699

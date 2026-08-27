@@ -1,0 +1,181 @@
+{
+  "circle_edges": 6006,
+  "circle_metric": "circle_k4_m6.pickle",
+  "elapsed_s": 132.05192852020264,
+  "feature_definition": "sum of normalized work-function values grouped by pairwise circular-distance signature",
+  "feature_signatures": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      2,
+      2,
+      2
+    ],
+    [
+      0,
+      0,
+      0,
+      3,
+      3,
+      3
+    ],
+    [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      2,
+      2,
+      2,
+      2
+    ],
+    [
+      0,
+      0,
+      3,
+      3,
+      3,
+      3
+    ],
+    [
+      0,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      1,
+      1,
+      2,
+      2
+    ],
+    [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3
+    ],
+    [
+      0,
+      1,
+      1,
+      2,
+      3,
+      3
+    ],
+    [
+      0,
+      1,
+      2,
+      2,
+      3,
+      3
+    ],
+    [
+      0,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    [
+      1,
+      1,
+      1,
+      2,
+      2,
+      3
+    ],
+    [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3
+    ],
+    [
+      1,
+      1,
+      2,
+      2,
+      3,
+      3
+    ]
+  ],
+  "method": "bounded_l1_linear_feature_slack_repair",
+  "models": [
+    {
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "status": "infeasible_or_failed",
+      "target_residual_edges": [
+        4766035,
+        5594108,
+        6193322
+      ]
+    },
+    {
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "status": "infeasible_or_failed",
+      "target_residual_edges": [
+        4766035,
+        5594108
+      ]
+    },
+    {
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "status": "infeasible_or_failed",
+      "target_residual_edges": [
+        4766035,
+        6193322
+      ]
+    },
+    {
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "status": "infeasible_or_failed",
+      "target_residual_edges": [
+        5594108,
+        6193322
+      ]
+    }
+  ],
+  "residual_edge_indexes": [
+    4766035,
+    5594108,
+    6193322
+  ],
+  "status": "completed",
+  "taxi_edges": 7000602,
+  "taxi_metric": "circle_taxi_k4_m6.pickle"
+}
+artifacts/kserver-residual-linear-repair-001.json

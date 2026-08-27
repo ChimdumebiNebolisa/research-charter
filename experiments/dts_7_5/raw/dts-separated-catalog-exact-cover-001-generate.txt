@@ -1,0 +1,1 @@
+mode=generate catalog=1000000 attempts=1646620 valid=1013033 elapsed=4.367720795

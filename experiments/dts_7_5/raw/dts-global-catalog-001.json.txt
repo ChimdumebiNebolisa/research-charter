@@ -1,0 +1,26 @@
+Experiment: dts-global-catalog-001
+Command exit code: 0
+Command: /root/research-charter-kserver-venv/bin/python /mnt/c/Users/Chimdumebi/Desktop/research-charter/research_tools/search_dts_global_catalog.py --limit 111 --catalog-size 250000 --attempt-limit 1500000 --seconds 120 --node-limit 2000000 --seed 20260827 --output /mnt/c/Users/Chimdumebi/Desktop/research-charter/artifacts/dts-global-catalog-001.json
+Runtime: WSL2 Ubuntu 26.04, Python 3.14
+
+Evaluator stdout:
+{"target_reached": false, "catalog_size": 250000, "search_nodes": 2000000, "best_depth": 4, "output": "/mnt/c/Users/Chimdumebi/Desktop/research-charter/artifacts/dts-global-catalog-001.json"}
+
+Output artifact SHA256: E1F2D6D5F6E4FD50D59583468D5CB3744A86082EBF1B82C6CAE3664F865D3DFB
+
+Selected output fields:
+limit = 111
+catalog_size_target = 250000
+catalog_size = 250000
+attempt_limit = 1500000
+attempts = 406993
+node_limit = 2000000
+search_nodes = 2000000
+best_depth = 4
+best_gaps = 6
+rows = []
+verification = {"valid": false, "scope": null}
+target_reached = false
+elapsed_seconds = 37.619635837000004
+
+Interpretation: the global uniform catalog reached its full 250,000 deduplicated valid-row target, but exact difference-cover branching hit the node cap at depth 4. No DTS candidate was produced; this finite random catalog does not establish global infeasibility.

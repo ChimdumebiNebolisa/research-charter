@@ -1,0 +1,16 @@
+Experiment dts-pair-allocation-001 execution record
+
+The run used 120 seconds, 20 valid generated rows per unordered pair of
+differences, and the existing scarcity-aware exact-cover search. It completed
+only 164 of the 6,105 pair schedules before the generation deadline, making
+3,280 valid rows and 3,278 deduplicated masks. Exact-cover search did not
+start (0 nodes), so no depth or target conclusion is available.
+
+The preserved artifact is artifacts/dts-pair-allocation-001.json with
+SHA-256:
+  9FE447CCA0F4B6777AB89E2AA0DF4B3EC82DA0156B9AEB8E3B3DC83638573D34
+
+This is an implementation/scaling failure of the exhaustive all-pairs
+generation schedule, not evidence against multi-anchor allocation. A follow-
+up is justified only with incremental constraint-aware row completion that
+avoids repeatedly rejecting full random samples.

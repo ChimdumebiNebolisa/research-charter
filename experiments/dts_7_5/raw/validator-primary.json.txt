@@ -1,0 +1,9 @@
+{
+  "difference_count": 105,
+  "duplicate_set": [],
+  "errors": [],
+  "row_count": 7,
+  "scope": 112,
+  "unique_difference_count": 105,
+  "valid": true
+}

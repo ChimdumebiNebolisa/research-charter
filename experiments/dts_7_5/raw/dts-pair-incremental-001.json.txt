@@ -1,0 +1,17 @@
+Experiment dts-pair-incremental-001 execution record
+
+The incremental pair-completion run used a 120-second budget, 500 shuffled
+pair anchors, and up to 30 rows per pair. It generated 37,541,586 completion
+attempts and 14,400 valid rows across 480 completed pair blocks, but the
+generation phase consumed the full budget and exact-cover search did not start.
+The resulting deduplicated catalog contained 14,397 masks; search_nodes=0,
+best_depth=0, and no candidate was available for verification.
+
+The preserved artifact is artifacts/dts-pair-incremental-001.json with
+SHA-256:
+  C42CE825D087E9B0B945E7C5D3CCCC72FA19E3238ABBCD5D08CA379C2BC51BB0
+
+Interpretation: incremental duplicate checks did not make the fixed-pair
+construction viable at scale. This is a generator-capacity failure, not
+evidence against multi-anchor structure; repeating the same pair family would
+require a different constructive row generator.
