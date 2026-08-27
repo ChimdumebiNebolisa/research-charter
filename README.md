@@ -1,6 +1,6 @@
 # Research Charter
 
-This repository is the locked foundation for a controlled research tournament over exactly three fixed open problems. It is in Foundation Phase only. No novel search, optimization, or large experiment has been run here, and Phase 2 is not authorized by this repository.
+This repository is the locked foundation and append-oriented research record for a controlled tournament over exactly three fixed open problems. Phase 2 is authorized by the human repository owner; the recorded research history contains failed, inconclusive, and negative results, and no novel frozen-target contribution has been verified.
 
 | Problem | Frozen baseline | Strict-improvement target |
 | --- | --- | --- |
@@ -15,7 +15,7 @@ The Heilbronn value is a credible published construction baseline, not a proof o
 - `governance/` contains the constitutional rules and verification policy.
 - `problems/` contains the frozen definitions, baselines, and problem-specific verification contracts.
 - `schemas/` defines the shape of experiment, candidate, and decision records.
-- `experiments/` is reserved for append-oriented research evidence; it is intentionally empty in Foundation Phase.
+- `experiments/` contains append-oriented research evidence, including failed and inconclusive records.
 - `state/` contains derived summaries and append-only research memory.
 - `scripts/` contains repository integrity, drift, and schema checks.
 - `upstreams.lock.json` records the exact external sources and code revisions used for the foundation.
@@ -30,8 +30,8 @@ python scripts/check_foundation_lock.py
 python -m unittest discover -s tests -v
 ```
 
-The final command assumes the `foundation-v1` tag has been created. Repository-local checks are safeguards, not an absolute security boundary: a user or automation with unrestricted GitHub administration can bypass local policy by rewriting history, deleting tags, or changing branch protection.
+The final command checks the active `foundation-v2` tag. The immutable `foundation-v1` tag remains available for historical comparison. Repository-local checks are safeguards, not an absolute security boundary: a user or automation with unrestricted GitHub administration can bypass local policy by rewriting history, deleting tags, or changing branch protection.
 
 ## Foundation status
 
-The foundation is considered ready for Phase 2 only after a human reviews the commit, pushes the commit and `foundation-v1` tag, enables the GitHub settings in `governance/GITHUB_PROTECTION_SETUP.md`, and explicitly supplies the Phase 2 instruction.
+The active foundation is `foundation-v2`, released after the human-authorized Heilbronn transcription amendment. `foundation-v1` remains immutable historical evidence. GitHub settings are described in `governance/GITHUB_PROTECTION_SETUP.md` and must be verified separately from this file.

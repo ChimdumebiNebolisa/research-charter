@@ -1,6 +1,6 @@
 # Protected Foundation Files
 
-The files below are the integrity boundary for ordinary research branches. The `foundation-v1` tag is the comparison reference. A change to any listed path requires explicit human intervention and a new foundation version.
+The files below are the integrity boundary for ordinary research branches. The active foundation reference is the `foundation-v2` tag; `foundation-v1` remains the immutable historical comparison reference. A change to any listed path requires explicit human intervention and a new foundation version.
 
 The repository-local check is not tamper-proof against an actor who can rewrite Git history, delete tags, modify workflows, or administer the GitHub repository. GitHub branch protection and human review are therefore required operational controls, not optional decoration.
 

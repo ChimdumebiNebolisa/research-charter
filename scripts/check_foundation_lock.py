@@ -68,7 +68,7 @@ def validate(tag: str, allow_uninitialized: bool = False) -> list[str]:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--tag", default="foundation-v1")
+    parser.add_argument("--tag", default="foundation-v2")
     parser.add_argument("--allow-uninitialized", action="store_true")
     args = parser.parse_args()
     try:
