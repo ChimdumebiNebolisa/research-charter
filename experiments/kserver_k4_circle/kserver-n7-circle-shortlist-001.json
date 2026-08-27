@@ -5,7 +5,7 @@
   "target_id": "kserver_circle_taxi_m6_violations_lt_3",
   "timestamp": "2026-08-27T06:30:00Z",
   "parent_experiment_ids": ["kserver-n7-circle-to-taxi-001"],
-  "git_commit_sha": "523ecca",
+  "git_commit_sha": "b27747a012fdb964deac9dfd06aa7a8002fc4149",
   "hypothesis": "The highest-ranked preserved non-seed zero-circle candidates from the completed circle search may avoid the five violations shared by the pinned upstream seeds and produce a full taxi result below 3.",
   "rationale": "The prior released-cache run completed 686 exact circle candidates, but deterministic tie-breaking selected two known pinned seeds among tied zero-circle candidates. Its artifact preserves additional tied zero-circle candidates. Excluding every pinned seed and the zero vector tests the next available candidates without rerunning the circle search or using a fixed-edge proxy.",
   "expected_information_gain": "Determines whether the preserved non-seed portion of the completed circle search contains a target-relevant taxi candidate and closes or promotes this exact shortlist path.",
@@ -21,9 +21,9 @@
   "baseline_comparison": {"frozen_primary_metric": "circle_taxi_k4_m6.pickle", "upstream_seed_0_violations": 5, "local_parametrized_baseline_violations": 17, "frozen_reported_best": 3, "expected_relation": "strict target progress only if a full non-seed finalist scores below 3"},
   "previous_best_comparison": {"circle_to_taxi_seed_inclusive": "two pinned seeds scored 5", "expected_relation": "a non-seed finalist must improve on 5 to be finite movement and must score below 3 to reach target"},
   "evidence_level": 0,
-  "interpretation": null,
+  "interpretation": "Pending execution; no result is interpreted before the preregistered exact taxi gate runs.",
   "failure_mode": null,
-  "what_was_learned": null,
-  "recommended_next_action": null,
+  "what_was_learned": "Pending execution; the intended information is whether preserved non-seed circle finalists survive the full taxi metric.",
+  "recommended_next_action": "After execution, independently reproduce any result below 3 and otherwise close or reallocate this shortlist path based on the exact results.",
   "repetition_justification": "This does not repeat the prior 600-second circle search or its seed-inclusive full gate. It consumes preserved candidates from that artifact and changes only the provenance-safe shortlist rule; the full taxi evaluator and metric remain unchanged."
 }
