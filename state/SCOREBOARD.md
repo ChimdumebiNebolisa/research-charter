@@ -84,3 +84,9 @@ This is a derived summary, not the source of scientific truth. It is updated fro
 - K-server spread-correction screen: the canonical seed scored `0/6006` on circle `m=6`; every nonzero tested `alpha*(max(wf_norm)-min(wf_norm))` correction scored `240` to `1,794` violations.
 - The translation-invariant nonlinear correction is closed without taxi evaluation; the next candidate family is structured `index_matrix` variation.
 - Current allocation: `kserver_k4_circle` primary for one bounded index-matrix screen; DTS paused; Heilbronn `BLOCKED_FOUNDATION_INTEGRITY`.
+
+## Phase 2 evidence after forty-three substantive experiments
+
+- K-server natural index-matrix screen: 20 deterministic row-anchor and cyclic-relabel variants were tested on all `6,006` circle inequalities; only the unchanged control scored `0`, while non-control variants scored `204` to `1,038` violations.
+- No matrix variant entered the exact taxi gate. This natural matrix family is closed; broader variation requires a justified structural catalogue rather than trivial tuning.
+- Current allocation: `WAITING_FOR_CAPABILITY` for a materially different global taxi mechanism or justified matrix catalogue; DTS paused; Heilbronn `BLOCKED_FOUNDATION_INTEGRITY`.
