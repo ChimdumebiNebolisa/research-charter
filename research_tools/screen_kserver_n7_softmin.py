@@ -10,6 +10,7 @@ import time
 from pathlib import Path
 
 import numpy as np
+from kserver.evaluation import NumpyKServerInstance
 
 
 SOURCE = "/home/kserver/k-server-bench/examples/search_n7_async_pipeline/search_n7_async_pipeline.py"
@@ -29,7 +30,7 @@ def main() -> int:
 
     module = runpy.run_path(args.source, run_name="n7_softmin_screen")
     mod = module["load_main_module"]()
-    instance = module["NumpyKServerInstance"].load(args.metric)
+    instance = NumpyKServerInstance.load(args.metric)
     context = instance.get_context()
     nodes = instance.get_nodes()
     edges = instance.get_edges()
