@@ -123,6 +123,12 @@ This is a derived summary, not the source of scientific truth. It is updated fro
 - Both independent integer verifiers rejected the best state. No scope-111 candidate, proof, or global infeasibility claim is supported.
 - Current allocation: `WAITING_FOR_CAPABILITY`; DTS, Heilbronn, and k-server remain paused/blocked pending a genuinely different construction, transferable mechanism, stronger capability, or human amendment.
 
+## Phase 2 evidence after seventy substantive experiments
+
+- DTS Wilson finite-field difference-family transfer: all `48` primitive roots, `576` valid construction parameters, `24` deduplicated `(211,6,1)` families, all cyclic translations, and exact row packings were screened. The best dual-verifier-valid ordinary DTS had scope `153`; no scope-111 witness was found.
+- This closes the tested Wilson transfer as structural Level 1 evidence. It does not establish DTS infeasibility or change the frozen scope-112 best result.
+- Current allocation: `WAITING_FOR_CAPABILITY`; DTS, Heilbronn, and k-server remain paused/blocked pending a genuinely different construction, transferable mechanism, stronger capability, or human amendment.
+
 ## Phase 2 evidence after sixty-seven substantive experiments
 
 - DTS exact repair decompositions around the reproducible `103/105` memetic state were closed: row-0 replacement found `0` compatible rows; fixed rows `1,3,5,6` admitted `84` rows but no disjoint triple; fixed rows `1,3,5` admitted `9,644` rows but no disjoint quadruple.
