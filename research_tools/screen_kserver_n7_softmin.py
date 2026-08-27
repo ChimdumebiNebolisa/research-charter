@@ -80,6 +80,7 @@ def main() -> int:
         print(f"temperature={temperature} circle_violations={len(violated)}", flush=True)
 
     results.sort(key=lambda item: (int(item["violations_k"]), float(item["temperature"] or 0.0)))
+    non_control_results = [item for item in results if item["variant"] != "hard_min_control"]
     payload = {
         "experiment_id": "kserver-n7-softmin-001",
         "status": "completed",
@@ -90,7 +91,8 @@ def main() -> int:
         "temperatures": list(TEMPERATURES),
         "results": results,
         "best_circle_result": results[0],
-        "target_reached": any(int(item["violations_k"]) < 3 for item in results),
+        "best_non_control_circle_result": min(non_control_results, key=lambda item: (int(item["violations_k"]), float(item["temperature"]))),
+        "target_reached": any(int(item["violations_k"]) < 3 for item in non_control_results),
         "elapsed_s": time.time() - started,
     }
     args.artifact.parent.mkdir(parents=True, exist_ok=True)
