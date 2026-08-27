@@ -90,10 +90,14 @@ def main() -> int:
     circle_results: list[dict[str, object]] = []
     elite: list[tuple[int, ...]] = []
     error: str | None = None
+    cache_shape: list[int] | None = None
+    cache_bytes: int | None = None
 
     try:
         print("building one shared circle cache", flush=True)
         mod, context, distances, cache, edges = module["build_ck4_cache"]()
+        cache_shape = list(cache.shape)
+        cache_bytes = int(cache.nbytes)
         print(f"circle cache shape={cache.shape} bytes={cache.nbytes}", flush=True)
         zero = tuple([0] * module["N_COEFS"])
         seeds = [zero, *[tuple(v) for v in module["SEED_VECTORS"]]]
@@ -140,7 +144,7 @@ def main() -> int:
         "elapsed_s": time.time() - started_at,
         "source": source,
         "seed": args.seed,
-        "shared_cache": {"built": error is None, "shape": list(cache.shape) if error is None else None, "bytes": int(cache.nbytes) if error is None else None},
+        "shared_cache": {"built": error is None, "shape": cache_shape, "bytes": cache_bytes},
         "circle_search": {"unique_candidates": len(unique), "completed_candidates": len(circle_results), "best": circle_results[:20]},
         "full_taxi_results": full_results,
         "target_reached": any("payload" in item and int(item["payload"]["violations_k"]) < 3 for item in full_results),
