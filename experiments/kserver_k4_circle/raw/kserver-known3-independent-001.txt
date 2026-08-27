@@ -1,0 +1,30 @@
+{
+  "candidate": "kserver-known3-reproduction-001",
+  "method": "direct-canonical-potential-and-array-inequality-count",
+  "metrics": [
+    {
+      "edges": 6006,
+      "elapsed_s": 0.5356147289276123,
+      "first_violated_edge_indexes": [],
+      "metric": "circle_k4_m6.pickle",
+      "min_slack": 0.0,
+      "nodes": 1001,
+      "violations_k": 0
+    },
+    {
+      "edges": 7000602,
+      "elapsed_s": 41.92756104469299,
+      "first_violated_edge_indexes": [
+        4766035,
+        5594108,
+        6193322
+      ],
+      "metric": "circle_taxi_k4_m6.pickle",
+      "min_slack": -1.0,
+      "nodes": 166681,
+      "violations_k": 3
+    }
+  ],
+  "workers": 8
+}
+artifacts/kserver-known3-independent-001.json
