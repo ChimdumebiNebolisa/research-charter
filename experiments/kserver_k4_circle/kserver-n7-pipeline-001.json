@@ -17,13 +17,13 @@
   "compute_budget": {"wall_time_seconds": 1900, "search_timeout_seconds": 1800, "cpu": "20 search workers as documented upstream"},
   "kill_condition": "Stop at the documented 1800-second search timeout, at the first candidate that passes the exact frozen evaluator and is preserved for verification, or at a precise runtime/contract failure. Do not modify the pinned evaluator or metric.",
   "output_artifacts": ["experiments/kserver_k4_circle/raw/kserver-n7-pipeline-001.txt", "artifacts/kserver-n7-pipeline-reproduce_n7_codex/", "artifacts/kserver-n7-pipeline-reproduce_n7_codex-final-evaluation/"],
-  "raw_result": {"status": "planned"},
+  "raw_result": {"status": "blocked", "target_reached": false, "solver_status": "not reached; serial baseline-cache initialization exceeded practical budget", "candidate": null, "staged_search_started": false, "output_artifact": null, "parent_exit_code": 1},
   "baseline_comparison": {"frozen_primary_metric": "circle_taxi_k4_m6.pickle", "frozen_baseline_violations": 3, "expected_relation": "strict improvement only if exact evaluator returns violations_k < 3; reproduction at 3 is baseline evidence"},
   "previous_best_comparison": {"available_pinned_example": 17, "reported_upstream_result": 3, "expected_relation": "candidate generation below 17 is exploratory movement; below 3 is target progress pending independent verification"},
-  "evidence_level": 0,
-  "interpretation": "Pre-registered execution of the documented upstream staged search through a minimal external API adapter; no candidate claim is made before execution.",
-  "failure_mode": null,
-  "what_was_learned": "Pending execution.",
+  "evidence_level": 1,
+  "interpretation": "The adapter passed the upstream worker self-test but the full pipeline never reached its search stages: serial canonical-potential evaluation over 166,681 taxi nodes remained active for approximately 11 minutes, with no checkpoint or candidate, and was interrupted. This is an adapter-performance/runtime result only.",
+  "failure_mode": "serial_baseline_cache_initialization_exceeds_practical_budget",
+  "what_was_learned": "The missing external workspace API is semantically compatible with the pinned search, but the naive serial implementation is not operational at taxi scale. The direct evaluator's fork-compatible multiprocessing path must be used for the baseline cache before the documented search can be tested.",
   "recommended_next_action": "If a candidate below 3 appears, freeze it and run clean exact evaluation, all relevant frozen generalization metrics, independent code-path verification, and prior-art review; otherwise preserve the search funnel and close only the tested configuration/failure mode.",
   "repetition_justification": "This is not a repeat of the 17-violation parametrized baseline: it runs the pinned staged coefficient-search family with the missing external workspace API supplied, directly testing the documented route to the reported 3 result."
 }
