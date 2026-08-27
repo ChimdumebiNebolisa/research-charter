@@ -116,3 +116,9 @@ This is a derived summary, not the source of scientific truth. It is updated fro
 - DTS full-scope exact SAT: the preserved scope-111 one-hot CNF has `15,540` variables and `1,461,683` clauses. Kissat 4.0.3 returned `UNKNOWN` after `119.57` seconds; CaDiCaL 2.1.3 independently returned `UNKNOWN` after `120.17` seconds real time. Neither solver emitted a model.
 - Independent DTS verification found no rows for either run, so no scope-111 candidate or infeasibility claim is supported. The two-solver full-domain SAT portfolio is closed at this encoding and budget.
 - Current allocation: `WAITING_FOR_CAPABILITY`; DTS requires a genuinely different structural decomposition or stronger exact-search capability, Heilbronn remains `BLOCKED_FOUNDATION_INTEGRITY`, and k-server remains paused after the finite-table overfit audit.
+## Phase 2 evidence after sixty-four substantive experiments
+
+- DTS memetic row-crossover/conflict-directed coordinate repair: all three fixed native seeds converged to the same internally valid `103/105` state with duplicate differences `[10,21]`; this is Level 1 proxy movement from the clamped `100/105` state, not a valid DTS.
+- DTS exhaustive shallow-basin audit: all `3,885` one-coordinate and `7,330,995` two-coordinate replacements over the `35` nonzero mark positions were enumerated; `4,187,558` were internally valid and the best remained `103/105`.
+- Both independent integer verifiers rejected the best state. No scope-111 candidate, proof, or global infeasibility claim is supported.
+- Current allocation: `WAITING_FOR_CAPABILITY`; DTS, Heilbronn, and k-server remain paused/blocked pending a genuinely different construction, transferable mechanism, stronger capability, or human amendment.
