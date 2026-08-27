@@ -25,14 +25,17 @@ def main() -> None:
     # The default documented configuration exhausted the 7.6 GiB WSL instance
     # during worker initialization. Keep the same search, but bound aggregate
     # resident memory to make a useful local execution possible.
-    module["FAST_WORKERS_TOTAL"] = 1
-    module["FAST_STAGE_A_WORKERS"] = 1
-    module["FAST_STAGE_B_WORKERS"] = 1
-    module["HEAVY_CPU_BUDGET"] = 2
-    module["STAGE_C_MAX_CPUS"] = 1
-    module["STAGE_D_MIN_CPUS"] = 1
-    module["STAGE_C_BATCH_SIZE"] = 1
-    module["STAGE_D_BATCH_SIZE"] = 1
+    # runpy returns a namespace copy on this Python version; functions retain
+    # the execution namespace in __globals__, so patch that namespace.
+    search_globals = module["main"].__globals__
+    search_globals["FAST_WORKERS_TOTAL"] = 1
+    search_globals["FAST_STAGE_A_WORKERS"] = 1
+    search_globals["FAST_STAGE_B_WORKERS"] = 1
+    search_globals["HEAVY_CPU_BUDGET"] = 2
+    search_globals["STAGE_C_MAX_CPUS"] = 1
+    search_globals["STAGE_D_MIN_CPUS"] = 1
+    search_globals["STAGE_C_BATCH_SIZE"] = 1
+    search_globals["STAGE_D_BATCH_SIZE"] = 1
 
     sys.argv = [search_script, *search_args]
     module["main"]()
