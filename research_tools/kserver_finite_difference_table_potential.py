@@ -26,7 +26,7 @@ class Potential:
         self._lookup = {row.tobytes(): int(value) for row, value in zip(rows, values, strict=True)}
 
     def __call__(self, wf):
-        row = np.asarray(wf)
+        row = np.ascontiguousarray(np.asarray(wf, dtype=float))
         try:
             return self._lookup[row.tobytes()]
         except KeyError as exc:
