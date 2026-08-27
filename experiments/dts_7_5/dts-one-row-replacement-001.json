@@ -4,7 +4,7 @@
   "problem_id": "dts_7_5",
   "target_id": "dts_scope_leq_111",
   "timestamp": "2026-08-27T09:17:31Z",
-  "parent_experiment_ids": ["baseline-reproduction-001", "dts-window-exact-001", "dts-local-perturbation-001"],
+  "parent_experiment_ids": ["dts-baseline-reproduction-001", "dts-window-exact-001", "dts-local-perturbation-001"],
   "git_commit_sha": "d8795e539f45716683491c097599a8821b63e999",
   "hypothesis": "The published scope-112 construction may admit a scope-111 DTS by replacing exactly one row while leaving the other six rows fixed after clamping its sole over-limit entry.",
   "rationale": "Existing local repair tested only a radius-10 neighborhood for row 0 and existing pool work did not exhaustively enumerate a full compatible replacement. The fixed-six decomposition reduces the question to an exact finite search over every normalized six-mark row with all 15 differences in the complement of the fixed rows.",

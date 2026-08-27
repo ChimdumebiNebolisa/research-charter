@@ -95,3 +95,13 @@ This is a derived summary, not the source of scientific truth. It is updated fro
 - K-server one-row index-matrix local-orbit screen: 29 deterministic cyclic-relabel and sign-flip variants were tested on all `6,006` circle inequalities; only the unchanged control scored `0`, while non-control variants scored `24` to `984` violations.
 - This closes practical local `index_matrix` variation around the verified seed. No taxi candidate was produced; no target or novelty claim is made.
 - Current allocation: `WAITING_FOR_CAPABILITY`; k-server, DTS, and Heilbronn are paused/blocked pending a materially different mechanism or capability.
+
+## Phase 2 evidence after fifty-nine substantive experiments
+
+- DTS full-domain one-row replacement around the clamped scope-112 witness: the only consistent fixed-six case had 108 exact enumeration nodes and zero compatible complete rows; the other six omitted-row cases were already inconsistent.
+- DTS state-conditioned on-demand row generation: two of three seeds reached six mutually difference-disjoint rows/90 unique differences, but no seven-row witness. Independent partial audits found no duplicates.
+- DTS sampled-prefix exact pair completion: no disjoint final pair in the visited depth-five prefixes; exact terminal enumeration returned only 8, 4, and 4 compatible rows across the three seeds.
+- DTS exhaustive two-row replacement around the clamped witness: six consistent fixed-five cases produced 16 compatible rows and 20 pair checks with zero disjoint pairs; an independent Python enumerator reproduced the result.
+- DTS exhaustive three-row replacement around the clamped witness: 16 consistent fixed-four cases produced 1,732 compatible rows and 6,896 triple checks with zero disjoint triples; an independent Python enumerator reproduced the result.
+- These finite closures do not establish global infeasibility and do not produce true-objective movement. The clamped published-witness basin is closed through three changed rows; DTS now requires a genuinely different structural construction or capability.
+- Current allocation: `WAITING_FOR_CAPABILITY`; DTS, Heilbronn, and k-server remain paused/blocked for the reasons recorded in `state/RESEARCH_STATUS.json`.
