@@ -1,0 +1,52 @@
+{
+  "record_type": "experiment",
+  "experiment_id": "kserver-finite-difference-relaxation-001",
+  "problem_id": "kserver_k4_circle",
+  "target_id": "kserver_circle_taxi_m6_violations_lt_3",
+  "timestamp": "2026-08-27T15:00:00Z",
+  "parent_experiment_ids": ["kserver-finite-difference-feasibility-001", "kserver-known3-reproduction-001"],
+  "git_commit_sha": "961c251075bb867b93eb137ca25b302e97172877",
+  "hypothesis": "A direct longest-path relaxation can resolve the finite taxi difference-constraint systems that generic sparse LP could not resolve within budget, yielding either a positive-cycle obstruction or a finite potential table.",
+  "rationale": "The preceding five sparse LP models all timed out before returning a primal solution. Difference constraints have a specialized feasibility criterion: the system is feasible exactly when no directed cycle has positive total required potential increase. Integer relaxation can therefore provide an auditable certificate or a converged finite potential without introducing an objective, coefficient bounds, or a new candidate family.",
+  "expected_information_gain": "A positive directed cycle would certify finite-graph infeasibility for the corresponding residual-edge exclusion pattern. Convergence would produce a table that can be independently checked on every frozen taxi edge and, only if it has fewer than three violations after the audit, sent to the primary evaluator. A wall/pass limit remains inconclusive and closes the route operationally after this one rescue.",
+  "method": "Load the pinned circle_taxi_k4_m6 metric, convert the exact integer edge weights w=ext-(k+1)d_min, and run synchronous longest-path relaxation with one integer potential variable per node, initialized at zero. Run exactly the same five models as the LP diagnostic: no residual edge removed, each residual pair removed, and all three removed. Stop on convergence, on the first pass reaching 166,681 iterations (the finite positive-cycle criterion), or at the 1,800-second total wall limit. Reconstruct and integer-check any positive cycle from predecessor edges; save any converged potential with the complete node work-function table. No taxi or primary-evaluator follow-up is performed until an independent all-edge audit.",
+  "metric": "frozen circle-taxi violations_k under the identical edge inequality; target is violations_k < 3",
+  "metric_relation_to_true_objective": "A positive-cycle certificate is only a finite benchmark obstruction. A finite table with a count below 3 is a strict improvement only for the pinned evaluator; arbitrary node values do not establish a general k-server potential or prove the conjecture.",
+  "configuration": {
+    "upstream_commit": "aea64346b846c967e4448f098d4b8b1748504d27",
+    "metric": "circle_taxi_k4_m6.pickle",
+    "nodes": 166681,
+    "edges": 7000602,
+    "variable_definition": "one integer scalar per frozen taxi node/work-function row",
+    "constraint_form": "Phi(v)-Phi(u) >= ext-(k+1)*d_min",
+    "relaxation": "synchronous longest-path Bellman-Ford update from zero super-source",
+    "certificate": "positive cycle in the retained directed graph",
+    "residual_edge_indexes": [4766035, 5594108, 6193322],
+    "models": [
+      {"model": "drop_none", "removed_edge_indexes": []},
+      {"model": "drop_pair_4766035_5594108", "removed_edge_indexes": [4766035, 5594108]},
+      {"model": "drop_pair_4766035_6193322", "removed_edge_indexes": [4766035, 6193322]},
+      {"model": "drop_pair_5594108_6193322", "removed_edge_indexes": [5594108, 6193322]},
+      {"model": "drop_all_three", "removed_edge_indexes": [4766035, 5594108, 6193322]}
+    ],
+    "integer_weight_check": "all edge weights must equal their rounded integer values"
+  },
+  "random_seeds": [],
+  "compute_budget": {"wall_time_seconds": 1800, "cpu": "Windows pinned upstream runtime with Numba-compiled integer relaxation", "memory_intent": "edge arrays and two node vectors; no evaluator or metric changes"},
+  "kill_condition": "Stop after the five declared models, convergence, a positive-cycle certificate, 166,681 passes, or the 1,800-second wall limit. Do not add edge exclusions, alternate update orders, floating tolerances, or solver formulations after seeing results. If no model yields a certificate or converged potential within budget, close arbitrary finite-potential fitting as computationally unproductive.",
+  "output_artifacts": [
+    "experiments/kserver_k4_circle/raw/kserver-finite-difference-relaxation-001.txt",
+    "artifacts/kserver-finite-difference-relaxation-001.json",
+    "artifacts/kserver-finite-difference-relaxation-001-*.npz",
+    "research_tools/solve_kserver_finite_difference_relaxation.py"
+  ],
+  "raw_result": {"status": "preregistered", "models": "not_run", "artifact_sha256": {}},
+  "baseline_comparison": {"frozen_primary_metric": "circle_taxi_k4_m6.pickle", "verified_prior_art_baseline": 3, "target": "<3", "expected_relation": "only a full frozen taxi count below 3 is strict finite improvement"},
+  "previous_best_comparison": {"candidate": "kserver-known3-reproduction-001", "taxi_violations": 3, "provenance": "published prior art", "expected_relation": "this is a deterministic feasibility diagnostic, not a generalizing candidate family"},
+  "evidence_level": 0,
+  "interpretation": "Preregistered; no result is available before execution.",
+  "failure_mode": null,
+  "what_was_learned": "Not yet run. The experiment tests whether direct difference-constraint structure can resolve the finite graph question after generic LP timed out.",
+  "recommended_next_action": "Execute exactly the five declared relaxation models, independently verify any positive cycle or converged table, and close arbitrary finite fitting after this bounded rescue.",
+  "repetition_justification": "This is an algorithmically distinct exact difference-constraint relaxation and certificate method, not a rerun of the generic sparse LP solver; it uses the same frozen inequalities and declared exclusions to resolve the prior computational limit."
+}
