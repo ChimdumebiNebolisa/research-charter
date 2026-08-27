@@ -5,7 +5,7 @@ This is a derived summary, not the source of scientific truth. It is updated fro
 | Problem | Frozen baseline | Target | Foundation status |
 | --- | --- | --- | --- |
 | `dts_7_5` | scope `112` | scope `<=111` | baseline independently verified; no improving candidate; direct, local, global, FPGA, and tested structured families closed; search PAUSED |
-| `heilbronn_n12` | source-faithful `0.032598858691819698...` | certified minimum area strictly greater | search BLOCKED: protected Markdown transcription yields zero area |
+| `heilbronn_n12` | source-faithful `0.032598858691819698...` | certified minimum area strictly greater | foundation-v2 corrected; no improving candidate; direction eligible for future preregistered search |
 | `kserver_k4_circle` | reported `3` violations on pinned `circle_taxi_k4_m6.pickle` | fewer than `3` | pinned evaluator independently reproduces `5` for upstream seed vector 0; target not reached; reported 3-vector absent |
 
 ## Phase 2 evidence after ten substantive experiments
