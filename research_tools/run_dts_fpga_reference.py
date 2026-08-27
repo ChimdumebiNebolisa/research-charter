@@ -52,6 +52,14 @@ def parse_rows(stdout: str) -> list[list[int]]:
     return rows[:7]
 
 
+def as_text(value: str | bytes | None) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, bytes):
+        return value.decode("utf-8", errors="replace")
+    return value
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", type=Path, required=True)
@@ -95,12 +103,12 @@ def main() -> int:
                 run_returncode = process.returncode
             except subprocess.TimeoutExpired as exc:
                 timed_out = True
-                partial_stdout = exc.stdout or ""
-                partial_stderr = exc.stderr or ""
+                partial_stdout = as_text(exc.stdout)
+                partial_stderr = as_text(exc.stderr)
                 process.kill()
                 final_stdout, final_stderr = process.communicate()
-                stdout = (partial_stdout or "") + (final_stdout or "")
-                stderr += (partial_stderr or "") + (final_stderr or "")
+                stdout = partial_stdout + as_text(final_stdout)
+                stderr += partial_stderr + as_text(final_stderr)
                 run_returncode = process.returncode
 
     rows = parse_rows(stdout)
