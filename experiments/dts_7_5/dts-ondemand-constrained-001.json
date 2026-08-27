@@ -41,8 +41,63 @@
     "research_tools/search_dts_ondemand.cpp"
   ],
   "raw_result": {
-    "status": "preregistered",
-    "target_reached": false
+    "status": "completed",
+    "target_reached": false,
+    "best_seed": 20260920,
+    "best_depth": 6,
+    "runs": [
+      {
+        "seed": 20260920,
+        "search_nodes": 7118,
+        "generator_nodes": 10361388,
+        "generated_rows": 18098,
+        "duplicate_rows": 9959,
+        "anchor_probes": 27942,
+        "gap_branches": 4974,
+        "best_depth": 6,
+        "best_gaps": 6,
+        "elapsed_seconds": 60.0009215,
+        "target_reached": false,
+        "partial_rows": [[0, 2, 30, 75, 88, 111], [0, 5, 42, 57, 107, 110], [0, 12, 32, 38, 99, 108], [0, 11, 27, 44, 51, 106], [0, 4, 14, 63, 97, 98], [0, 18, 43, 64, 72, 103]],
+        "independent_partial_audit": {"row_count": 6, "unique_difference_count": 90, "duplicates": []},
+        "artifact_sha256": "6CE8A9EE7BF7387B7B1FE435FA4E68D31D5660C4842742246F8A2A5FF7BF2072",
+        "raw_sha256": "AE94005D31AB4499F7E6B8FA6BC00843B46B94903768A5E4B9819C07DFADF483"
+      },
+      {
+        "seed": 20260924,
+        "search_nodes": 7140,
+        "generator_nodes": 10958589,
+        "generated_rows": 17841,
+        "duplicate_rows": 10537,
+        "anchor_probes": 27845,
+        "gap_branches": 4986,
+        "best_depth": 6,
+        "best_gaps": 6,
+        "elapsed_seconds": 60.0008619,
+        "target_reached": false,
+        "partial_rows": [[0, 1, 18, 60, 81, 111], [0, 2, 43, 46, 72, 108], [0, 7, 11, 23, 75, 109], [0, 10, 49, 84, 99, 104], [0, 19, 28, 76, 101, 107], [0, 24, 37, 69, 77, 91]],
+        "independent_partial_audit": {"row_count": 6, "unique_difference_count": 90, "duplicates": []},
+        "artifact_sha256": "8E4CE62FF4B2B457E9B9986A945E5981015507181C0810E58A4BF04C8E8CE4FF",
+        "raw_sha256": "AEF6DA8F6E5B14BB3C6329E948E1312F3FA9A9A00157368D0BF53D22C9BFCC3A"
+      },
+      {
+        "seed": 20260925,
+        "search_nodes": 6508,
+        "generator_nodes": 11074938,
+        "generated_rows": 13498,
+        "duplicate_rows": 7911,
+        "anchor_probes": 25389,
+        "gap_branches": 4723,
+        "best_depth": 5,
+        "best_gaps": 6,
+        "elapsed_seconds": 60.0005487,
+        "target_reached": false,
+        "partial_rows": [[0, 1, 9, 43, 84, 111], [0, 3, 15, 21, 54, 109], [0, 7, 32, 79, 103, 108], [0, 14, 49, 77, 87, 107], [0, 19, 23, 45, 89, 105]],
+        "independent_partial_audit": {"row_count": 5, "unique_difference_count": 75, "duplicates": []},
+        "artifact_sha256": "6650E26A0F1BDD9200024C1DBAD0A6730364B94CB3B48B580F482148C161EDBC",
+        "raw_sha256": "D38C26B1F5496831A7FE27D60A872FA12BF0D1AFC095A3F32D7D4DEB6174613D"
+      }
+    ]
   },
   "baseline_comparison": {
     "frozen_scope": 112,
@@ -54,10 +109,10 @@
     "single-anchor_conditional_catalogue_depth": 5,
     "expected_relation": "state-conditioned generation should be compared by deepest exact-compatible row depth, not by catalogue size"
   },
-  "evidence_level": 0,
-  "interpretation": "Preregistered search experiment; no execution result is claimed until all three raw outputs are recorded.",
-  "failure_mode": null,
-  "what_was_learned": "Pending execution.",
-  "recommended_next_action": "Run the three declared seeds, independently validate any witness, and close this policy if it does not exceed the prior depth-five frontier.",
+  "evidence_level": 1,
+  "interpretation": "The state-conditioned generator reached six mutually difference-disjoint rows on two of three seeds, exceeding the prior static-catalogue depth-five frontier, but no seed reached seven rows and no scope-111 witness was returned. The six-row partials passed an independent audit for 90 unique differences each. This is a methodological signal, not true-objective movement.",
+  "failure_mode": "on-demand-search-stalled-before-seventh-row-with-six-gap-budget",
+  "what_was_learned": "Conditioning row generation on the exact current used/gap mask improves the observed partial frontier from depth five to depth six on two seeds, while consuming about 10-11 million incremental generator nodes per 60-second seed. The remaining seventh-row compatibility is still rare under sampled anchor placement; the current policy is not a witness-producing route within the declared budget.",
+  "recommended_next_action": "Close this exact on-demand sampling policy as a finite methodological screen. A continuation requires a new coordinated multi-row mechanism, such as a beam or conflict-directed repair that uses these six-row states, not more seeds or the same anchor sampler.",
   "repetition_justification": "This is materially different from static catalogue, single-anchor catalogue, pair-conditioned catalogue, and greedy/block-deletion searches because row generation is conditioned on the exact recursive used/gap mask at every node and rejects conflicts before a row is complete."
 }
