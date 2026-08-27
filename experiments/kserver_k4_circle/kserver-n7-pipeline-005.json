@@ -5,7 +5,7 @@
   "target_id": "kserver_circle_taxi_m6_violations_lt_3",
   "timestamp": "2026-08-27T13:00:00Z",
   "parent_experiment_ids": ["kserver-n7-pipeline-004"],
-  "git_commit_sha": "ec5c82769c866b1b26c5ba16c4c0c0388451eca7",
+  "git_commit_sha": "7875b8d3b90fce4742da67e0c0fd0147912bbf58",
   "hypothesis": "Removing the duplicate stage-C worker spawn and retaining one fast worker plus one heavy worker per stage will allow the pinned staged n=7 search to initialize and complete candidate scoring within the local WSL memory budget.",
   "rationale": "Pipeline-003 exhausted the WSL instance with six fast and three heavy workers. Pipeline-004 correctly reduced fast and nested CPU concurrency but still failed while initializing the upstream controller's two stage-C and one stage-D processes. This experiment changes only the aggregate worker count at source-load time: one stage-C worker and one stage-D worker remain, with one nested process each. The search families, seed, startup edge proxy, exact candidate scoring, metric, and pinned evaluator remain fixed.",
   "expected_information_gain": "Tests whether the upstream search can produce completed exact stage-A/B/C/D observations once aggregate worker initialization fits the available runtime.",
