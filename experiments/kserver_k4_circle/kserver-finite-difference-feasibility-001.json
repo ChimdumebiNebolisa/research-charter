@@ -1,0 +1,52 @@
+{
+  "record_type": "experiment",
+  "experiment_id": "kserver-finite-difference-feasibility-001",
+  "problem_id": "kserver_k4_circle",
+  "target_id": "kserver_circle_taxi_m6_violations_lt_3",
+  "timestamp": "2026-08-27T13:00:00Z",
+  "parent_experiment_ids": ["kserver-envelope-switching-001", "kserver-known3-reproduction-001"],
+  "git_commit_sha": "8013860774bd9a0e2a51e2fb77c61f622245ad9e",
+  "hypothesis": "The three known taxi violations may be an artifact of the published canonical potential family: an arbitrary scalar potential on the finite frozen taxi graph may satisfy all difference constraints, or all but a controlled subset of the three residual edges.",
+  "rationale": "Coefficient repair, full-coordinate additive repair, and published max/min envelope switches did not improve the verified three-violation candidate. The next separable diagnostic is the finite graph feasibility problem itself, which removes the potential-class restriction while retaining the exact frozen edge inequalities. Because a feasible value table would be benchmark-specific and potentially overfit, it is diagnostic evidence only.",
+  "expected_information_gain": "Distinguishes a graph-level obstruction from failure of the tested canonical families. Feasibility after all three residual edges are removed can produce a finite candidate for the strict target screen; infeasibility, or feasibility only after exclusions, closes this arbitrary finite-potential route and requires a structured generalizing mechanism.",
+  "method": "Load the pinned circle_taxi_k4_m6 metric and assign one free scalar variable to each of its 166,681 work-function nodes. Encode every retained taxi edge as Phi(v)-Phi(u) >= ext-(k+1)d_min, fix the first potential to zero, and solve sparse LP feasibility with five declared models: no residual edge removed, each of the three residual pairs removed, and all three residual edges removed. Use a 300-second HiGHS time limit per model and a 1,800-second total wall budget. Preserve every feasible value table with its full work-function rows. Any feasible table is independently array-checked on all taxi edges and then, only if it has fewer than three violations, sent through the pinned primary evaluator; no finite result is called a proof.",
+  "metric": "frozen circle-taxi violations_k under the identical edge inequality; target is violations_k < 3",
+  "metric_relation_to_true_objective": "This is a finite feasibility diagnostic on the pinned benchmark. A count below 3 is a strict improvement only for the frozen finite evaluator; arbitrary per-node values do not establish a general k-server potential or prove the conjecture.",
+  "configuration": {
+    "upstream_commit": "aea64346b846c967e4448f098d4b8b1748504d27",
+    "metric": "circle_taxi_k4_m6.pickle",
+    "nodes": 166681,
+    "edges": 7000602,
+    "variable_definition": "one scalar per frozen taxi node/work-function row",
+    "constraint_form": "Phi(v)-Phi(u) >= ext-(k+1)*d_min",
+    "gauge": "Phi(node_0)=0",
+    "residual_edge_indexes": [4766035, 5594108, 6193322],
+    "models": [
+      {"model": "drop_none", "removed_edge_indexes": []},
+      {"model": "drop_pair_4766035_5594108", "removed_edge_indexes": [4766035, 5594108]},
+      {"model": "drop_pair_4766035_6193322", "removed_edge_indexes": [4766035, 6193322]},
+      {"model": "drop_pair_5594108_6193322", "removed_edge_indexes": [5594108, 6193322]},
+      {"model": "drop_all_three", "removed_edge_indexes": [4766035, 5594108, 6193322]}
+    ],
+    "solver": "scipy.optimize.linprog method=highs with sparse two-nonzero rows",
+    "model_time_limit_seconds": 300
+  },
+  "random_seeds": [],
+  "compute_budget": {"wall_time_seconds": 1800, "cpu": "WSL2 pinned upstream runtime; sparse LP feasibility", "memory_intent": "one sparse constraint matrix at a time; no evaluator or metric changes"},
+  "kill_condition": "Stop after the five declared models, at 1,800 seconds total, or at a precise solver/runtime failure. Do not add edge exclusions, bounds, objective terms, or alternate solvers after seeing results. If no feasible model exists, close arbitrary finite difference-potential fitting. If a feasible model exists, independently count every taxi edge; only a count below 3 may trigger the pinned primary evaluator, and any finite value table must still be treated as overfit until a structured generalization is demonstrated.",
+  "output_artifacts": [
+    "experiments/kserver_k4_circle/raw/kserver-finite-difference-feasibility-001.txt",
+    "artifacts/kserver-finite-difference-feasibility-001.json",
+    "artifacts/kserver-finite-difference-feasibility-001-*.npz",
+    "research_tools/solve_kserver_finite_difference_feasibility.py"
+  ],
+  "raw_result": {"status": "preregistered", "models": "not_run", "artifact_sha256": {}},
+  "baseline_comparison": {"frozen_primary_metric": "circle_taxi_k4_m6.pickle", "verified_prior_art_baseline": 3, "target": "<3", "expected_relation": "only a full frozen taxi count below 3 is strict finite improvement"},
+  "previous_best_comparison": {"candidate": "kserver-known3-reproduction-001", "taxi_violations": 3, "provenance": "published prior art", "expected_relation": "this diagnostic removes the canonical-family restriction but is not itself a generalizing candidate"},
+  "evidence_level": 0,
+  "interpretation": "Preregistered; no result is available before execution.",
+  "failure_mode": null,
+  "what_was_learned": "Not yet run. The diagnostic will test whether the finite frozen graph admits a scalar potential outside the published canonical families.",
+  "recommended_next_action": "Execute exactly the five declared sparse feasibility models, independently audit any feasible value table, and close the route if it yields no strict result or only benchmark-specific overfit values.",
+  "repetition_justification": "This is not a repetition of additive feature repair or envelope switching: it removes the functional-family restriction and solves the frozen edge system directly with one variable per benchmark node."
+}
