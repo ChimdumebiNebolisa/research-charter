@@ -107,8 +107,11 @@ def main() -> int:
                 partial_stderr = as_text(exc.stderr)
                 process.kill()
                 final_stdout, final_stderr = process.communicate()
-                stdout = partial_stdout + as_text(final_stdout)
-                stderr += partial_stderr + as_text(final_stderr)
+                # communicate() after kill returns the complete pipe contents
+                # on this Python/runtime combination; prefer it to avoid
+                # duplicating the bytes already exposed by TimeoutExpired.
+                stdout = as_text(final_stdout) or partial_stdout
+                stderr += as_text(final_stderr) or partial_stderr
                 run_returncode = process.returncode
 
     rows = parse_rows(stdout)
