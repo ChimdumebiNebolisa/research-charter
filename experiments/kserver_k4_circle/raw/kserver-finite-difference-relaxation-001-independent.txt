@@ -1,0 +1,99 @@
+{
+  "constraint": "Phi(v)-Phi(u) >= ext-(k+1)*d_min",
+  "method": "independent_integer_array_edge_audit",
+  "metric": "circle_taxi_k4_m6.pickle",
+  "residual_edge_indexes": [
+    4766035,
+    5594108,
+    6193322
+  ],
+  "results": [
+    {
+      "edges": 7000602,
+      "first_violated_edge_indexes": [],
+      "min_slack": 0,
+      "nodes": 166681,
+      "potential_max": 17,
+      "potential_min": 0,
+      "residual_edge_slacks": {
+        "4766035": 0,
+        "5594108": 0,
+        "6193322": 0
+      },
+      "table": "artifacts\\kserver-finite-difference-relaxation-001-drop_none.npz",
+      "violations_k": 0
+    },
+    {
+      "edges": 7000602,
+      "first_violated_edge_indexes": [
+        4766035,
+        5594108
+      ],
+      "min_slack": -2,
+      "nodes": 166681,
+      "potential_max": 17,
+      "potential_min": 0,
+      "residual_edge_slacks": {
+        "4766035": -2,
+        "5594108": -2,
+        "6193322": 0
+      },
+      "table": "artifacts\\kserver-finite-difference-relaxation-001-drop_pair_4766035_5594108.npz",
+      "violations_k": 2
+    },
+    {
+      "edges": 7000602,
+      "first_violated_edge_indexes": [
+        4766035
+      ],
+      "min_slack": -2,
+      "nodes": 166681,
+      "potential_max": 17,
+      "potential_min": 0,
+      "residual_edge_slacks": {
+        "4766035": -2,
+        "5594108": 0,
+        "6193322": 0
+      },
+      "table": "artifacts\\kserver-finite-difference-relaxation-001-drop_pair_4766035_6193322.npz",
+      "violations_k": 1
+    },
+    {
+      "edges": 7000602,
+      "first_violated_edge_indexes": [
+        5594108
+      ],
+      "min_slack": -2,
+      "nodes": 166681,
+      "potential_max": 17,
+      "potential_min": 0,
+      "residual_edge_slacks": {
+        "4766035": 0,
+        "5594108": -2,
+        "6193322": 0
+      },
+      "table": "artifacts\\kserver-finite-difference-relaxation-001-drop_pair_5594108_6193322.npz",
+      "violations_k": 1
+    },
+    {
+      "edges": 7000602,
+      "first_violated_edge_indexes": [
+        4766035,
+        5594108
+      ],
+      "min_slack": -2,
+      "nodes": 166681,
+      "potential_max": 17,
+      "potential_min": 0,
+      "residual_edge_slacks": {
+        "4766035": -2,
+        "5594108": -2,
+        "6193322": 0
+      },
+      "table": "artifacts\\kserver-finite-difference-relaxation-001-drop_all_three.npz",
+      "violations_k": 2
+    }
+  ],
+  "status": "completed"
+}
+artifacts\kserver-finite-difference-relaxation-001-independent.json

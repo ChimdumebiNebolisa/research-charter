@@ -1,0 +1,50 @@
+{
+  "interpretation": "zero fallback is only a diagnostic for out-of-domain rows, not a proposed generalization",
+  "method": "cross_metric_finite_table_domain_audit",
+  "results": [
+    {
+      "edges": 7000602,
+      "first_violated_edge_indexes": [],
+      "matched_node_count": 166681,
+      "metric": "circle_taxi_k4_m6.pickle",
+      "min_slack_with_zero_fallback": 0,
+      "missing_node_count": 0,
+      "nodes": 166681,
+      "violations_with_zero_fallback": 0
+    },
+    {
+      "edges": 6006,
+      "first_violated_edge_indexes": [
+        293,
+        365,
+        370,
+        371,
+        383,
+        419,
+        437,
+        455,
+        461,
+        518,
+        662,
+        665,
+        759,
+        765,
+        771,
+        791,
+        794,
+        812,
+        818,
+        827
+      ],
+      "matched_node_count": 105,
+      "metric": "circle_k4_m6.pickle",
+      "min_slack_with_zero_fallback": -15,
+      "missing_node_count": 896,
+      "nodes": 1001,
+      "violations_with_zero_fallback": 1491
+    }
+  ],
+  "status": "completed",
+  "table": "artifacts\\kserver-finite-difference-relaxation-001-drop_none.npz"
+}
+artifacts\kserver-finite-difference-relaxation-001-cross-metric.json
