@@ -105,3 +105,9 @@ This is a derived summary, not the source of scientific truth. It is updated fro
 - DTS exhaustive three-row replacement around the clamped witness: 16 consistent fixed-four cases produced 1,732 compatible rows and 6,896 triple checks with zero disjoint triples; an independent Python enumerator reproduced the result.
 - These finite closures do not establish global infeasibility and do not produce true-objective movement. The clamped published-witness basin is closed through three changed rows; DTS now requires a genuinely different structural construction or capability.
 - Current allocation: `WAITING_FOR_CAPABILITY`; DTS, Heilbronn, and k-server remain paused/blocked for the reasons recorded in `state/RESEARCH_STATUS.json`.
+
+## Phase 2 evidence after sixty substantive experiments
+
+- Heilbronn full-coordinate global differential evolution: three fixed seeds, 1,500 generations, and 7,000 Gaussian polish proposals per seed all retained the source-faithful Comellas--Yebra construction at float64 precision; no strict improvement was found.
+- An independent 100-digit Decimal audit recomputed all 220 triangles of the retained decimal candidate and found minimum area `0.032598858691819690`; this is nondegenerate but not a certified improvement over the exact baseline.
+- This closes the tested global-DE family at the declared budget, not the Heilbronn problem. Current allocation remains `WAITING_FOR_CAPABILITY`; DTS needs a new structural construction or exact-search capability, Heilbronn needs a new parameterization or authorized corrected foundation, and k-server needs a transferable mechanism or materially stronger runtime.
