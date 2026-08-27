@@ -43,3 +43,10 @@ This is a derived summary, not the source of scientific truth. It is intentional
 - DTS incremental pair allocation: 14,397 masks were generated, but exact-cover search again received zero nodes (Level 1 implementation failure).
 - DTS valid-row library packing: best union 96/105; conflict-directed library swaps: best union 97/105. Both best states failed the independent integer verifier (Level 1 finite-family evidence).
 - No true-objective movement has been verified. Current allocation remains `WAITING_FOR_CAPABILITY`; the next valuable action is a genuinely new algebraic/structured DTS construction or exact decomposition.
+
+## Phase 2 evidence after thirty-two substantive experiments
+
+- DTS public FPGA-reference adaptation: with separated training (TRAINING_M=152, 100 trials), the source-faithful default-threshold run reached main search but repeatedly stalled at six populated rows; no scope-111 candidate was decoded (Level 1 finite runtime evidence).
+- DTS FPGA threshold variant: increasing BLOCK_GEN_THRESH to 1000 and DTS_GEN_THRESH to 2000000 completed training but consumed the 120-second software budget before any main-search status; no candidate was decoded (Level 1 finite runtime evidence).
+- These FPGA runs test a public bit-parallel search family and provide capability/runtime information only; they do not establish infeasibility or novelty. No true-objective movement has been verified.
+- Current allocation remains `WAITING_FOR_CAPABILITY`: DTS now needs hardware-scale FPGA execution or a genuinely new algebraic/structured decomposition; Heilbronn remains `BLOCKED_FOUNDATION_INTEGRITY`; k-server remains runtime/candidate-provenance blocked.
