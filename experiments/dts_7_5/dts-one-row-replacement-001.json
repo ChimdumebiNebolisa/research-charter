@@ -35,8 +35,19 @@
     "research_tools/search_dts_one_row_replacement.cpp"
   ],
   "raw_result": {
-    "status": "preregistered",
-    "target_reached": false
+    "status": "completed",
+    "target_reached": false,
+    "stopped": false,
+    "elapsed_seconds": 0.0000502,
+    "omitted_rows_checked": [0],
+    "fixed_six_consistent": [true, false, false, false, false, false, false],
+    "nodes_by_omitted_row": [108, 0, 0, 0, 0, 0, 0],
+    "complete_rows_by_omitted_row": [0, 0, 0, 0, 0, 0, 0],
+    "compatible_rows_by_omitted_row": [0, 0, 0, 0, 0, 0, 0],
+    "candidate": null,
+    "artifact_sha256": "9986F4FA64849819576A758E5D7505C8F5A5588D944E464C5CAEC8769DA8B6B1",
+    "raw_sha256": "82DB3DBF79CC9BD37FCD021C126D0915C1E0F44960E1EEDA06E313F62EDEA679",
+    "independent_verifier": {"valid": false, "reason": "no candidate returned"}
   },
   "baseline_comparison": {
     "frozen_scope": 112,
@@ -48,10 +59,10 @@
     "radius10_one_row_search": "no compatible row in the tested local neighborhood",
     "expected_relation": "global one-row replacement enumeration strictly extends the prior local window"
   },
-  "evidence_level": 0,
-  "interpretation": "Preregistered exact finite decomposition; no execution result is claimed in this record until raw output is recorded.",
-  "failure_mode": null,
-  "what_was_learned": "Pending execution.",
-  "recommended_next_action": "Execute once, validate any returned witness independently, then close or promote only this one-row replacement family according to the finite result.",
+  "evidence_level": 1,
+  "interpretation": "The exhaustive fixed-six case for omitted row 0 visited 108 partial rows and found no compatible complete replacement. The other six omissions were rejected immediately because their fixed rows already contain a collision. This closes the exact one-row replacement family around the clamped published witness, but does not constrain coordinated multi-row changes or imply global infeasibility.",
+  "failure_mode": "no-compatible-one-row-replacement-in-full-scope-domain",
+  "what_was_learned": "The prior radius-10 result was not hiding a distant one-row repair: no scope-111 row exists against the six clamped rows in the full normalized domain. The clamped witness can therefore only be repaired, if at all, by changing at least two rows or by leaving the published construction family.",
+  "recommended_next_action": "Close one-row replacement. Do not repeat the same fixed-six enumeration; any DTS continuation must use a coordinated multi-row decomposition or a structurally different construction.",
   "repetition_justification": "This is not a repeat of the radius-10 window: it exhausts the full scope-111 row domain against the fixed-six complement and also checks every possible omitted row index for fixed-set consistency."
 }
