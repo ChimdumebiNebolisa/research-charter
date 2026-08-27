@@ -35,3 +35,11 @@ This is a derived summary, not the source of scientific truth. It is intentional
 - K-server pipeline-005: one fast plus one worker per heavy stage reached the controller, then WSL again became unresponsive before any completed stage result (Level 1 runtime evidence).
 - No k-server candidate was scored in these staged-search runs; no movement below the frozen primary baseline of `3` is claimed.
 - Current allocation: `WAITING_FOR_CAPABILITY`; DTS needs a structural decomposition, Heilbronn remains `BLOCKED_FOUNDATION_INTEGRITY`, and k-server needs a stable more-capable runtime or the missing reported 3-violation candidate workspace.
+
+## Phase 2 evidence after twenty-nine substantive experiments
+
+- DTS single-anchor difference allocation: 44,378 deduplicated conditional rows reached depth 5, matching the prior ceiling (Level 1 finite-family evidence).
+- DTS rejection-based pair allocation: generation exhausted its budget before exact-cover search (Level 1 implementation failure).
+- DTS incremental pair allocation: 14,397 masks were generated, but exact-cover search again received zero nodes (Level 1 implementation failure).
+- DTS valid-row library packing: best union 96/105; conflict-directed library swaps: best union 97/105. Both best states failed the independent integer verifier (Level 1 finite-family evidence).
+- No true-objective movement has been verified. Current allocation remains `WAITING_FOR_CAPABILITY`; the next valuable action is a genuinely new algebraic/structured DTS construction or exact decomposition.
