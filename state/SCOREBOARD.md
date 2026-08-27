@@ -27,3 +27,11 @@ This is a derived summary, not the source of scientific truth. It is intentional
 - Heilbronn source-faithful SLSQP: 12 starts returned to the published minimum within float64 noise; no certification or improvement claim.
 - No true-objective movement has been verified.
 - Current allocation: `WAITING_FOR_CAPABILITY`; no primary or hedge. Heilbronn `BLOCKED_FOUNDATION_INTEGRITY`; DTS requires a structural decomposition; k-server evaluator is operational but candidate provenance/search workspace is missing.
+
+## Phase 2 evidence after twenty-four substantive experiments
+
+- K-server pipeline-003: the startup proxy reached the pinned controller, but six fast plus three heavy workers caused a confirmed WSL global OOM before any completed stage result (Level 1 runtime evidence).
+- K-server pipeline-004: one fast plus three heavy workers reached the controller, then WSL terminated with `Wsl/Service/E_UNEXPECTED` before any completed stage result (Level 1 runtime evidence).
+- K-server pipeline-005: one fast plus one worker per heavy stage reached the controller, then WSL again became unresponsive before any completed stage result (Level 1 runtime evidence).
+- No k-server candidate was scored in these staged-search runs; no movement below the frozen primary baseline of `3` is claimed.
+- Current allocation: `WAITING_FOR_CAPABILITY`; DTS needs a structural decomposition, Heilbronn remains `BLOCKED_FOUNDATION_INTEGRITY`, and k-server needs a stable more-capable runtime or the missing reported 3-violation candidate workspace.

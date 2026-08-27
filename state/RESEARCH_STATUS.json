@@ -2,7 +2,7 @@
   "phase": "phase2",
   "phase_2_authorized": true,
   "foundation_status": "protected_files_clean; heilbronn_baseline_transcription_inconsistency_recorded",
-  "experiments_run": 21,
+  "experiments_run": 24,
   "novel_research_started": true,
   "allowed_problem_ids": ["dts_7_5", "heilbronn_n12", "kserver_k4_circle"],
   "baseline_status": {
@@ -10,7 +10,7 @@
     "heilbronn_n12": "RESOLVED_CREDIBLE_CONSTRUCTION_NOT_GLOBAL_OPTIMUM",
     "kserver_k4_circle": "RESOLVED_REPORTED_PRIMARY_EVALUATOR_RESULT"
   },
-  "last_completed_experiment": "dts-global-catalog-001",
+  "last_completed_experiment": "kserver-n7-pipeline-005",
   "current_running": null,
   "best_verified_candidate": {
     "dts_7_5": {"candidate_id": null, "result": "scope 112 baseline only", "evidence_level": 2},
@@ -18,14 +18,14 @@
     "kserver_k4_circle": {"candidate_id": null, "result": "pinned parametrized human baseline: 17 violations; reported 3-vector not reproduced", "evidence_level": 2}
   },
   "active_hypotheses": [],
-  "dead_directions": ["single-mark local perturbation from clamped scope-112 witness", "irreversible from-scratch random greedy row selection", "current two-mark/whole-row annealing score", "unbounded sequential pool generation", "bounded sampled pool backtracking at current generator settings", "native Windows OR-Tools CP-SAT", "direct DTS CP-SAT formulation under 120-second Windows/Linux budgets", "Z3 direct integer Distinct formulation under 120-second budget", "radius-3 all-row Python DFS at 5,000,000 nodes", "radius-3 candidate-level CP-SAT exact cover under 120 seconds", "radius-3 Glucose4 sequential-counter SAT encoding under 120 seconds", "uniform global Golomb catalog with rare-difference branching", "pure-Python block deletion within the tested budget (partial gain, no complete assignment)", "source-faithful Heilbronn fixed-orientation SLSQP local multistart"],
-  "next_experiment": "WAITING_FOR_CAPABILITY: a structurally biased DTS difference-allocation/decomposition method, an authorized k-server 3-violation candidate workspace, or a human-approved Heilbronn foundation amendment",
-  "resource_allocation": {"primary": null, "hedge": null, "paused": ["dts_7_5: paused after direct solvers, local neighborhoods, and uniform global catalog failed to produce a witness; resume only with structural decomposition/bias", "heilbronn_n12: BLOCKED_FOUNDATION_INTEGRITY due protected transcription; source-faithful SLSQP showed no float improvement", "kserver_k4_circle: evaluator operational for 17 baseline, but search blocked by missing unpublished 3-vector/external main.py workspace"]},
+  "dead_directions": ["single-mark local perturbation from clamped scope-112 witness", "irreversible from-scratch random greedy row selection", "current two-mark/whole-row annealing score", "unbounded sequential pool generation", "bounded sampled pool backtracking at current generator settings", "native Windows OR-Tools CP-SAT", "direct DTS CP-SAT formulation under 120-second Windows/Linux budgets", "Z3 direct integer Distinct formulation under 120-second budget", "radius-3 all-row Python DFS at 5,000,000 nodes", "radius-3 candidate-level CP-SAT exact cover under 120 seconds", "radius-3 Glucose4 sequential-counter SAT encoding under 120 seconds", "uniform global Golomb catalog with rare-difference branching", "pure-Python block deletion within the tested budget (partial gain, no complete assignment)", "source-faithful Heilbronn fixed-orientation SLSQP local multistart", "k-server pinned staged search under documented six-fast/three-heavy worker configuration", "k-server pinned staged search under one-fast/three-heavy worker configuration", "k-server pinned staged search under one-fast/two-heavy worker configuration on current WSL host"],
+  "next_experiment": "WAITING_FOR_CAPABILITY: a structurally biased DTS difference-allocation/decomposition method, a stable more-capable k-server runtime or authorized 3-violation candidate workspace, or a human-approved Heilbronn foundation amendment",
+  "resource_allocation": {"primary": null, "hedge": null, "paused": ["dts_7_5: paused after direct solvers, local neighborhoods, and uniform global catalog failed to produce a witness; resume only with structural decomposition/bias", "heilbronn_n12: BLOCKED_FOUNDATION_INTEGRITY due protected transcription; source-faithful SLSQP showed no float improvement", "kserver_k4_circle: exact evaluator operational for 17 baseline, but three staged-search runtime configurations reached the controller and failed before any completed score; pause pending stable more-capable runtime or missing 3-vector/workspace"]},
   "notes": [
     "Phase 2 authorization was supplied by the human repository owner in the 2026-08-26 session prompt.",
     "The scoreboard is derived; evidence remains in append-oriented records and raw artifacts.",
     "Heilbronn search is blocked because the protected baseline coordinate transcription conflicts with the primary PDF; do not edit protected files autonomously.",
     "The pinned k-server evaluator is operational in WSL2 with a fork wrapper and scores the pinned parametrized example at 17; the reported 3-violation candidate is not present in the pinned public revision, and the upstream staged search expects an external main.py workspace.",
-    "After twenty-one substantive experiments, all active compute is paused: DTS direct solvers and both local/global exact-cover families produced no witness, Heilbronn local SLSQP showed no float improvement and remains foundation-blocked, and k-server lacks the unpublished 3-vector/search workspace."
+    "After twenty-four substantive experiments, all active compute is paused: DTS direct solvers and both local/global exact-cover families produced no witness, Heilbronn local SLSQP showed no float improvement and remains foundation-blocked, and k-server's pinned staged search reached its controller in three progressively narrower worker configurations but failed before any completed score because the local WSL runtime became resource/service-unstable."
   ]
 }
