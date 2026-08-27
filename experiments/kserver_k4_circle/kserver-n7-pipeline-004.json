@@ -5,7 +5,7 @@
   "target_id": "kserver_circle_taxi_m6_violations_lt_3",
   "timestamp": "2026-08-27T12:00:00Z",
   "parent_experiment_ids": ["kserver-n7-pipeline-003"],
-  "git_commit_sha": "9a24d5b5c08a0c3737a8982604ec7960a676f9c0",
+  "git_commit_sha": "a384793774b6a70f57ea63c1295503faf0a05a61",
   "hypothesis": "Capping the aggregate worker budget will let the pinned staged n=7 search complete useful exact stage-A/B work on the available WSL instance, providing evidence about the search family rather than failing during initialization.",
   "rationale": "Experiment 003 reached the controller but the documented six-fast-worker plus three-heavy-worker configuration was killed by global WSL memory exhaustion before one result completed. This run changes only process concurrency: one fast worker, one worker per heavy stage, and one nested process per heavy worker. The startup ordering proxy, candidate-generation families, exact pinned candidate scoring, metric, and evaluator remain unchanged.",
   "expected_information_gain": "Distinguishes a worker-capacity failure from whether the upstream search can generate and score candidates under the frozen k-server objective.",
