@@ -1,0 +1,28 @@
+Experiment kserver-n7-streaming-mp-001 execution record
+
+Pinned source: aea64346b846c967e4448f098d4b8b1748504d27
+Metric: circle_taxi_k4_m6.pickle
+Metric SHA256: 143ED19EB145143F0CC4C8B7ECBD44BB6FDF2A1A7E08B7AB15010DEBE46190
+Candidate: pinned search source SEED_VECTORS[0]
+Coefficient vector: [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, -1, -1, 0, 0]
+Runtime: WSL2 Ubuntu, Python 3.14, fork start method, eight bounded streaming potential workers
+
+Search-runner result:
+- processed_normalized_edges_score = 1.0 over all 7,000,602 inequalities
+- violations_k = 5
+- violated edge indexes = [1382726, 1446816, 2930299, 5594108, 6193322]
+- evaluator elapsed = 484.9086847305298 seconds; total wall elapsed = 528.1735050678253 seconds
+- artifact SHA256 = D8BE5C2CA57BC022DA69B78083D82F07FF90166DBF13462B29EE4A1B75C068D9
+
+Independent pinned evaluator reproduction (kwargs file: research_tools/kserver_n7_seed0_kwargs.json):
+- unmodified tools/evaluator/evaluate.py entrypoint via fork wrapper
+- final_evaluation_num_processes = 8; robustness_check = true
+- correct.json: {"correct": true, "error": null}
+- metrics.json public["0/violations_k"] = 5
+- metrics.json public["0/violations_k_score"] = 0.999999285775709
+- metrics.json private["0/execution_time"] = 495.443337922 seconds
+- correct.json SHA256 = 35A0741C4FF4E0DD7DE5917E2D34B08D5372131CF73B859BA148C5C8B1644AA1
+- metrics.json SHA256 = 7958EC6D8393F026D02E909056C6BC9CB708B4355076441387926D7AB43DE302
+
+Interpretation:
+The two execution paths agree on an exact score of 5. This is finite primary-metric movement relative to the locally reproduced 17-violation parametrized baseline, but it remains above the frozen target (<3) and is not a novel candidate because the vector is present in the pinned upstream search source.

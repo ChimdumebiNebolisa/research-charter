@@ -1,12 +1,12 @@
 # Scoreboard
 
-This is a derived summary, not the source of scientific truth. It is intentionally empty of experiment results in Foundation Phase.
+This is a derived summary, not the source of scientific truth. It is updated from the append-oriented experiment records.
 
 | Problem | Frozen baseline | Target | Foundation status |
 | --- | --- | --- | --- |
-| `dts_7_5` | scope `112` | scope `<=111` | baseline independently verified; no improving candidate; direct solvers/local/global exact-cover searches unresolved; search PAUSED |
+| `dts_7_5` | scope `112` | scope `<=111` | baseline independently verified; no improving candidate; direct, local, global, FPGA, and tested structured families closed; search PAUSED |
 | `heilbronn_n12` | source-faithful `0.032598858691819698...` | certified minimum area strictly greater | search BLOCKED: protected Markdown transcription yields zero area |
-| `kserver_k4_circle` | reported `3` violations on pinned `circle_taxi_k4_m6.pickle` | fewer than `3` | evaluator operational in WSL; available parametrized baseline scores `17`; reported 3-vector/search workspace absent |
+| `kserver_k4_circle` | reported `3` violations on pinned `circle_taxi_k4_m6.pickle` | fewer than `3` | pinned evaluator independently reproduces `5` for upstream seed vector 0; target not reached; reported 3-vector absent |
 
 ## Phase 2 evidence after ten substantive experiments
 
@@ -50,3 +50,12 @@ This is a derived summary, not the source of scientific truth. It is intentional
 - DTS FPGA threshold variant: increasing BLOCK_GEN_THRESH to 1000 and DTS_GEN_THRESH to 2000000 completed training but consumed the 120-second software budget before any main-search status; no candidate was decoded (Level 1 finite runtime evidence).
 - These FPGA runs test a public bit-parallel search family and provide capability/runtime information only; they do not establish infeasibility or novelty. No true-objective movement has been verified.
 - Current allocation remains `WAITING_FOR_CAPABILITY`: DTS now needs hardware-scale FPGA execution or a genuinely new algebraic/structured decomposition; Heilbronn remains `BLOCKED_FOUNDATION_INTEGRITY`; k-server remains runtime/candidate-provenance blocked.
+
+## Phase 2 evidence after thirty-seven substantive experiments
+
+- DTS affine gap coupling: best `89/105` unique differences; no valid target.
+- DTS quadratic gap coupling: best `79/105` unique differences; no valid target.
+- DTS exhaustive p=43 Ruzsa/Ling residue split: `10,922,688` balanced transforms; best independently valid scope `195`; no target transform.
+- K-server single-process shared circle cache: cache built and 700 exact circle candidates completed, including zero-violation circle proxies; full taxi evaluation exceeded the local wall budget.
+- K-server streaming full-metric evaluator: the first pinned upstream seed vector scored `5` over all `7,000,602` taxi inequalities in `528` seconds; the unmodified pinned evaluator independently reproduced `5` in `495` seconds with eight final workers. This is finite primary-metric movement from the local 17-violation parametrized baseline, not the frozen target and not a novel candidate because the vector is present in the pinned source.
+- Current allocation: `WAITING_FOR_CAPABILITY` for further full-metric search unless a targeted mutation run is preregistered; DTS structured families remain closed; Heilbronn remains `BLOCKED_FOUNDATION_INTEGRITY`.
