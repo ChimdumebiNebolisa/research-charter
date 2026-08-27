@@ -8,6 +8,10 @@ This is a derived summary, not the source of scientific truth. It is updated fro
 | `heilbronn_n12` | source-faithful `0.032598858691819698...` | certified minimum area strictly greater | foundation-v2 corrected; no improving candidate; direction eligible for future preregistered search |
 | `kserver_k4_circle` | reported `3` violations on pinned `circle_taxi_k4_m6.pickle` | fewer than `3` | pinned evaluator independently reproduces `5` for upstream seed vector 0; target not reached; reported 3-vector absent |
 
+## Director review — 2026-08-27
+
+No new experiment is justified. DTS is paused pending a new structural construction or stronger exact-search capability; Heilbronn is eligible after foundation-v2 but has no concrete materially different certified-search hypothesis; k-server is paused pending a compact mechanism that transfers beyond the finite taxi table. Allocation: `WAITING_FOR_CAPABILITY`, with no primary or hedge. There is no experiment 72.
+
 ## Phase 2 evidence after ten substantive experiments
 
 - DTS local perturbation: scope `111`, but only `100/105` unique differences; duplicate set `[13, 36, 53, 100, 111]` across all three seeds (Level 1 proxy signal).
