@@ -66,3 +66,9 @@ This is a derived summary, not the source of scientific truth. It is updated fro
 - The two top proxy finalists were exact-scored on all `7,000,602` taxi inequalities and both returned `348,550` violations. The local five-edge repair proxy is falsified and closed; no target result is claimed.
 - The upstream seed vector remains the best locally verified finite result at `5` violations, independently reproduced by the unmodified pinned evaluator; it is upstream-listed and not a novelty claim.
 - Current allocation: `WAITING_FOR_CAPABILITY` for a globally cached/vectorized candidate screen or more capable runtime; do not repeat the five-edge proxy.
+
+## Phase 2 evidence after forty substantive experiments
+
+- K-server released-cache circle-to-taxi search: 686 circle candidates completed; the two full taxi finalists were hard-coded upstream seed vectors and both scored `5` violations over all `7,000,602` inequalities.
+- This confirms stable end-to-end scoring but yields no novel candidate; future shortlist selection excludes all pinned seeds so the preserved non-seed circle finalists can be tested.
+- Current allocation: `kserver_k4_circle` primary for one non-seed exact shortlist; DTS paused; Heilbronn `BLOCKED_FOUNDATION_INTEGRITY`.
