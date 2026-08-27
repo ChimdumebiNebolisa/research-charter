@@ -2,7 +2,7 @@
   "phase": "phase2",
   "phase_2_authorized": true,
   "foundation_status": "protected_files_clean; heilbronn_baseline_transcription_inconsistency_recorded",
-  "experiments_run": 70,
+  "experiments_run": 71,
   "novel_research_started": true,
   "allowed_problem_ids": ["dts_7_5", "heilbronn_n12", "kserver_k4_circle"],
   "baseline_status": {
@@ -10,7 +10,7 @@
     "heilbronn_n12": "RESOLVED_CREDIBLE_CONSTRUCTION_NOT_GLOBAL_OPTIMUM",
     "kserver_k4_circle": "RESOLVED_REPORTED_PRIMARY_EVALUATOR_RESULT"
   },
-  "last_completed_experiment": "dts-wilson-difference-family-001",
+  "last_completed_experiment": "dts-kissat-sequential-long-001",
   "current_running": null,
   "best_verified_candidate": {
     "dts_7_5": {"candidate_id": null, "result": "scope 112 baseline only", "evidence_level": 2},
@@ -22,6 +22,7 @@
   "next_experiment": "none_currently_justified",
   "resource_allocation": {"primary": null, "hedge": null, "paused": ["dts_7_5: random-catalogue, on-demand sampled DFS, sampled-prefix exact-pair completion, exhaustive repair of the clamped published witness through three changed rows, full-scope SAT at the tested budgets, including symmetry-strengthened and sequential-counter Kissat, the Wilson (211,6,1) difference-family transfer, and the memetic 103 basin through two coordinate changes plus exact one-, three-, and four-row completions are closed; resume only with a genuinely different structural construction or capability", "heilbronn_n12: protected transcription remains unusable for official comparison; source-faithful SLSQP and full-coordinate differential evolution found no improvement; resume only with a new parameterization or authorized corrected foundation", "kserver_k4_circle: finite taxi-table witness is overfit; resume only with a human-supplied structural mechanism or materially new capability"]},
   "notes": [
+    "The extended sequential-counter scope-111 DTS SAT run used the same 30964-variable/1610283-clause exact formula for 1199.45 Kissat solver seconds and returned UNKNOWN with no model; both independent verifiers rejected the empty decode. The recent 2025/2026 Heilbronn literature audit found no newer explicit n=12 construction beyond the Comellas-Yebra baseline. These results close the tested runtime-only and provenance routes without establishing DTS infeasibility or Heilbronn optimality.",
     "Phase 2 authorization was supplied by the human repository owner in the 2026-08-26 session prompt.",
     "The preregistered Wilson finite-field (211,6,1) difference-family transfer exhaustively checked 48 primitive roots, 576 valid parameters, and 24 deduplicated families with all translations and exact row packing. The best dual-verifier-valid ordinary DTS had scope `153`, with no scope-111 witness; this closes the tested transfer without implying DTS infeasibility.",
     "The preregistered sequential-counter full-domain DTS SAT formula reduced the symmetry-strengthened encoding from `2,383,982` to `1,610,283` clauses and used `332 MB` peak memory, but Kissat 4.0.3 still returned `UNKNOWN` after `119.64` solver seconds with no model. Primary and flat-counter verification both rejected the empty decode. Pairwise at-most-one clause overhead is not the sole bottleneck; close this exact encoding at the tested budget and require a materially different construction or capability.",

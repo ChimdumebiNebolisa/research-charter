@@ -146,3 +146,9 @@ This is a derived summary, not the source of scientific truth. It is updated fro
 - DTS sequential-counter SAT: replacing pairwise at-most-one constraints with exact sequential counters reduced the symmetry-strengthened scope-111 CNF to `30,964` variables and `1,610,283` clauses, with `332 MB` peak memory. Kissat 4.0.3 returned `UNKNOWN` after `119.64` solver seconds with no model.
 - Primary and independent flat-counter verification both rejected the empty decode. Pairwise clause overhead is not the sole bottleneck; this exact encoding is closed at the declared budget and provides no infeasibility or target-contribution claim.
 - Current allocation: `WAITING_FOR_CAPABILITY`; DTS, Heilbronn, and k-server remain paused/blocked pending a genuinely different construction, transferable mechanism, stronger capability, or human amendment.
+## Phase 2 evidence after seventy-one substantive experiments
+
+- DTS exact sequential-counter SAT with a tenfold extension: the same `30,964`-variable/`1,610,283`-clause scope-111 formula ran under Kissat 4.0.3 for `1,199.45` solver seconds and returned `UNKNOWN`; peak resident memory was `332 MB`, and no model was emitted.
+- Primary and independent integer verifiers both rejected the empty decode. This closes the exact sequential-counter encoding at the tested CPU-only budget; it is not a finite or global infeasibility result.
+- Heilbronn provenance audit: the 2025 global-optimization paper reaches `n=10`, and the 2026 exact-coordinate paper still lists Comellas–Yebra as the source of the best-known `n=12` construction. No newer explicit `n=12` candidate was found; no target comparison or novelty claim is made.
+- Current allocation: `WAITING_FOR_CAPABILITY`; DTS, Heilbronn, and k-server remain paused/blocked pending a genuinely different construction, transferable mechanism, stronger capability, or authorized foundation correction.
