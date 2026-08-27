@@ -1,0 +1,1 @@
+one_coordinate_cases=3885 two_coordinate_cases=7330995 internally_valid_cases=4187558 best_unique=103 target_reached=false

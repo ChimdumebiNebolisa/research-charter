@@ -1,0 +1,7 @@
+Experiment dts-separated-catalog-exact-cover-001 search record
+Method: persistent catalogue plus static rare-difference branching
+Catalog size: 1000000
+Search nodes: 1796; best depth: 5; best gaps: 6
+Target reached: false
+Rows: []
+Elapsed seconds: 240.086319181

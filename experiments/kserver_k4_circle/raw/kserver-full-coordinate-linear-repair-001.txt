@@ -1,0 +1,52 @@
+{
+  "circle_edges": 6006,
+  "circle_metric": "circle_k4_m6.pickle",
+  "elapsed_s": 67.83672666549683,
+  "feature_count": 126,
+  "feature_definition": "all 126 normalized work-function coordinates for sorted 4-server multisets on m=6",
+  "method": "bounded_l1_full_configuration_coordinate_slack_repair",
+  "models": [
+    {
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "status": "infeasible_or_failed",
+      "target_residual_edges": [
+        4766035,
+        5594108,
+        6193322
+      ]
+    },
+    {
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "status": "infeasible_or_failed",
+      "target_residual_edges": [
+        4766035,
+        5594108
+      ]
+    },
+    {
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "status": "infeasible_or_failed",
+      "target_residual_edges": [
+        4766035,
+        6193322
+      ]
+    },
+    {
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "status": "infeasible_or_failed",
+      "target_residual_edges": [
+        5594108,
+        6193322
+      ]
+    }
+  ],
+  "residual_edge_indexes": [
+    4766035,
+    5594108,
+    6193322
+  ],
+  "status": "completed",
+  "taxi_edges": 7000602,
+  "taxi_metric": "circle_taxi_k4_m6.pickle"
+}
+artifacts/kserver-full-coordinate-linear-repair-001.json

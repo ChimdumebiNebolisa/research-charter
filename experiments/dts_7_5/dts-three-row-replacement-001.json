@@ -1,0 +1,78 @@
+{
+  "record_type": "experiment",
+  "experiment_id": "dts-three-row-replacement-001",
+  "problem_id": "dts_7_5",
+  "target_id": "dts_scope_leq_111",
+  "timestamp": "2026-08-27T09:44:58Z",
+  "parent_experiment_ids": ["dts-two-row-replacement-001", "dts-ondemand-pair-completion-001"],
+  "git_commit_sha": "103efd389020f98a5926f8fe37525af1bbf72f76",
+  "hypothesis": "The clamped published construction may reach scope 111 after replacing exactly three rows while keeping the other four rows fixed.",
+  "rationale": "One- and two-row replacement families around the clamped scope-112 witness are empty. A three-row complement is the smallest remaining coordinated repair family that is still tractable for complete row enumeration and exact disjointness checking.",
+  "expected_information_gain": "A disjoint compatible row triple is an independently verifiable scope-111 witness. Exhausting all consistent fixed-four subsets closes the published-witness repair basin through three changed rows and determines whether a target construction must alter at least four rows or leave this basin.",
+  "method": "Clamp the published scope-112 row to [0,11,58,75,98,111]. For every unordered triple of omitted row indices, validate the other four fixed rows and skip any fixed set with an existing collision. For each consistent case, exhaustively enumerate every increasing normalized six-mark row with scope<=111 whose 15 differences lie in the fixed-four complement, maintaining a local exact mask during recursion. Test all unordered triples of enumerated rows for pairwise disjoint masks, reinsert any triple into the omitted positions, and independently validate a complete assignment with research_tools/verify_dts_independent.py.",
+  "metric": "consistent fixed-four cases, exact enumeration nodes, complete compatible rows, triple checks, target reach, and independent validity",
+  "metric_relation_to_true_objective": "Only a complete seven-row assignment accepted by the independent integer verifier is a scope<=111 true-objective witness. A zero-triple result is finite evidence only for this three-row replacement family and is not a global impossibility proof.",
+  "configuration": {
+    "scope_limit": 111,
+    "baseline_rows": "published scope-112 witness with row 0 endpoint clamped from 112 to 111",
+    "omitted_triples": "all 35 unordered row-index triples",
+    "enumeration": "all compatible normalized six-mark rows against each fixed-four difference complement",
+    "arithmetic": "integer two-word masks for differences 1..111",
+    "node_limit": 1000000000,
+    "wall_seconds": 120,
+    "verifier": "research_tools/verify_dts_independent.py"
+  },
+  "random_seeds": [],
+  "compute_budget": {
+    "wall_time_seconds": 120,
+    "cpu": "single native C++ process",
+    "memory_intent": "bounded candidate vector for each fixed-four case and integer masks"
+  },
+  "kill_condition": "Stop at the first independently validated witness, at the declared wall or node budget, or after all consistent fixed-four cases are exhausted. Do not infer global infeasibility from this finite repair family.",
+  "output_artifacts": [
+    "experiments/dts_7_5/raw/dts-three-row-replacement-001.txt",
+    "artifacts/dts-three-row-replacement-001.json",
+    "research_tools/search_dts_three_row_replacement.cpp"
+  ],
+  "raw_result": {
+    "status": "completed",
+    "target_reached": false,
+    "stopped": false,
+    "elapsed_seconds": 0.0274085,
+    "consistent_cases": 16,
+    "inconsistent_cases": 19,
+    "nodes": 50134,
+    "complete_compatible_rows": 1732,
+    "triple_checks": 6896,
+    "consistent_triples": [[0, 1, 2], [0, 1, 3], [0, 1, 4], [0, 1, 5], [0, 1, 6], [0, 2, 3], [0, 2, 4], [0, 2, 5], [0, 2, 6], [0, 3, 4], [0, 3, 5], [0, 3, 6], [0, 4, 5], [0, 4, 6], [0, 5, 6], [1, 4, 6]],
+    "rows_by_case": [44, 110, 76, 42, 258, 92, 84, 36, 88, 100, 92, 206, 196, 148, 46, 114],
+    "disjoint_triples_by_case": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "candidate": null,
+    "artifact_sha256": "6EB0EA6856EDB9F6ECCED2EEFE917C423E331B56260955BBFEAF1B29F6D95EEA",
+    "raw_sha256": "3603F0E2396D5E1F91EC216ECEF7D66987842FAF1B877DBB2D363E9622AC59D6",
+    "independent_recheck": {
+      "implementation": "standalone Python increasing-mark enumerator",
+      "consistent_cases": 16,
+      "nodes": 50134,
+      "complete_compatible_rows": 1732,
+      "disjoint_triples": 0
+    },
+    "independent_verifier": {"valid": false, "reason": "no candidate returned"}
+  },
+  "baseline_comparison": {
+    "frozen_scope": 112,
+    "target_scope": 111,
+    "expected_relation": "strict improvement only if complete and validator-valid"
+  },
+  "previous_best_comparison": {
+    "one_row_replacement": "no compatible row in the full scope-111 domain",
+    "two_row_replacement": "no disjoint pair in all six consistent fixed-five cases",
+    "expected_relation": "exhaustive fixed-four complement extends the exact published-witness repair closure by one changed row"
+  },
+  "evidence_level": 1,
+  "interpretation": "All 35 omitted-row triples were checked. Nineteen fixed-four cases were already inconsistent; the 16 consistent cases produced 1,732 compatible rows and 6,896 triple checks, with no pairwise-disjoint row triple. A standalone Python enumerator reproduced the aggregate counts and zero-triple result. This closes the clamped published-witness repair basin through three changed rows, but is not a global impossibility result.",
+  "failure_mode": "no-disjoint-three-row-replacement-in-full-scope-domain",
+  "what_was_learned": "The published construction cannot be repaired to scope 111 by changing at most three rows. Any target construction must alter at least four rows or come from a different structural basin; more exact repair enumeration around this witness is not justified without a new reason.",
+  "recommended_next_action": "Close the published-witness repair basin through three rows. Do not expand to four-row replacement by brute force; prioritize a genuinely different construction family or await a new structural hypothesis/capability.",
+  "repetition_justification": "This is not a repeat of one- or two-row replacement: it enumerates a different fixed-four complement and tests row triples across all 35 omitted-index cases."
+}

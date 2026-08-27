@@ -1,0 +1,23 @@
+Experiment: dts-cpsat-linux-001
+Command exit code: 0
+Command: /root/research-charter-kserver-venv/bin/python /mnt/c/Users/Chimdumebi/Desktop/research-charter/research_tools/search_dts_cpsat.py --limit 111 --seconds 120 --workers 8 --seed 20260826 --output /mnt/c/Users/Chimdumebi/Desktop/research-charter/artifacts/dts-cpsat-linux-001.json
+Runtime: WSL2 Ubuntu 26.04, Python 3.14, OR-Tools 9.15.6755 (Linux wheel)
+
+Evaluator stdout:
+{"status": "UNKNOWN", "target_reached": false, "elapsed_seconds": 120.147, "output": "/mnt/c/Users/Chimdumebi/Desktop/research-charter/artifacts/dts-cpsat-linux-001.json"}
+
+Output artifact SHA256: A02784004B76DB885C5876DFA1A2CD52840DC1791A87B00401EC76CF508AE7DD
+
+Selected output fields:
+status = UNKNOWN
+status_code = 0
+elapsed_seconds = 120.147321992
+limit = 111
+workers = 8
+seed = 20260826
+objective_bound = null
+rows = []
+verification = {"valid": false, "scope": null}
+target_reached = false
+
+Interpretation: Linux CP-SAT completed without the native Windows access violation, but produced no candidate or bound within the 120-second limit. UNKNOWN is solver evidence only and is not mathematical infeasibility.

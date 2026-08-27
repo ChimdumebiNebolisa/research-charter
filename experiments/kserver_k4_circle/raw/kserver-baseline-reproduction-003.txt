@@ -1,0 +1,36 @@
+Experiment: kserver-baseline-reproduction-003
+Execution: 2026-08-26T23:09:38Z (artifact modification time; local time was 18:09:38 CDT)
+Upstream commit: aea64346b846c967e4448f098d4b8b1748504d27
+Metric: circle_taxi_k4_m6.pickle
+Metric SHA256: 143ED19EB145143F0CC4C8B7ECBD44BB6FDF2A1A7E08B7AB15010DEBE46190
+Candidate: examples/evader_parametrized_circle_taxi_k4_m6/evader_parametrized_potential.py
+Runtime: WSL2 Ubuntu 26.04, Python 3.14, multiprocessing start method fork
+Wrapper: research_tools/run_kserver_evaluator_fork.py
+Evaluator timeout: 1200 seconds
+Final evaluator processes: 1
+Options: --keep_only_violations_k --robustness_check
+
+Command completed with process exit code 0. The evaluator emitted no final stdout JSON; the result artifacts were written to:
+artifacts/baselines/kserver-evader-circle-taxi-k4-m6-fork/
+
+Artifact hashes:
+35A0741C4FF4E0DD7DE5917E2D34B08D5372131CF73B859BA148C5C8B1644AA1  correct.json
+2DF640B3FA6D74E42A0B69100228260EA559CC562B41D006772FC62A2416356C  metrics.json
+
+correct.json:
+{"correct": true, "error": null}
+
+metrics.json selected result fields:
+public["0/violations_k"] = 17
+public["0/violations_k_score"] = 0.9999975716374107
+public["0/robustness"] = null
+public["total_attempts"] = 1
+public["num_successful_runs"] = 1
+public["num_valid_runs"] = 1
+public["num_invalid_runs"] = 0
+private["0/metric_name"] = circle_taxi_k4_m6.pickle
+private["0/score"] = 0.9999975716374107
+private["0/execution_time"] = 628.6814662639999 seconds
+private["best_potential_cls"] = Potential
+
+Interpretation: the exact pinned primary evaluator is operational under the fork wrapper and reproduces the upstream README's human-designed 17-violation baseline. It does not reproduce the separately reported 3-violation candidate, and it does not reach the frozen target violations_k < 3.

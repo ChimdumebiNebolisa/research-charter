@@ -1,0 +1,8 @@
+Experiment dts-one-row-replacement-001 execution record
+Method: exhaustive increasing-mark enumeration of every scope-111 row compatible with six clamped published rows
+Rows omitted and fixed-six consistency: 0=consistent 1=inconsistent 2=inconsistent 3=inconsistent 4=inconsistent 5=inconsistent 6=inconsistent 
+Nodes by omitted row: 108,0,0,0,0,0,0
+Complete compatible rows by omitted row: 0,0,0,0,0,0,0
+Target reached: false
+Rows: 
+Elapsed seconds: 5.01999893459e-05

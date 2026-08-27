@@ -1,0 +1,1 @@
+{"best_minimum_area_float64": 0.03259885869181968, "improvement": 0.0, "output": "artifacts\\heilbronn-de-global-001.json"}

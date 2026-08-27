@@ -1,0 +1,1 @@
+fixed_unique=90 allowed=21 nodes=108 complete_rows=0 target_reached=false

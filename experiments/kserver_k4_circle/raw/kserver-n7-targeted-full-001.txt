@@ -1,0 +1,18 @@
+Experiment kserver-n7-targeted-full-001 execution record
+
+Pinned source: aea64346b846c967e4448f098d4b8b1748504d27
+Metric: circle_taxi_k4_m6.pickle
+Runtime: WSL2 Ubuntu, Python 3.14, fork start method, eight streaming potential workers
+Finalists selected by the prior exact five-edge screen:
+- coefficient index 8 replaced by -5
+- coefficient index 8 replaced by -4
+
+Full exact results:
+- finalist 1 violations_k = 348550; processed_normalized_edges_score = 1.0; elapsed = 444.57716178894043 seconds
+- finalist 2 violations_k = 348550; processed_normalized_edges_score = 1.0; elapsed = 432.085577249527 seconds
+- both returned the same first violated edge indexes [1, 2, 3, 4, 5, ...]
+- no finalist reached the target below 3
+- artifact SHA256 = 9D9D2B5D8C0A0E0B1052B7DDD7C85CA9EB2C0A37227FB7AA6113279E5768796C
+
+Interpretation:
+The five-edge proxy had zero residual for both finalists but failed to transfer to the complete taxi metric, which found 348550 violations. This closes the tested local repair selection rule; no target or novelty claim is made.

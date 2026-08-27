@@ -1,0 +1,79 @@
+{
+  "record_type": "experiment",
+  "experiment_id": "dts-two-row-replacement-001",
+  "problem_id": "dts_7_5",
+  "target_id": "dts_scope_leq_111",
+  "timestamp": "2026-08-27T09:41:00Z",
+  "parent_experiment_ids": ["dts-one-row-replacement-001", "dts-ondemand-pair-completion-001"],
+  "git_commit_sha": "7ef1790946af5ef0c9673950626d52575a8bdf26",
+  "hypothesis": "The clamped published construction may reach scope 111 after replacing exactly two rows while keeping the other five rows fixed.",
+  "rationale": "The exact one-row replacement family is empty, while the on-demand search showed that compatible final-row choices are rare. Exhaustively solving the two-row complement around every consistent five-row subset is the smallest coordinated repair family not yet closed and avoids sampled row pools.",
+  "expected_information_gain": "A disjoint compatible row pair is an independently verifiable scope-111 witness. Exhausting all compatible pairs for every consistent fixed-five subset closes the two-row repair family around the published construction and identifies whether a successful repair must change at least three rows or leave this construction basin.",
+  "method": "Clamp the published scope-112 row to [0,11,58,75,98,111]. For every unordered pair of omitted row indices, validate the other five fixed rows and skip any fixed set with an existing collision. For each consistent case, exhaustively enumerate all increasing normalized six-mark rows with scope<=111 whose 15 differences are contained in the fixed-five complement; maintain a local exact difference mask during recursion. Test every unordered pair of enumerated rows for disjoint masks, reinsert any pair into the omitted positions, and independently validate a complete assignment with research_tools/verify_dts_independent.py.",
+  "metric": "consistent fixed-five cases, exact enumeration nodes, complete compatible rows, pair checks, target reach, and independent validity",
+  "metric_relation_to_true_objective": "Only a complete seven-row assignment accepted by the independent integer verifier is a scope<=111 true-objective witness. A zero-pair result is finite evidence only for this two-row replacement family and is not a global impossibility proof.",
+  "configuration": {
+    "scope_limit": 111,
+    "baseline_rows": "published scope-112 witness with row 0 endpoint clamped from 112 to 111",
+    "omitted_pairs": "all 21 unordered row-index pairs",
+    "enumeration": "all compatible normalized six-mark rows against each fixed-five difference complement",
+    "arithmetic": "integer two-word masks for differences 1..111",
+    "node_limit": 1000000000,
+    "wall_seconds": 120,
+    "verifier": "research_tools/verify_dts_independent.py"
+  },
+  "random_seeds": [],
+  "compute_budget": {
+    "wall_time_seconds": 120,
+    "cpu": "single native C++ process",
+    "memory_intent": "bounded candidate vector for each fixed-five case and integer masks"
+  },
+  "kill_condition": "Stop at the first independently validated witness, at the declared wall or node budget, or after all consistent fixed-five cases are exhausted. Do not infer global infeasibility from this finite repair family.",
+  "output_artifacts": [
+    "experiments/dts_7_5/raw/dts-two-row-replacement-001.txt",
+    "artifacts/dts-two-row-replacement-001.json",
+    "research_tools/search_dts_two_row_replacement.cpp"
+  ],
+  "raw_result": {
+    "status": "completed",
+    "target_reached": false,
+    "stopped": false,
+    "elapsed_seconds": 0.001271,
+    "consistent_cases": 6,
+    "inconsistent_cases": 15,
+    "nodes": 2940,
+    "complete_compatible_rows": 16,
+    "pair_checks": 20,
+    "consistent_pairs": [[0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6]],
+    "nodes_by_case": [434, 422, 535, 591, 477, 481],
+    "rows_by_case": [2, 2, 2, 6, 2, 2],
+    "disjoint_pairs_by_case": [0, 0, 0, 0, 0, 0],
+    "candidate": null,
+    "artifact_sha256": "33A48B717BACBBA8E379D2325601E4AE00DD241EB30EB2B1E56196A6C5B3A67E",
+    "raw_sha256": "07CDE875F99021370B8AF13E7A0BA25331E343F0B90814810803D592906CA50C",
+    "independent_recheck": {
+      "implementation": "standalone Python increasing-mark enumerator",
+      "consistent_cases": 6,
+      "nodes_by_case": [434, 422, 535, 591, 477, 481],
+      "rows_by_case": [2, 2, 2, 6, 2, 2],
+      "disjoint_pairs_by_case": [0, 0, 0, 0, 0, 0]
+    },
+    "independent_verifier": {"valid": false, "reason": "no candidate returned"}
+  },
+  "baseline_comparison": {
+    "frozen_scope": 112,
+    "target_scope": 111,
+    "expected_relation": "strict improvement only if complete and validator-valid"
+  },
+  "previous_best_comparison": {
+    "one_row_replacement": "no compatible row in the full scope-111 domain",
+    "on_demand_pair_completion": "no disjoint pair in sampled depth-five prefixes",
+    "expected_relation": "exhaustive fixed-five complement extends the one-row test to coordinated two-row repair"
+  },
+  "evidence_level": 1,
+  "interpretation": "All 21 omitted-row pairs were checked. Fifteen fixed-five cases were already inconsistent; the six consistent cases all omit row 0 and one other row. Exact enumeration found 16 compatible replacement rows in total and 20 unordered pair checks, with no disjoint pair. A standalone Python enumerator reproduced the per-case node, row, and zero-pair counts. This closes the two-row repair family around the clamped published witness but is not a global impossibility result.",
+  "failure_mode": "no-disjoint-two-row-replacement-in-full-scope-domain",
+  "what_was_learned": "The published construction cannot be repaired to scope 111 by changing at most two rows: every possible fixed-five complement was either already colliding or had no pair of mutually disjoint compatible rows. Any target construction must change at least three rows or use a different structural source.",
+  "recommended_next_action": "Close the published-witness repair basin through two rows. Do not expand this exact enumeration to three-row repair without a new structural reason; prioritize a genuinely different construction family or record the repository as awaiting new capability.",
+  "repetition_justification": "This is not a repeat of one-row replacement or sampled pair completion: it exhausts all compatible row pairs around every consistent fixed-five subset of the clamped published witness."
+}

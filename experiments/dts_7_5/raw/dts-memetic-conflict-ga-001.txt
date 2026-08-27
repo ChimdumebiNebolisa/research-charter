@@ -1,0 +1,3 @@
+seed=20260828 best_unique=103 iterations=3430008 elapsed=90.0044
+seed=20260829 best_unique=103 iterations=3460708 elapsed=90.0044
+seed=20260830 best_unique=103 iterations=3448053 elapsed=90.0039

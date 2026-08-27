@@ -1,0 +1,91 @@
+Traceback (most recent call last):
+  File "/mnt/c/Users/Chimdumebi/Desktop/research-charter/research_tools/solve_kserver_finite_difference_feasibility.py", line 13, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+starting drop_none removed=[]
+{"elapsed_s": 316.3123948574066, "kept_edges": 7000602, "model": "drop_none", "removed_edge_indexes": [], "solver_message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)", "solver_status": 1, "status": "solver_limit_or_failure"}
+starting drop_pair_4766035_5594108 removed=[4766035, 5594108]
+{"elapsed_s": 313.5082757472992, "kept_edges": 7000600, "model": "drop_pair_4766035_5594108", "removed_edge_indexes": [4766035, 5594108], "solver_message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)", "solver_status": 1, "status": "solver_limit_or_failure"}
+starting drop_pair_4766035_6193322 removed=[4766035, 6193322]
+{"elapsed_s": 314.74353098869324, "kept_edges": 7000600, "model": "drop_pair_4766035_6193322", "removed_edge_indexes": [4766035, 6193322], "solver_message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)", "solver_status": 1, "status": "solver_limit_or_failure"}
+starting drop_pair_5594108_6193322 removed=[5594108, 6193322]
+{"elapsed_s": 314.961936712265, "kept_edges": 7000600, "model": "drop_pair_5594108_6193322", "removed_edge_indexes": [5594108, 6193322], "solver_message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)", "solver_status": 1, "status": "solver_limit_or_failure"}
+starting drop_all_three removed=[4766035, 5594108, 6193322]
+{"elapsed_s": 313.23511505126953, "kept_edges": 7000599, "model": "drop_all_three", "removed_edge_indexes": [4766035, 5594108, 6193322], "solver_message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)", "solver_status": 1, "status": "solver_limit_or_failure"}
+{
+  "constraint": "Phi(v)-Phi(u) >= ext-(k+1)*d_min",
+  "edges": 7000602,
+  "elapsed_s": 1604.1347062587738,
+  "method": "sparse_finite_difference_constraint_feasibility",
+  "model_time_limit_s": 300.0,
+  "models": [
+    {
+      "elapsed_s": 316.3123948574066,
+      "kept_edges": 7000602,
+      "model": "drop_none",
+      "removed_edge_indexes": [],
+      "solver_message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "solver_status": 1,
+      "status": "solver_limit_or_failure"
+    },
+    {
+      "elapsed_s": 313.5082757472992,
+      "kept_edges": 7000600,
+      "model": "drop_pair_4766035_5594108",
+      "removed_edge_indexes": [
+        4766035,
+        5594108
+      ],
+      "solver_message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "solver_status": 1,
+      "status": "solver_limit_or_failure"
+    },
+    {
+      "elapsed_s": 314.74353098869324,
+      "kept_edges": 7000600,
+      "model": "drop_pair_4766035_6193322",
+      "removed_edge_indexes": [
+        4766035,
+        6193322
+      ],
+      "solver_message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "solver_status": 1,
+      "status": "solver_limit_or_failure"
+    },
+    {
+      "elapsed_s": 314.961936712265,
+      "kept_edges": 7000600,
+      "model": "drop_pair_5594108_6193322",
+      "removed_edge_indexes": [
+        5594108,
+        6193322
+      ],
+      "solver_message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "solver_status": 1,
+      "status": "solver_limit_or_failure"
+    },
+    {
+      "elapsed_s": 313.23511505126953,
+      "kept_edges": 7000599,
+      "model": "drop_all_three",
+      "removed_edge_indexes": [
+        4766035,
+        5594108,
+        6193322
+      ],
+      "solver_message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "solver_status": 1,
+      "status": "solver_limit_or_failure"
+    }
+  ],
+  "nodes": 166681,
+  "potential_contract": "one value per frozen taxi node; all taxi node work-functions are retained in feasible artifacts",
+  "residual_edge_indexes": [
+    4766035,
+    5594108,
+    6193322
+  ],
+  "status": "completed",
+  "taxi_metric": "circle_taxi_k4_m6.pickle"
+}
+artifacts\kserver-finite-difference-feasibility-001.json

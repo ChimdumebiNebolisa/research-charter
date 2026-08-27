@@ -1,0 +1,16 @@
+Experiment dts-fpga-threshold-001 execution record
+
+The transformed public C reference compiled successfully and completed all
+100 separated training trials at TRAINING_M=152. Training scopes were
+145--152. The target M=111 search then ran for the 120-second wall budget
+with BLOCK_GEN_THRESH=1000 and DTS_GEN_THRESH=2000000, but emitted no main
+target-search status before timeout. No seven-row decode was produced and
+the independent verifier had no candidate to check.
+
+The preserved artifact is artifacts/dts-fpga-threshold-001.json with
+SHA-256:
+  FC0CBE106D0E6F728D45E42A59017D0D076BBC9FD05846EE1E2CEA89D2010B19
+
+Compared with dts-fpga-reference-002, the higher persistence thresholds
+shifted the bounded run from repeated six-row main statuses to no observed
+main status. This is a finite runtime tradeoff, not infeasibility evidence.

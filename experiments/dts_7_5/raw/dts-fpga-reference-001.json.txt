@@ -1,0 +1,15 @@
+Experiment dts-fpga-reference-001 execution record
+
+The corrected invocation compiled the transformed public C reference
+successfully (gcc return code 0) and ran for the full 120-second budget. It
+printed only the instance header and deterministic seed; no training trial
+completed, no main-phase result was printed, and no seven-row decode was
+available. The runner killed the process at timeout (run return code -9).
+
+The preserved artifact is artifacts/dts-fpga-reference-001.json with SHA-256:
+  458E50FF6D1D5080E02F539A3934479100B18B9AB9AC7B1682A6EC710DC5E220
+
+The first invocation used a nonexistent WSL source path and failed before
+compilation; it is not counted as a search result. The valid invocation used
+the mounted pinned source checkout. This result is a capability/training
+configuration failure, not evidence that the target is infeasible.

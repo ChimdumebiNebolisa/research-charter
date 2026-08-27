@@ -1,0 +1,24 @@
+Experiment dts-ruzsa-split-001 execution record
+
+The initial pure-Python implementation did not complete the intended finite
+Ruzsa/Ling orbit enumeration within the 130-second budget. It was safely
+interrupted after constructing and verifying each orbit point proved too
+expensive. No transform was reported, no candidate was produced, and no
+scientific inference about the construction family is made.
+
+This is preserved as an implementation failure. A corrected exact rerun must
+use the same prime, Ruzsa construction, unit multipliers, translations, and
+residue split, while using residue-class span invariants to avoid per-point
+full row construction.
+
+Corrected exact enumeration result:
+
+The run checked all 12 primitive roots modulo 43 and 10,922,688 balanced
+unit-multiplier/translation transforms. The best independently valid split
+had scope 195, using generator 3, multiplier 5, and translation 1422. No
+transform reached scope 111. The optimized artifact is
+artifacts/dts-ruzsa-split-001-optimized.json with SHA-256:
+  55C999B78B0951632CE31D4E843302CCFCAA59A3C541A461B5F0C1A6AF14E62D
+
+The exact family result is negative finite-family evidence only; it does not
+establish infeasibility of the frozen DTS target.

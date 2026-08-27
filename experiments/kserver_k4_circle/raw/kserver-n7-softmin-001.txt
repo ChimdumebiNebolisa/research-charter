@@ -1,0 +1,7 @@
+Experiment kserver-n7-softmin-001
+Metric: /home/kserver/k-server-bench/metrics/circle_k4_m6.pickle; nodes=1001 edges=6006
+Candidate family: normalized entropic soft-min of canonical configuration energies
+Temperatures: [0.01, 0.05, 0.1, 0.25, 0.5, 1.0, 2.0, 4.0, 8.0, 16.0]
+Scores: [('hard_min_control', None, 0), ('normalized_entropic_softmin', 0.01, 1362), ('normalized_entropic_softmin', 0.05, 1362), ('normalized_entropic_softmin', 0.1, 1362), ('normalized_entropic_softmin', 0.25, 1362), ('normalized_entropic_softmin', 0.5, 1362), ('normalized_entropic_softmin', 1.0, 1398), ('normalized_entropic_softmin', 2.0, 1416), ('normalized_entropic_softmin', 4.0, 1428), ('normalized_entropic_softmin', 8.0, 1464), ('normalized_entropic_softmin', 16.0, 1476)]
+Best result: {'variant': 'hard_min_control', 'temperature': None, 'violations_k': 0, 'edges_total': 6006, 'violated_edge_idxes': []}
+Elapsed seconds: 15.78987431526184

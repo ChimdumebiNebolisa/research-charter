@@ -1,0 +1,129 @@
+{
+  "best_run": {
+    "backtracking_order": [
+      4,
+      1,
+      0,
+      6
+    ],
+    "best_depth": 1,
+    "best_rows": [],
+    "nodes": 65,
+    "pool_attempts": {
+      "0": 100000,
+      "1": 100000,
+      "4": 100000,
+      "6": 100000
+    },
+    "pool_sizes": {
+      "0": 13,
+      "1": 12,
+      "4": 5,
+      "6": 13
+    },
+    "seed": 42,
+    "target_reached": false,
+    "verification": {
+      "scope": 111,
+      "valid": false
+    }
+  },
+  "limit": 111,
+  "method": "compatibility-indexed-candidate-pool-backtracking",
+  "node_limit": 500000,
+  "pool_attempt_limit": 100000,
+  "pool_seconds": 5.0,
+  "pool_size": 250,
+  "radius": 25,
+  "runs": [
+    {
+      "backtracking_order": [
+        4,
+        6,
+        0,
+        1
+      ],
+      "best_depth": 1,
+      "best_rows": [],
+      "nodes": 96,
+      "pool_attempts": {
+        "0": 100000,
+        "1": 100000,
+        "4": 100000,
+        "6": 100000
+      },
+      "pool_sizes": {
+        "0": 12,
+        "1": 13,
+        "4": 8,
+        "6": 11
+      },
+      "seed": 41,
+      "target_reached": false,
+      "verification": {
+        "scope": 111,
+        "valid": false
+      }
+    },
+    {
+      "backtracking_order": [
+        4,
+        1,
+        0,
+        6
+      ],
+      "best_depth": 1,
+      "best_rows": [],
+      "nodes": 65,
+      "pool_attempts": {
+        "0": 100000,
+        "1": 100000,
+        "4": 100000,
+        "6": 100000
+      },
+      "pool_sizes": {
+        "0": 13,
+        "1": 12,
+        "4": 5,
+        "6": 13
+      },
+      "seed": 42,
+      "target_reached": false,
+      "verification": {
+        "scope": 111,
+        "valid": false
+      }
+    },
+    {
+      "backtracking_order": [
+        4,
+        0,
+        1,
+        6
+      ],
+      "best_depth": 1,
+      "best_rows": [],
+      "nodes": 70,
+      "pool_attempts": {
+        "0": 100000,
+        "1": 100000,
+        "4": 100000,
+        "6": 100000
+      },
+      "pool_sizes": {
+        "0": 9,
+        "1": 11,
+        "4": 7,
+        "6": 16
+      },
+      "seed": 43,
+      "target_reached": false,
+      "verification": {
+        "scope": 111,
+        "valid": false
+      }
+    }
+  ],
+  "seconds_per_seed": 30.0,
+  "target_reached": false
+}

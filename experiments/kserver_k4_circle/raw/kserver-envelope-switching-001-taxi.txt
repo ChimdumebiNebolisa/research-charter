@@ -1,0 +1,612 @@
+{
+  "candidate_count": 30,
+  "edges": 7000602,
+  "elapsed_s": 54.92255163192749,
+  "metric": "circle_taxi_k4_m6.pickle",
+  "nodes": 166681,
+  "results": [
+    {
+      "candidate_id": "max_unifying_-4",
+      "first_violated_edge_indexes": [
+        4766035,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "max",
+      "offset": -4,
+      "variant": "unifying",
+      "violations_k": 3
+    },
+    {
+      "candidate_id": "max_unifying_-2",
+      "first_violated_edge_indexes": [
+        4766035,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "max",
+      "offset": -2,
+      "variant": "unifying",
+      "violations_k": 3
+    },
+    {
+      "candidate_id": "max_unifying_+0",
+      "first_violated_edge_indexes": [
+        732438,
+        732900,
+        733404,
+        733782,
+        774564,
+        774816,
+        775446,
+        775698,
+        1382726,
+        1446816,
+        2577204,
+        2577456,
+        2577834,
+        2578338,
+        2930299,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "max",
+      "offset": 0,
+      "variant": "unifying",
+      "violations_k": 17
+    },
+    {
+      "candidate_id": "max_unifying_+2",
+      "first_violated_edge_indexes": [
+        732438,
+        732900,
+        733404,
+        733782,
+        774564,
+        774816,
+        775446,
+        775698,
+        1382726,
+        1446816,
+        2577204,
+        2577456,
+        2577834,
+        2578338,
+        2930299,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "max",
+      "offset": 2,
+      "variant": "unifying",
+      "violations_k": 17
+    },
+    {
+      "candidate_id": "max_unifying_+4",
+      "first_violated_edge_indexes": [
+        732438,
+        732900,
+        733404,
+        733782,
+        774564,
+        774816,
+        775446,
+        775698,
+        1382726,
+        1446816,
+        2577204,
+        2577456,
+        2577834,
+        2578338,
+        2930299,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "max",
+      "offset": 4,
+      "variant": "unifying",
+      "violations_k": 17
+    },
+    {
+      "candidate_id": "min_unifying_-4",
+      "first_violated_edge_indexes": [
+        732438,
+        732900,
+        733404,
+        733782,
+        774564,
+        774816,
+        775446,
+        775698,
+        1382726,
+        1446816,
+        2577204,
+        2577456,
+        2577834,
+        2578338,
+        2930299,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "min",
+      "offset": -4,
+      "variant": "unifying",
+      "violations_k": 17
+    },
+    {
+      "candidate_id": "min_unifying_-2",
+      "first_violated_edge_indexes": [
+        732438,
+        732900,
+        733404,
+        733782,
+        774564,
+        774816,
+        775446,
+        775698,
+        1382726,
+        1446816,
+        2577204,
+        2577456,
+        2577834,
+        2578338,
+        2930299,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "min",
+      "offset": -2,
+      "variant": "unifying",
+      "violations_k": 17
+    },
+    {
+      "candidate_id": "min_unifying_+0",
+      "first_violated_edge_indexes": [
+        4766035,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "min",
+      "offset": 0,
+      "variant": "unifying",
+      "violations_k": 3
+    },
+    {
+      "candidate_id": "min_unifying_+2",
+      "first_violated_edge_indexes": [
+        4766035,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "min",
+      "offset": 2,
+      "variant": "unifying",
+      "violations_k": 3
+    },
+    {
+      "candidate_id": "min_unifying_+4",
+      "first_violated_edge_indexes": [
+        4766035,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "min",
+      "offset": 4,
+      "variant": "unifying",
+      "violations_k": 3
+    },
+    {
+      "candidate_id": "max_kplus1_-4",
+      "first_violated_edge_indexes": [
+        4766035,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "max",
+      "offset": -4,
+      "variant": "kplus1",
+      "violations_k": 3
+    },
+    {
+      "candidate_id": "max_kplus1_-2",
+      "first_violated_edge_indexes": [
+        4766035,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "max",
+      "offset": -2,
+      "variant": "kplus1",
+      "violations_k": 3
+    },
+    {
+      "candidate_id": "max_kplus1_+0",
+      "first_violated_edge_indexes": [
+        127893,
+        128229,
+        128481,
+        129279,
+        129783,
+        140829,
+        141081,
+        141627,
+        142047,
+        159141,
+        159519,
+        159813,
+        164307,
+        164643,
+        165021,
+        165777,
+        166071,
+        179511,
+        179763,
+        179931
+      ],
+      "min_slack": -1.0,
+      "mode": "max",
+      "offset": 0,
+      "variant": "kplus1",
+      "violations_k": 588
+    },
+    {
+      "candidate_id": "max_kplus1_+2",
+      "first_violated_edge_indexes": [
+        127893,
+        128229,
+        128481,
+        129279,
+        129783,
+        140829,
+        141081,
+        141627,
+        142047,
+        159141,
+        159519,
+        159813,
+        164307,
+        164643,
+        165021,
+        165777,
+        166071,
+        179511,
+        179763,
+        179931
+      ],
+      "min_slack": -1.0,
+      "mode": "max",
+      "offset": 2,
+      "variant": "kplus1",
+      "violations_k": 588
+    },
+    {
+      "candidate_id": "max_kplus1_+4",
+      "first_violated_edge_indexes": [
+        127893,
+        128229,
+        128481,
+        129279,
+        129783,
+        140829,
+        141081,
+        141627,
+        142047,
+        159141,
+        159519,
+        159813,
+        164307,
+        164643,
+        165021,
+        165777,
+        166071,
+        179511,
+        179763,
+        179931
+      ],
+      "min_slack": -1.0,
+      "mode": "max",
+      "offset": 4,
+      "variant": "kplus1",
+      "violations_k": 588
+    },
+    {
+      "candidate_id": "min_kplus1_-4",
+      "first_violated_edge_indexes": [
+        127893,
+        128229,
+        128481,
+        129279,
+        129783,
+        140829,
+        141081,
+        141627,
+        142047,
+        159141,
+        159519,
+        159813,
+        164307,
+        164643,
+        165021,
+        165777,
+        166071,
+        179511,
+        179763,
+        179931
+      ],
+      "min_slack": -1.0,
+      "mode": "min",
+      "offset": -4,
+      "variant": "kplus1",
+      "violations_k": 588
+    },
+    {
+      "candidate_id": "min_kplus1_-2",
+      "first_violated_edge_indexes": [
+        127893,
+        128229,
+        128481,
+        129279,
+        129783,
+        140829,
+        141081,
+        141627,
+        142047,
+        159141,
+        159519,
+        159813,
+        164307,
+        164643,
+        165021,
+        165777,
+        166071,
+        179511,
+        179763,
+        179931
+      ],
+      "min_slack": -1.0,
+      "mode": "min",
+      "offset": -2,
+      "variant": "kplus1",
+      "violations_k": 588
+    },
+    {
+      "candidate_id": "min_kplus1_+0",
+      "first_violated_edge_indexes": [
+        4766035,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "min",
+      "offset": 0,
+      "variant": "kplus1",
+      "violations_k": 3
+    },
+    {
+      "candidate_id": "min_kplus1_+2",
+      "first_violated_edge_indexes": [
+        4766035,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "min",
+      "offset": 2,
+      "variant": "kplus1",
+      "violations_k": 3
+    },
+    {
+      "candidate_id": "min_kplus1_+4",
+      "first_violated_edge_indexes": [
+        4766035,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "min",
+      "offset": 4,
+      "variant": "kplus1",
+      "violations_k": 3
+    },
+    {
+      "candidate_id": "max_shinka_-4",
+      "first_violated_edge_indexes": [
+        4766035,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "max",
+      "offset": -4,
+      "variant": "shinka",
+      "violations_k": 3
+    },
+    {
+      "candidate_id": "max_shinka_-2",
+      "first_violated_edge_indexes": [
+        4766035,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "max",
+      "offset": -2,
+      "variant": "shinka",
+      "violations_k": 3
+    },
+    {
+      "candidate_id": "max_shinka_+0",
+      "first_violated_edge_indexes": [
+        732900,
+        733404,
+        733782,
+        774816,
+        775446,
+        775698,
+        1382726,
+        1446816,
+        2577456,
+        2577834,
+        2578338,
+        2930299,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "max",
+      "offset": 0,
+      "variant": "shinka",
+      "violations_k": 14
+    },
+    {
+      "candidate_id": "max_shinka_+2",
+      "first_violated_edge_indexes": [
+        732900,
+        733404,
+        733782,
+        774816,
+        775446,
+        775698,
+        1382726,
+        1446816,
+        2577456,
+        2577834,
+        2578338,
+        2930299,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "max",
+      "offset": 2,
+      "variant": "shinka",
+      "violations_k": 14
+    },
+    {
+      "candidate_id": "max_shinka_+4",
+      "first_violated_edge_indexes": [
+        732900,
+        733404,
+        733782,
+        774816,
+        775446,
+        775698,
+        1382726,
+        1446816,
+        2577456,
+        2577834,
+        2578338,
+        2930299,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "max",
+      "offset": 4,
+      "variant": "shinka",
+      "violations_k": 14
+    },
+    {
+      "candidate_id": "min_shinka_-4",
+      "first_violated_edge_indexes": [
+        732900,
+        733404,
+        733782,
+        774816,
+        775446,
+        775698,
+        1382726,
+        1446816,
+        2577456,
+        2577834,
+        2578338,
+        2930299,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "min",
+      "offset": -4,
+      "variant": "shinka",
+      "violations_k": 14
+    },
+    {
+      "candidate_id": "min_shinka_-2",
+      "first_violated_edge_indexes": [
+        732900,
+        733404,
+        733782,
+        774816,
+        775446,
+        775698,
+        1382726,
+        1446816,
+        2577456,
+        2577834,
+        2578338,
+        2930299,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "min",
+      "offset": -2,
+      "variant": "shinka",
+      "violations_k": 14
+    },
+    {
+      "candidate_id": "min_shinka_+0",
+      "first_violated_edge_indexes": [
+        4766035,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "min",
+      "offset": 0,
+      "variant": "shinka",
+      "violations_k": 3
+    },
+    {
+      "candidate_id": "min_shinka_+2",
+      "first_violated_edge_indexes": [
+        4766035,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "min",
+      "offset": 2,
+      "variant": "shinka",
+      "violations_k": 3
+    },
+    {
+      "candidate_id": "min_shinka_+4",
+      "first_violated_edge_indexes": [
+        4766035,
+        5594108,
+        6193322
+      ],
+      "min_slack": -1.0,
+      "mode": "min",
+      "offset": 4,
+      "variant": "shinka",
+      "violations_k": 3
+    }
+  ],
+  "status": "completed",
+  "workers": 8
+}
+artifacts/kserver-envelope-switching-001-taxi.json

@@ -1,0 +1,17 @@
+Experiment kserver-n7-shared-cache-001 execution record
+
+Command:
+wsl.exe -d Ubuntu -- bash -lc "cd /mnt/c/Users/Chimdumebi/Desktop/research-charter && source /root/research-charter-kserver-venv/bin/activate && python research_tools/search_kserver_n7_shared.py --search-seconds 600 --wall-seconds 1200 --taxi-top 2 --seed 20260827"
+
+Observed output:
+- The shared circle cache built with shape (1001, 279936) and 1,120,863,744 bytes.
+- 700 unique circle candidates were completed during the 600-second search phase.
+- Logged milestones included a zero-violation circle candidate at candidate 400 and again at candidate 500.
+- Two elite circle candidates were selected for sequential full taxi evaluation.
+- No full taxi result was returned before the 1200-second wall budget.
+- The parent and one nested evaluator remained CPU-active; WSL did not become unresponsive.
+
+Termination:
+The first exact taxi evaluation was interrupted at the preregistered wall boundary. The traceback was inside the pinned batch potential computation while evaluating canonical Potential values. No candidate taxi score, target result, or mathematical inference is claimed.
+
+The preserved structured artifact is artifacts/kserver-n7-shared-cache-001.json.

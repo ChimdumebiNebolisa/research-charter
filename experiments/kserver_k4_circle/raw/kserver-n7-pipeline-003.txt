@@ -1,0 +1,32 @@
+Experiment kserver-n7-pipeline-003 execution record
+
+The preregistered adapter smoke test passed. The unmodified pinned staged
+search reached its controller with the startup ordering proxy:
+
+  spawned fast worker count=1..6 target=6
+  spawned heavy worker stage_c_0 n_cpus=6
+  spawned heavy worker stage_c_1 n_cpus=6
+  spawned heavy worker stage_d_0 n_cpus=6
+  controller started timeout_s=1800.0 n_cpus=20 adaptive_edge_cache=4096 seed_candidates=0 startup_seeds_enabled=False
+
+The run terminated before any worker completed. No final JSON was produced.
+The preserved checkpoint reports elapsed_s=0.0191423893, 12 stage-A tasks
+submitted, 0 completed, 11 unique candidates, and no stage-B/C/D result.
+Preserved generated artifacts and SHA-256 hashes:
+
+  artifacts/kserver-n7-pipeline-reproduce_n7_codex_proxy/n7_async_pipeline_reproduce_n7_codex_proxy.log
+    F8D18CFE9C7C8920FA58E369A2AA9133632D14F242F01BBC03B1C38C89EA8E07
+  artifacts/kserver-n7-pipeline-reproduce_n7_codex_proxy/n7_async_pipeline_reproduce_n7_codex_proxy.checkpoint.json
+    010A14CD10F203844870D55A1AAF4233A57A0D636782C7B4EF62436D3ED37C36
+  artifacts/kserver-n7-pipeline-reproduce_n7_codex_proxy/n7_async_pipeline_reproduce_n7_codex_proxy.events.jsonl
+    9C3FD1F129E3BBE740C0178B2F286F581A1D16A45CD7FE65CD1074004EFD8E86
+
+Runtime diagnosis: WSL2 reported a global out-of-memory kill during worker
+initialization. The killed Python process had approximately 2.1 GiB anon RSS;
+several other Python workers were concurrently resident, and the WSL instance
+had approximately 7.6 GiB RAM with no swap. This is a resource failure, not a
+search result and provides no evidence about the target metric.
+
+Result: blocked at search startup by aggregate worker memory. No candidate was
+scored and no baseline comparison is possible. The next authorized test, if
+run, must cap process count and nested heavy-worker parallelism.

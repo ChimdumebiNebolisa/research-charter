@@ -1,0 +1,15 @@
+Experiment: kserver-n7-pipeline-001
+Command: /root/research-charter-kserver-venv/bin/python /mnt/c/Users/Chimdumebi/Desktop/research-charter/research_tools/run_kserver_evaluator_fork.py /home/kserver/k-server-bench/examples/search_n7_async_pipeline/search_n7_async_pipeline.py --timeout 1800 --n-cpus 20 --families seed_dense,mutate_ck4,mutate_proxy,mutate_timed,mutate_full --disable-startup-seeds --tag reproduce_n7_codex
+Runtime: WSL2 Ubuntu 26.04, Python 3.14, pinned k-servers package, multiprocessing fork
+
+Adapter smoke test before the full run passed:
+[n7-async-worker] pid=522 cache_ready elapsed=55.0s nodes=1001 latent=279936
+[n7-async] worker result candidate=1 ck4=1530 duration=2.801s
+[n7-async] worker result candidate=2 ck4=0 duration=0.643s
+[n7-async] worker result candidate=3 ck4=0 duration=1.107s
+[n7-async] worker result candidate=4 ck4=0 duration=0.658s
+[n7-async] worker self-test wrote /home/kserver/workspace/n7_async_worker_test.json
+
+Full-run outcome: the process remained in the initial serial `collect_violated_edge_idxes` baseline-cache construction for approximately 11 minutes. The staged search log remained empty, no checkpoint/result JSON was written, and no candidate was generated. The process was manually interrupted after the adapter-performance failure; the parent shell returned exit code 1.
+
+Interpretation: the API adapter is mathematically/import-wise compatible but its serial all-node canonical-potential evaluation is too slow for the intended pipeline. This is runtime evidence only and is not a k-server search result.

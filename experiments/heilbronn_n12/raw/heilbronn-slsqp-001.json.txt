@@ -1,0 +1,21 @@
+Experiment: heilbronn-slsqp-001
+Command exit code: 0
+Command: /root/research-charter-kserver-venv/bin/python /mnt/c/Users/Chimdumebi/Desktop/research-charter/research_tools/search_heilbronn_slsqp.py --baseline /mnt/c/Users/Chimdumebi/Desktop/research-charter/artifacts/baselines/heilbronn_comellas_yebra.json --starts 12 --seed 20260827 --maxiter 500 --output /mnt/c/Users/Chimdumebi/Desktop/research-charter/artifacts/heilbronn-slsqp-001.json
+Runtime: WSL2 Ubuntu 26.04, Python 3.14, scipy 1.18.1
+
+Evaluator stdout:
+{"best_minimum_area_float64": 0.03259885869181968, "improvement": 0.0, "output": "/mnt/c/Users/Chimdumebi/Desktop/research-charter/artifacts/heilbronn-slsqp-001.json"}
+
+Output artifact SHA256: E41B8721AD9B491F0C2D53F219B54A5F2A0675A0D2C3A77D589E48193253647C
+
+Selected output fields:
+baseline_minimum_area_float64 = 0.032598858691819679323
+best_minimum_area_float64 = 0.032598858691819679323
+improvement_over_float_baseline = 0
+starts = 12
+seed = 20260827
+maxiter = 500
+all starts reported optimizer success; iterations were 2 to 4; no start exceeded the baseline minimum.
+certification_status = not_certified_float_search_only
+
+Interpretation: fixed-orientation SLSQP multistart from the source-faithful Comellas-Yebra configuration found no float64 improvement. This is local optimization evidence only; the protected transcription was not used and no certified Heilbronn claim is made.

@@ -1,0 +1,18 @@
+experiment_id: kserver-baseline-reproduction-001
+upstream_commit: aea64346b846c967e4448f098d4b8b1748504d27
+metric: circle_k4_m6.pickle
+metric_sha256: 42C098F0B0B653040638C58A224D4D7A7210C92938343321BC5B1E3FEFECDD17
+candidate: research_tools/kserver_zero_potential.py
+command: python tools/evaluator/evaluate.py --program_path research_tools/kserver_zero_potential.py --potential_qualname Potential --potential_kwargs_json {} --metrics_path <pinned-checkout>/metrics --metrics_names circle_k4_m6.pickle --results_dir <artifact-dir> --final_evaluation_num_processes 1 --keep_only_violations_k --robustness_check
+compatibility: no-op resource import only; upstream evaluator and metric files unmodified
+raw_stdout:
+2026-08-26 15:49:04 - INFO - evaluate.py:614 - Evaluation args: Namespace(... metrics_names=['circle_k4_m6.pickle'], ... final_evaluation_num_processes=1, ...)
+2026-08-26 15:49:04 - INFO - evaluate.py:480 - Evaluating metric: <pinned-checkout>/metrics/circle_k4_m6.pickle
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File ".../Python312/Lib/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File ".../Python312/Lib/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+ModuleNotFoundError: No module named 'user_program_1787777344539598'
+result: evaluator did not produce a metric result; Windows multiprocessing cannot re-import the evaluator's dynamically loaded candidate module. The pinned taxi baseline is not reproduced.

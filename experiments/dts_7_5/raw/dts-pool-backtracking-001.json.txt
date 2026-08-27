@@ -1,0 +1,115 @@
+{
+  "best_run": {
+    "backtracking_order": [
+      0
+    ],
+    "best_depth": 0,
+    "best_rows": [],
+    "nodes": 0,
+    "pool_attempts": {
+      "0": 1034745,
+      "1": 0,
+      "4": 0,
+      "6": 0
+    },
+    "pool_sizes": {
+      "0": 117,
+      "1": 0,
+      "4": 0,
+      "6": 0
+    },
+    "seed": 31,
+    "target_reached": false,
+    "verification": {
+      "scope": 111,
+      "valid": false
+    }
+  },
+  "limit": 111,
+  "method": "compatibility-indexed-candidate-pool-backtracking",
+  "node_limit": 500000,
+  "pool_size": 5000,
+  "radius": 25,
+  "runs": [
+    {
+      "backtracking_order": [
+        0
+      ],
+      "best_depth": 0,
+      "best_rows": [],
+      "nodes": 0,
+      "pool_attempts": {
+        "0": 1034745,
+        "1": 0,
+        "4": 0,
+        "6": 0
+      },
+      "pool_sizes": {
+        "0": 117,
+        "1": 0,
+        "4": 0,
+        "6": 0
+      },
+      "seed": 31,
+      "target_reached": false,
+      "verification": {
+        "scope": 111,
+        "valid": false
+      }
+    },
+    {
+      "backtracking_order": [
+        0
+      ],
+      "best_depth": 0,
+      "best_rows": [],
+      "nodes": 0,
+      "pool_attempts": {
+        "0": 985746,
+        "1": 0,
+        "4": 0,
+        "6": 0
+      },
+      "pool_sizes": {
+        "0": 133,
+        "1": 0,
+        "4": 0,
+        "6": 0
+      },
+      "seed": 32,
+      "target_reached": false,
+      "verification": {
+        "scope": 111,
+        "valid": false
+      }
+    },
+    {
+      "backtracking_order": [
+        0
+      ],
+      "best_depth": 0,
+      "best_rows": [],
+      "nodes": 0,
+      "pool_attempts": {
+        "0": 971724,
+        "1": 0,
+        "4": 0,
+        "6": 0
+      },
+      "pool_sizes": {
+        "0": 114,
+        "1": 0,
+        "4": 0,
+        "6": 0
+      },
+      "seed": 33,
+      "target_reached": false,
+      "verification": {
+        "scope": 111,
+        "valid": false
+      }
+    }
+  ],
+  "seconds_per_seed": 30.0,
+  "target_reached": false
+}

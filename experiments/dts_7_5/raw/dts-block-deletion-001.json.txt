@@ -1,0 +1,241 @@
+{
+  "best_run": {
+    "best_depth": 5,
+    "best_rows": [
+      [
+        0,
+        24,
+        42,
+        93,
+        94,
+        109
+      ],
+      [
+        0,
+        21,
+        27,
+        81,
+        92,
+        95
+      ],
+      [
+        0,
+        12,
+        48,
+        58,
+        98,
+        103
+      ],
+      [
+        0,
+        8,
+        28,
+        72,
+        105,
+        107
+      ],
+      [
+        0,
+        30,
+        34,
+        47,
+        73,
+        96
+      ]
+    ],
+    "best_scope": 109,
+    "best_unique_difference_count": 75,
+    "deletions": 18810,
+    "full_trials": 0,
+    "generation_failures": 9291,
+    "replacements": 7439,
+    "restarts": 1852,
+    "seed": 51,
+    "target_reached": false,
+    "verification": {
+      "scope": 109,
+      "valid": false
+    }
+  },
+  "limit": 111,
+  "mark_attempts": 100,
+  "method": "upstream-inspired-sequential-bitmask-generation-with-block-deletion",
+  "runs": [
+    {
+      "best_depth": 5,
+      "best_rows": [
+        [
+          0,
+          24,
+          42,
+          93,
+          94,
+          109
+        ],
+        [
+          0,
+          21,
+          27,
+          81,
+          92,
+          95
+        ],
+        [
+          0,
+          12,
+          48,
+          58,
+          98,
+          103
+        ],
+        [
+          0,
+          8,
+          28,
+          72,
+          105,
+          107
+        ],
+        [
+          0,
+          30,
+          34,
+          47,
+          73,
+          96
+        ]
+      ],
+      "best_scope": 109,
+      "best_unique_difference_count": 75,
+      "deletions": 18810,
+      "full_trials": 0,
+      "generation_failures": 9291,
+      "replacements": 7439,
+      "restarts": 1852,
+      "seed": 51,
+      "target_reached": false,
+      "verification": {
+        "scope": 109,
+        "valid": false
+      }
+    },
+    {
+      "best_depth": 5,
+      "best_rows": [
+        [
+          0,
+          11,
+          13,
+          65,
+          81,
+          103
+        ],
+        [
+          0,
+          7,
+          31,
+          84,
+          102,
+          105
+        ],
+        [
+          0,
+          49,
+          57,
+          58,
+          93,
+          108
+        ],
+        [
+          0,
+          30,
+          34,
+          63,
+          73,
+          110
+        ],
+        [
+          0,
+          12,
+          40,
+          60,
+          101,
+          106
+        ]
+      ],
+      "best_scope": 110,
+      "best_unique_difference_count": 75,
+      "deletions": 17970,
+      "full_trials": 0,
+      "generation_failures": 8936,
+      "replacements": 7182,
+      "restarts": 1754,
+      "seed": 52,
+      "target_reached": false,
+      "verification": {
+        "scope": 110,
+        "valid": false
+      }
+    },
+    {
+      "best_depth": 5,
+      "best_rows": [
+        [
+          0,
+          14,
+          26,
+          54,
+          85,
+          104
+        ],
+        [
+          0,
+          17,
+          47,
+          69,
+          98,
+          111
+        ],
+        [
+          0,
+          8,
+          57,
+          61,
+          95,
+          100
+        ],
+        [
+          0,
+          9,
+          24,
+          72,
+          97,
+          108
+        ],
+        [
+          0,
+          21,
+          27,
+          83,
+          101,
+          103
+        ]
+      ],
+      "best_scope": 111,
+      "best_unique_difference_count": 75,
+      "deletions": 20322,
+      "full_trials": 0,
+      "generation_failures": 10123,
+      "replacements": 8154,
+      "restarts": 1969,
+      "seed": 53,
+      "target_reached": false,
+      "verification": {
+        "scope": 111,
+        "valid": false
+      }
+    }
+  ],
+  "seconds_per_seed": 20.0,
+  "target_reached": false
+}

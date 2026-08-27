@@ -1,0 +1,45 @@
+{
+  "record_type": "candidate",
+  "candidate_id": "kserver-finite-difference-table-001",
+  "problem_id": "kserver_k4_circle",
+  "target_id": "kserver_circle_taxi_m6_violations_lt_3",
+  "created_at": "2026-08-27T16:30:00Z",
+  "source_experiment_id": "kserver-finite-difference-relaxation-001",
+  "git_commit_sha": "4357aabf1f7ebcf479e036016854c2fdb8a90226",
+  "artifact_paths": [
+    "artifacts/kserver-finite-difference-relaxation-001-drop_none.npz",
+    "artifacts/kserver-finite-difference-relaxation-001-independent.json",
+    "artifacts/kserver-finite-difference-relaxation-001-primary-taxi-5/metrics.json",
+    "research_tools/kserver_finite_difference_table_potential.py"
+  ],
+  "evaluator": {
+    "upstream_commit": "aea64346b846c967e4448f098d4b8b1748504d27",
+    "primary_evaluator": "tools/evaluator/evaluate.py via run_kserver_evaluator_fork.py",
+    "metric": "circle_taxi_k4_m6.pickle",
+    "violations_k": 0,
+    "processed_normalized_edges_score": 1.0,
+    "robustness_check": false,
+    "independent_array_audit": "all 7000602 taxi edges, integer slack minimum 0"
+  },
+  "claimed_result": {
+    "frozen_taxi_violations_k": 0,
+    "strict_finite_target_reached": true,
+    "full_k_server_conjecture_proved": false,
+    "novelty_status": "finite evaluator witness; no general mathematical claim"
+  },
+  "validation_status": "primary_evaluator",
+  "evidence_level": 2,
+  "provenance": {
+    "construction": "integer longest-path relaxation of the frozen taxi difference constraints",
+    "table_size": 166681,
+    "published_baseline": "prior-art canonical potential at 3 taxi violations",
+    "independent_check": "verify_kserver_finite_difference_relaxation.py"
+  },
+  "limitations": [
+    "The artifact stores one arbitrary value per frozen taxi work-function node and has no compact work-function formula.",
+    "Only 105 of 1001 complete-circle control nodes match the taxi table; zero fallback gives 1491 circle violations, so cross-metric transfer fails.",
+    "The successful primary run evaluated only the frozen taxi target metric and disabled robustness because transformed rows are outside the table domain.",
+    "A zero finite evaluator count is not a proof of the full k-server conjecture and does not establish a transferable potential.",
+    "The result is not adversarially verified or ready to claim as a general research solution."
+  ]
+}

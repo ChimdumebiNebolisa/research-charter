@@ -1,0 +1,10 @@
+experiment_id: dts-cpsat-001
+command: python research_tools/search_dts_cpsat.py --limit 111 --seconds 120 --workers 8 --seed 20260826 --output <this-file>
+environment: Windows Python 3.12.10, OR-Tools 9.15.6755
+raw_result:
+Windows fatal exception: access violation
+  File ".../site-packages/ortools/sat/python/cp_model.py", line 1771 in solve
+  File "research_tools/search_dts_cpsat.py", line 56 in main
+exit_code: -1073741819
+control_sanity: the same access violation occurs for a three-variable AllDifferent model with workers=1 and a one-second limit.
+interpretation: no solver status, bound, or DTS candidate was obtained; this is a dependency/runtime failure, not infeasibility evidence.
