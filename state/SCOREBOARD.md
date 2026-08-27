@@ -78,3 +78,9 @@ This is a derived summary, not the source of scientific truth. It is updated fro
 - K-server preserved non-seed circle shortlist: the two highest-ranked non-seed zero-circle candidates were exact-scored over all `7,000,602` taxi inequalities and both returned `54` violations.
 - Excluding pinned seeds fixed the provenance tie-break but did not improve the global taxi metric; the preserved circle-zero selector is closed and no target or novelty claim is made.
 - Current allocation: `WAITING_FOR_CAPABILITY` for a materially different global taxi search or more capable runtime; DTS paused; Heilbronn `BLOCKED_FOUNDATION_INTEGRITY`.
+
+## Phase 2 evidence after forty-two substantive experiments
+
+- K-server spread-correction screen: the canonical seed scored `0/6006` on circle `m=6`; every nonzero tested `alpha*(max(wf_norm)-min(wf_norm))` correction scored `240` to `1,794` violations.
+- The translation-invariant nonlinear correction is closed without taxi evaluation; the next candidate family is structured `index_matrix` variation.
+- Current allocation: `kserver_k4_circle` primary for one bounded index-matrix screen; DTS paused; Heilbronn `BLOCKED_FOUNDATION_INTEGRITY`.
