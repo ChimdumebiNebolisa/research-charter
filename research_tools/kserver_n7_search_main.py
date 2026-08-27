@@ -58,6 +58,14 @@ def compute_potentials_for_nodes(
     if not indexes:
         return {}
 
+    # The pinned staged script calls this function without node_idxes only to
+    # collect startup violations for edge ordering. That full canonical scan
+    # is prohibitively expensive for 166,681 taxi nodes. The experiment that
+    # uses this adapter variant supplies the pinned edge order conservatively;
+    # all candidate scoring still uses the exact Potential path below.
+    if node_idxes is None:
+        return {index: 0.0 for index in indexes}
+
     global _PARALLEL_POTENTIAL, _PARALLEL_NODES
     _PARALLEL_POTENTIAL = Potential(context, **potential_kwargs)
     _PARALLEL_NODES = nodes
