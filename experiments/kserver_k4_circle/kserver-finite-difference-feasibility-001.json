@@ -40,13 +40,13 @@
     "artifacts/kserver-finite-difference-feasibility-001-*.npz",
     "research_tools/solve_kserver_finite_difference_feasibility.py"
   ],
-  "raw_result": {"status": "preregistered", "models": "not_run", "artifact_sha256": {}},
+  "raw_result": {"status": "completed_inconclusive_solver_limits", "models": {"drop_none": "solver_limit", "drop_pair_4766035_5594108": "solver_limit", "drop_pair_4766035_6193322": "solver_limit", "drop_pair_5594108_6193322": "solver_limit", "drop_all_three": "solver_limit"}, "nodes": 166681, "edges": 7000602, "taxi_evaluation": "not_run_because_no_feasible_solution_returned", "artifact_sha256": {"json": "3842909175AEC7073B11B437C82791F9F42D787D6F51249E0050EA7C34B7A203", "raw_log": "B65B0097C7DDA4099E97C1BF228515FDF1B1B935A8CE82A84815D3F77C8D2672"}},
   "baseline_comparison": {"frozen_primary_metric": "circle_taxi_k4_m6.pickle", "verified_prior_art_baseline": 3, "target": "<3", "expected_relation": "only a full frozen taxi count below 3 is strict finite improvement"},
   "previous_best_comparison": {"candidate": "kserver-known3-reproduction-001", "taxi_violations": 3, "provenance": "published prior art", "expected_relation": "this diagnostic removes the canonical-family restriction but is not itself a generalizing candidate"},
-  "evidence_level": 0,
-  "interpretation": "Preregistered; no result is available before execution.",
-  "failure_mode": null,
-  "what_was_learned": "Not yet run. The diagnostic will test whether the finite frozen graph admits a scalar potential outside the published canonical families.",
-  "recommended_next_action": "Execute exactly the five declared sparse feasibility models, independently audit any feasible value table, and close the route if it yields no strict result or only benchmark-specific overfit values.",
+  "evidence_level": 1,
+  "interpretation": "All five declared sparse LP models reached the 300-second HiGHS limit without returning a primal solution. The finite graph feasibility question therefore remains unresolved; no infeasibility, feasibility, or objective improvement is claimed.",
+  "failure_mode": "sparse_difference_constraint_lp_time_limit",
+  "what_was_learned": "Generic sparse LP is not an efficient certificate method for this 166,681-variable, 7,000,602-edge difference-constraint system under the available budget. The experiment does not distinguish graph-level obstruction from finite feasibility.",
+  "recommended_next_action": "Use one bounded specialized difference-constraint relaxation/cycle-certificate diagnostic on exactly the same five edge-exclusion models; if it cannot produce a certificate within budget, close arbitrary finite fitting as computationally unproductive.",
   "repetition_justification": "This is not a repetition of additive feature repair or envelope switching: it removes the functional-family restriction and solves the frozen edge system directly with one variable per benchmark node."
 }
