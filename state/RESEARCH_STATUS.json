@@ -2,7 +2,7 @@
   "phase": "phase2",
   "phase_2_authorized": true,
   "foundation_status": "protected_files_clean; heilbronn_baseline_transcription_inconsistency_recorded",
-  "experiments_run": 37,
+  "experiments_run": 39,
   "novel_research_started": true,
   "allowed_problem_ids": ["dts_7_5", "heilbronn_n12", "kserver_k4_circle"],
   "baseline_status": {
@@ -10,7 +10,7 @@
     "heilbronn_n12": "RESOLVED_CREDIBLE_CONSTRUCTION_NOT_GLOBAL_OPTIMUM",
     "kserver_k4_circle": "RESOLVED_REPORTED_PRIMARY_EVALUATOR_RESULT"
   },
-  "last_completed_experiment": "kserver-n7-streaming-mp-001",
+  "last_completed_experiment": "kserver-n7-targeted-full-001",
   "current_running": null,
   "best_verified_candidate": {
     "dts_7_5": {"candidate_id": null, "result": "scope 112 baseline only", "evidence_level": 2},
@@ -19,13 +19,13 @@
   },
   "active_hypotheses": [],
   "dead_directions": ["single-mark local perturbation from clamped scope-112 witness", "irreversible from-scratch random greedy row selection", "current two-mark/whole-row annealing score", "unbounded sequential pool generation", "bounded sampled pool backtracking at current generator settings", "native Windows OR-Tools CP-SAT", "direct DTS CP-SAT formulation under 120-second Windows/Linux budgets", "Z3 direct integer Distinct formulation under 120-second budget", "radius-3 all-row Python DFS at 5,000,000 nodes", "radius-3 candidate-level CP-SAT exact cover under 120 seconds", "radius-3 Glucose4 sequential-counter SAT encoding under 120 seconds", "uniform global Golomb catalog with rare-difference branching", "pure-Python block deletion within the tested budget (partial gain, no complete assignment)", "source-faithful Heilbronn fixed-orientation SLSQP local multistart", "k-server pinned staged search under documented six-fast/three-heavy worker configuration", "k-server pinned staged search under one-fast/three-heavy worker configuration", "k-server pinned staged search under one-fast/two-heavy worker configuration on current WSL host", "single-anchor conditional DTS allocation catalog", "exhaustive rejection-based pair-conditioned DTS generation", "incremental fixed-pair DTS generation under local budget", "DTS valid-row library best-response packing", "DTS conflict-directed valid-row library swaps", "public FPGA reference with target-scope training under 120 seconds", "public FPGA reference with separated training and default persistence thresholds under 120 seconds", "public FPGA reference with increased persistence thresholds under 120 seconds", "DTS affine-gap polynomial coupling under the tested annealing budget", "DTS quadratic-gap polynomial coupling under the tested annealing budget", "DTS p=43 Ruzsa/Ling residue-class split orbit", "k-server single-process shared circle cache with full taxi evaluation under current WSL wall budget"],
-  "next_experiment": "kserver-n7-targeted-mutation-001: preregister a small mutation family around the independently reproduced 5-violation seed; filter only with exact circle scoring and gate every finalist on the frozen taxi evaluator",
+  "next_experiment": "kserver-n7-topk-screen-001: preregister a cached top-k canonical-state screen to evaluate many bounded mutations globally before exact taxi gates; do not repeat the five-edge proxy",
   "resource_allocation": {"primary": "kserver_k4_circle", "hedge": null, "paused": ["dts_7_5: paused after direct solvers, local neighborhoods, conditional allocation, row-library packing, and structured algebraic families failed to produce a witness; resume only with a materially different construction or exact decomposition", "heilbronn_n12: BLOCKED_FOUNDATION_INTEGRITY due protected transcription; source-faithful SLSQP showed no float improvement"]},
   "notes": [
     "Phase 2 authorization was supplied by the human repository owner in the 2026-08-26 session prompt.",
     "The scoreboard is derived; evidence remains in append-oriented records and raw artifacts.",
     "Heilbronn search is blocked because the protected baseline coordinate transcription conflicts with the primary PDF; do not edit protected files autonomously.",
     "The pinned k-server evaluator is operational in WSL2 with a fork wrapper and scores the pinned parametrized example at 17; the reported 3-violation candidate is not present in the pinned public revision, and the upstream staged search expects an external main.py workspace.",
-    "After thirty-seven substantive experiments, the bounded streaming evaluator completed the frozen taxi workload: the first pinned upstream seed vector scored 5 violations across all 7,000,602 inequalities and the unmodified pinned evaluator independently reproduced 5. This is below the local 17-violation parametrized baseline but above the frozen target of 3; the vector is upstream-known, so the next value is targeted mutation search, not a novelty claim."
+    "After thirty-nine substantive experiments, the bounded streaming evaluator completed the frozen taxi workload: the first pinned upstream seed vector scored 5 violations across all 7,000,602 inequalities and the unmodified pinned evaluator independently reproduced 5. A five-edge repair screen found zero residuals for coefficient-8 mutations, but exact global evaluation returned 348,550 violations for both top finalists, closing that proxy. The next value is a genuinely global cached state screen, not another local-edge filter."
   ]
 }

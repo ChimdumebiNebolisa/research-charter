@@ -59,3 +59,10 @@ This is a derived summary, not the source of scientific truth. It is updated fro
 - K-server single-process shared circle cache: cache built and 700 exact circle candidates completed, including zero-violation circle proxies; full taxi evaluation exceeded the local wall budget.
 - K-server streaming full-metric evaluator: the first pinned upstream seed vector scored `5` over all `7,000,602` taxi inequalities in `528` seconds; the unmodified pinned evaluator independently reproduced `5` in `495` seconds with eight final workers. This is finite primary-metric movement from the local 17-violation parametrized baseline, not the frozen target and not a novel candidate because the vector is present in the pinned source.
 - Current allocation: `WAITING_FOR_CAPABILITY` for further full-metric search unless a targeted mutation run is preregistered; DTS structured families remain closed; Heilbronn remains `BLOCKED_FOUNDATION_INTEGRITY`.
+
+## Phase 2 evidence after thirty-nine substantive experiments
+
+- K-server targeted five-edge repair: 380 of 1,831 generated mutations were screened before the wall budget; coefficient-8 replacements had zero residuals on the five known seed-failing edges (Level 1 proxy only).
+- The two top proxy finalists were exact-scored on all `7,000,602` taxi inequalities and both returned `348,550` violations. The local five-edge repair proxy is falsified and closed; no target result is claimed.
+- The upstream seed vector remains the best locally verified finite result at `5` violations, independently reproduced by the unmodified pinned evaluator; it is upstream-listed and not a novelty claim.
+- Current allocation: `WAITING_FOR_CAPABILITY` for a globally cached/vectorized candidate screen or more capable runtime; do not repeat the five-edge proxy.
