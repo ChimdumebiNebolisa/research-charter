@@ -30,11 +30,13 @@ REPLACEMENTS = {
 }
 
 
-def transform(source: str, training_scope: int, training_trials: int) -> str:
+def transform(source: str, training_scope: int, training_trials: int, block_gen_thresh: int, dts_gen_thresh: int) -> str:
     transformed = source
     replacements = dict(REPLACEMENTS)
     replacements["#define TRAINING_M (152)"] = f"#define TRAINING_M ({training_scope})"
     replacements["#define TRAINING_TRIALS 1000"] = f"#define TRAINING_TRIALS {training_trials}"
+    replacements["#define BLOCK_GEN_THRESH (100)"] = f"#define BLOCK_GEN_THRESH ({block_gen_thresh})"
+    replacements["#define DTS_GEN_THRESH (2*100*1000)"] = f"#define DTS_GEN_THRESH ({dts_gen_thresh})"
     for old, new in replacements.items():
         if transformed.count(old) != 1:
             raise RuntimeError(f"expected exactly one source occurrence: {old}")
@@ -69,12 +71,20 @@ def main() -> int:
     parser.add_argument("--seconds", type=float, default=120.0)
     parser.add_argument("--training-scope", type=int, default=111)
     parser.add_argument("--training-trials", type=int, default=1000)
+    parser.add_argument("--block-gen-thresh", type=int, default=100)
+    parser.add_argument("--dts-gen-thresh", type=int, default=200000)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
 
     started = time.monotonic()
     original = args.source.read_text(encoding="utf-8")
-    transformed = transform(original, args.training_scope, args.training_trials)
+    transformed = transform(
+        original,
+        args.training_scope,
+        args.training_trials,
+        args.block_gen_thresh,
+        args.dts_gen_thresh,
+    )
     source_sha256 = hashlib.sha256(original.encode()).hexdigest()
     transformed_sha256 = hashlib.sha256(transformed.encode()).hexdigest()
     stdout = ""
@@ -126,7 +136,7 @@ def main() -> int:
         "source": str(args.source),
         "source_sha256": source_sha256,
         "transformed_source_sha256": transformed_sha256,
-        "instance": {"n": 7, "k": 5, "scope_limit": 111, "training_scope": args.training_scope, "training_trials": args.training_trials},
+        "instance": {"n": 7, "k": 5, "scope_limit": 111, "training_scope": args.training_scope, "training_trials": args.training_trials, "block_gen_thresh": args.block_gen_thresh, "dts_gen_thresh": args.dts_gen_thresh},
         "seed": 20260902,
         "seconds": args.seconds,
         "compile_returncode": compile_returncode,
