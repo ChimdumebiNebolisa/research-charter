@@ -1,0 +1,7 @@
+Experiment dts-three-row-replacement-001 execution record
+Method: exhaustive enumeration of every compatible row triple after fixing four clamped published rows
+Consistent cases: 16; inconsistent cases: 19; nodes: 50134; complete compatible rows: 1732; triple checks: 6896
+Target reached: false
+Omitted triple: [-1,-1,-1]
+Rows: 
+Elapsed seconds: 0.0274084999983
