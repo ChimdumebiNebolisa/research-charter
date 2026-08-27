@@ -134,3 +134,9 @@ This is a derived summary, not the source of scientific truth. It is updated fro
 - DTS symmetry-strengthened full-domain SAT: complete row-lexicographic ordering and per-row reflection breaking produced a reproducible `15,570`-variable/`2,383,982`-clause scope-111 CNF. Kissat 4.0.3 returned `UNKNOWN` after `119.34` solver seconds with no model.
 - Primary and independent flat-counter verification both rejected the empty decode. This closes the tested symmetry-strengthened encoding at the declared budget; it provides no infeasibility or target-contribution claim.
 - Current allocation: `WAITING_FOR_CAPABILITY`; DTS, Heilbronn, and k-server remain paused/blocked pending a genuinely different construction, transferable mechanism, stronger capability, or human amendment.
+
+## Phase 2 evidence after sixty-nine substantive experiments
+
+- DTS sequential-counter SAT: replacing pairwise at-most-one constraints with exact sequential counters reduced the symmetry-strengthened scope-111 CNF to `30,964` variables and `1,610,283` clauses, with `332 MB` peak memory. Kissat 4.0.3 returned `UNKNOWN` after `119.64` solver seconds with no model.
+- Primary and independent flat-counter verification both rejected the empty decode. Pairwise clause overhead is not the sole bottleneck; this exact encoding is closed at the declared budget and provides no infeasibility or target-contribution claim.
+- Current allocation: `WAITING_FOR_CAPABILITY`; DTS, Heilbronn, and k-server remain paused/blocked pending a genuinely different construction, transferable mechanism, stronger capability, or human amendment.
