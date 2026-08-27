@@ -111,3 +111,8 @@ This is a derived summary, not the source of scientific truth. It is updated fro
 - Heilbronn full-coordinate global differential evolution: three fixed seeds, 1,500 generations, and 7,000 Gaussian polish proposals per seed all retained the source-faithful Comellas--Yebra construction at float64 precision; no strict improvement was found.
 - An independent 100-digit Decimal audit recomputed all 220 triangles of the retained decimal candidate and found minimum area `0.032598858691819690`; this is nondegenerate but not a certified improvement over the exact baseline.
 - This closes the tested global-DE family at the declared budget, not the Heilbronn problem. Current allocation remains `WAITING_FOR_CAPABILITY`; DTS needs a new structural construction or exact-search capability, Heilbronn needs a new parameterization or authorized corrected foundation, and k-server needs a transferable mechanism or materially stronger runtime.
+## Phase 2 evidence after sixty-two substantive experiments
+
+- DTS full-scope exact SAT: the preserved scope-111 one-hot CNF has `15,540` variables and `1,461,683` clauses. Kissat 4.0.3 returned `UNKNOWN` after `119.57` seconds; CaDiCaL 2.1.3 independently returned `UNKNOWN` after `120.17` seconds real time. Neither solver emitted a model.
+- Independent DTS verification found no rows for either run, so no scope-111 candidate or infeasibility claim is supported. The two-solver full-domain SAT portfolio is closed at this encoding and budget.
+- Current allocation: `WAITING_FOR_CAPABILITY`; DTS requires a genuinely different structural decomposition or stronger exact-search capability, Heilbronn remains `BLOCKED_FOUNDATION_INTEGRITY`, and k-server remains paused after the finite-table overfit audit.
