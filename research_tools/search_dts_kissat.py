@@ -143,8 +143,9 @@ def main() -> int:
     write_dimacs(args.cnf, builder)
     cnf_sha256 = hashlib.sha256(args.cnf.read_bytes()).hexdigest()
     try:
+        seconds_argument = str(int(args.seconds)) if args.seconds.is_integer() else str(args.seconds)
         completed = subprocess.run(
-            ["kissat", f"--time={args.seconds}", str(args.cnf)],
+            ["kissat", f"--time={seconds_argument}", str(args.cnf)],
             capture_output=True,
             text=True,
             timeout=args.seconds + 15.0,
