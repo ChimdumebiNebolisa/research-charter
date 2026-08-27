@@ -5,7 +5,7 @@
   "target_id": "dts_scope_leq_111",
   "timestamp": "2026-08-27T20:30:00Z",
   "parent_experiment_ids": ["dts-conflict-swap-001", "dts-block-deletion-001"],
-  "git_commit_sha": "b96359305a8ef5beb36f535e662e024746b26252",
+  "git_commit_sha": "5dc7f198c48818971b62dcd5ce02d10d5c6e1fa5",
   "hypothesis": "The public FPGA-search reference algorithm's bit-parallel difference spectrum, trained mark distributions, and reversible row deletion can find a scope-111 (7,5)-DTS when adapted faithfully to the frozen instance, despite the prior Python implementations failing under short budgets.",
   "rationale": "The repository's Python searches reached depth four to five or about 100 unique differences, while the public reference uses a different high-throughput representation and a search policy designed for globally disjoint rulers. It is an external, source-faithful algorithmic family rather than another Python catalog, coordinate anneal, or generic exact solver.",
   "expected_information_gain": "Tests whether the repeated DTS ceiling is caused by software representation/search throughput and whether the public FPGA-oriented construction procedure transfers to the exact frozen (7,5), scope-111 target.",
