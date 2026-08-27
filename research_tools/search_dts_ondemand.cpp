@@ -42,10 +42,6 @@ static bool has_bit(const Mask& mask, int difference) {
     return (mask.hi & (1ULL << (difference - 64))) != 0;
 }
 
-static bool overlaps(const Mask& left, const Mask& right) {
-    return ((left.lo & right.lo) != 0) || ((left.hi & right.hi) != 0);
-}
-
 static void set_bit(Mask& mask, int difference) {
     if (difference < 64) mask.lo |= 1ULL << difference;
     else mask.hi |= 1ULL << (difference - 64);
@@ -321,7 +317,7 @@ int main(int argc, char** argv) {
                   << ",\"best_gaps\":" << searcher.best_gaps << ",\"stopped\":" << (searcher.stopped ? "true" : "false")
                   << ",\"target_reached\":" << (found ? "true" : "false")
                   << ",\"elapsed_seconds\":" << std::setprecision(12) << elapsed << ",\"rows\":";
-        write_rows(artifact, found ? searcher.best_selected : searcher.selected);
+        write_rows(artifact, searcher.best_selected);
         artifact << ",\"anchor_trace\":[";
         for (std::size_t i = 0; i < searcher.best_trace.size(); ++i) {
             if (i) artifact << ",";
@@ -336,7 +332,7 @@ int main(int argc, char** argv) {
             << "Search nodes: " << searcher.nodes << "; generator nodes: " << searcher.generator_nodes << "; generated rows: " << searcher.generated_rows << "\n"
             << "Best depth: " << searcher.best_depth << "; best gaps: " << searcher.best_gaps << "; gap branches: " << searcher.gap_branches << "\n"
             << "Target reached: " << (found ? "true" : "false") << "\nRows: ";
-        write_rows(raw, found ? searcher.best_selected : searcher.selected);
+        write_rows(raw, searcher.best_selected);
         raw << "\nAnchor trace: ";
         for (std::size_t i = 0; i < searcher.best_trace.size(); ++i) {
             if (i) raw << ",";
