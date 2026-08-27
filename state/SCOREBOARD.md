@@ -72,3 +72,9 @@ This is a derived summary, not the source of scientific truth. It is updated fro
 - K-server released-cache circle-to-taxi search: 686 circle candidates completed; the two full taxi finalists were hard-coded upstream seed vectors and both scored `5` violations over all `7,000,602` inequalities.
 - This confirms stable end-to-end scoring but yields no novel candidate; future shortlist selection excludes all pinned seeds so the preserved non-seed circle finalists can be tested.
 - Current allocation: `kserver_k4_circle` primary for one non-seed exact shortlist; DTS paused; Heilbronn `BLOCKED_FOUNDATION_INTEGRITY`.
+
+## Phase 2 evidence after forty-one substantive experiments
+
+- K-server preserved non-seed circle shortlist: the two highest-ranked non-seed zero-circle candidates were exact-scored over all `7,000,602` taxi inequalities and both returned `54` violations.
+- Excluding pinned seeds fixed the provenance tie-break but did not improve the global taxi metric; the preserved circle-zero selector is closed and no target or novelty claim is made.
+- Current allocation: `WAITING_FOR_CAPABILITY` for a materially different global taxi search or more capable runtime; DTS paused; Heilbronn `BLOCKED_FOUNDATION_INTEGRITY`.
