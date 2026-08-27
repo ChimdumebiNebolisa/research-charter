@@ -1,0 +1,1 @@
+catalog=84 generation_nodes=3020 packing_nodes=131 best_depth=1 best_gaps=6 target_reached=false

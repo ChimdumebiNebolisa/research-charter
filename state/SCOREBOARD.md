@@ -122,3 +122,9 @@ This is a derived summary, not the source of scientific truth. It is updated fro
 - DTS exhaustive shallow-basin audit: all `3,885` one-coordinate and `7,330,995` two-coordinate replacements over the `35` nonzero mark positions were enumerated; `4,187,558` were internally valid and the best remained `103/105`.
 - Both independent integer verifiers rejected the best state. No scope-111 candidate, proof, or global infeasibility claim is supported.
 - Current allocation: `WAITING_FOR_CAPABILITY`; DTS, Heilbronn, and k-server remain paused/blocked pending a genuinely different construction, transferable mechanism, stronger capability, or human amendment.
+
+## Phase 2 evidence after sixty-seven substantive experiments
+
+- DTS exact repair decompositions around the reproducible `103/105` memetic state were closed: row-0 replacement found `0` compatible rows; fixed rows `1,3,5,6` admitted `84` rows but no disjoint triple; fixed rows `1,3,5` admitted `9,644` rows but no disjoint quadruple.
+- All three searches completed without timeout and used exact difference-mask compatibility. No target candidate was produced; the closures are finite structural evidence only and do not prove global DTS infeasibility.
+- Current allocation: `WAITING_FOR_CAPABILITY`; DTS, Heilbronn, and k-server remain paused/blocked pending a genuinely different construction, transferable mechanism, stronger capability, or human amendment.
