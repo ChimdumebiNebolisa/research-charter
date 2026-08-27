@@ -12,6 +12,7 @@ from __future__ import annotations
 import multiprocessing as mp
 from pathlib import Path
 import sys
+import types
 
 
 def main() -> None:
@@ -27,11 +28,11 @@ def main() -> None:
     source = source.replace(duplicate_spawn, "", 1)
 
     mp.set_start_method("fork")
-    execution_globals: dict[str, object] = {
-        "__name__": "n7_search_module",
-        "__file__": search_script,
-        "__package__": None,
-    }
+    search_module = types.ModuleType("n7_search_module")
+    search_module.__file__ = search_script
+    search_module.__package__ = None
+    sys.modules[search_module.__name__] = search_module
+    execution_globals = search_module.__dict__
     exec(compile(source, search_script, "exec"), execution_globals)
 
     execution_globals["FAST_WORKERS_TOTAL"] = 1
