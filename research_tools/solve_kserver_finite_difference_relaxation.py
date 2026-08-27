@@ -37,15 +37,12 @@ def relax_difference_system(
     skip1: int,
     skip2: int,
     max_passes: int,
-    deadline: float,
 ) -> tuple[int, int, int, np.ndarray, np.ndarray]:
     """Return status, passes, witness node, values, and predecessor edges."""
     values = np.zeros(node_count, dtype=np.int64)
     predecessors = np.full(node_count, -1, dtype=np.int32)
     edge_count = edge_from.size
     for iteration in range(max_passes):
-        if iteration % 8 == 0 and time.time() >= deadline:
-            return 2, iteration, -1, values, predecessors
         next_values = values.copy()
         next_predecessors = predecessors.copy()
         changed = False
@@ -147,7 +144,6 @@ def main() -> int:
             skip[1],
             skip[2],
             max_passes,
-            started + args.wall_time_limit,
         )
         payload: dict[str, object] = {
             "model": label,
