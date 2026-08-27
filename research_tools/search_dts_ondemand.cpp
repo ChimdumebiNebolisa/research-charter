@@ -42,6 +42,10 @@ static bool has_bit(const Mask& mask, int difference) {
     return (mask.hi & (1ULL << (difference - 64))) != 0;
 }
 
+static bool overlaps(const Mask& left, const Mask& right) {
+    return ((left.lo & right.lo) != 0) || ((left.hi & right.hi) != 0);
+}
+
 static void set_bit(Mask& mask, int difference) {
     if (difference < 64) mask.lo |= 1ULL << difference;
     else mask.hi |= 1ULL << (difference - 64);
@@ -130,6 +134,8 @@ struct Searcher {
     int anchor_probe;
     int samples_per_anchor;
     std::uint64_t row_node_budget;
+    bool exact_pair;
+    std::uint64_t exact_pair_node_budget;
     double deadline;
     std::uint64_t node_limit;
     std::mt19937_64 rng;
@@ -137,6 +143,9 @@ struct Searcher {
     std::uint64_t generator_nodes = 0;
     std::uint64_t generated_rows = 0;
     std::uint64_t duplicate_rows = 0;
+    std::uint64_t exact_pair_nodes = 0;
+    std::uint64_t exact_pair_rows = 0;
+    std::uint64_t exact_pair_checks = 0;
     std::uint64_t anchor_probes = 0;
     std::uint64_t gap_branches = 0;
     int best_depth = 0;
@@ -180,6 +189,64 @@ struct Searcher {
         return result;
     }
 
+    void enumerate_exact(const Mask& forbidden, std::vector<int>& marks, Mask row_mask,
+                         std::vector<Row>& rows, std::uint64_t& budget) {
+        if (budget == 0 || clock_seconds() >= deadline) return;
+        --budget;
+        ++exact_pair_nodes;
+        if (marks.size() == 6) {
+            Row row;
+            row.marks[0] = 0;
+            for (std::size_t index = 1; index < marks.size(); ++index) row.marks[index] = marks[index];
+            row.mask = row_mask;
+            rows.push_back(row);
+            ++exact_pair_rows;
+            return;
+        }
+        const int remaining = 6 - static_cast<int>(marks.size());
+        const int low = marks.back() + 1;
+        const int high = limit - remaining + 1;
+        for (int value = low; value <= high; ++value) {
+            Mask next = row_mask;
+            bool valid = true;
+            for (int old : marks) {
+                const int difference = value - old;
+                if (has_bit(forbidden, difference) || has_bit(next, difference)) {
+                    valid = false;
+                    break;
+                }
+                set_bit(next, difference);
+            }
+            if (!valid) continue;
+            marks.push_back(value);
+            enumerate_exact(forbidden, marks, next, rows, budget);
+            marks.pop_back();
+            if (budget == 0 || clock_seconds() >= deadline) return;
+        }
+    }
+
+    bool exact_pair_completion(const Mask& used, const Mask& gaps, std::vector<int>& trace) {
+        std::vector<Row> rows;
+        std::vector<int> marks{0};
+        std::uint64_t budget = exact_pair_node_budget;
+        const Mask forbidden{used.lo | gaps.lo, used.hi | gaps.hi};
+        enumerate_exact(forbidden, marks, Mask{}, rows, budget);
+        for (std::size_t left = 0; left < rows.size(); ++left) {
+            for (std::size_t right = left + 1; right < rows.size(); ++right) {
+                ++exact_pair_checks;
+                if (overlaps(rows[left].mask, rows[right].mask)) continue;
+                best_selected = selected;
+                best_selected.push_back(rows[left]);
+                best_selected.push_back(rows[right]);
+                best_trace = trace;
+                best_trace.push_back(0);
+                best_trace.push_back(0);
+                return true;
+            }
+        }
+        return false;
+    }
+
     bool dfs(const Mask& used, const Mask& gaps, int depth, int gap_count, std::vector<int>& trace) {
         if (expired()) return false;
         if (depth > best_depth || (depth == best_depth && gap_count > best_gaps)) {
@@ -192,6 +259,9 @@ struct Searcher {
             best_selected = selected;
             best_trace = trace;
             return true;
+        }
+        if (exact_pair && depth == 5) {
+            return exact_pair_completion(used, gaps, trace);
         }
 
         struct Choice { int anchor = -1; std::vector<Row> rows; } choice;
@@ -253,6 +323,8 @@ struct Options {
     int anchor_probe = 24;
     int samples_per_anchor = 18;
     std::uint64_t row_node_budget = 15000;
+    bool exact_pair = false;
+    std::uint64_t exact_pair_node_budget = 200000;
     double seconds = 90.0;
     std::uint64_t node_limit = 100000;
     std::uint64_t seed = 20260909;
@@ -269,6 +341,8 @@ Options parse_options(int argc, char** argv) {
         else if (key == "--anchor-probe") options.anchor_probe = std::stoi(value);
         else if (key == "--samples-per-anchor") options.samples_per_anchor = std::stoi(value);
         else if (key == "--row-node-budget") options.row_node_budget = std::stoull(value);
+        else if (key == "--exact-pair") options.exact_pair = std::stoi(value) != 0;
+        else if (key == "--exact-pair-node-budget") options.exact_pair_node_budget = std::stoull(value);
         else if (key == "--seconds") options.seconds = std::stod(value);
         else if (key == "--node-limit") options.node_limit = std::stoull(value);
         else if (key == "--seed") options.seed = std::stoull(value);
@@ -298,7 +372,8 @@ int main(int argc, char** argv) {
         const Options options = parse_options(argc, argv);
         const double started = clock_seconds();
         Searcher searcher{options.limit, options.anchor_probe, options.samples_per_anchor, options.row_node_budget,
-                          started + options.seconds, options.node_limit, std::mt19937_64(options.seed)};
+                          options.exact_pair, options.exact_pair_node_budget, started + options.seconds,
+                          options.node_limit, std::mt19937_64(options.seed)};
         Mask empty;
         std::vector<int> trace;
         const bool found = searcher.dfs(empty, empty, 0, 0, trace);
@@ -309,10 +384,16 @@ int main(int argc, char** argv) {
                   << options.limit << ",\"anchor_probe\":" << options.anchor_probe
                   << ",\"samples_per_anchor\":" << options.samples_per_anchor
                   << ",\"row_node_budget\":" << options.row_node_budget
+                  << ",\"exact_pair\":" << (options.exact_pair ? "true" : "false")
+                  << ",\"exact_pair_node_budget\":" << options.exact_pair_node_budget
                   << ",\"seconds\":" << options.seconds << ",\"node_limit\":" << options.node_limit
                   << ",\"seed\":" << options.seed << ",\"search_nodes\":" << searcher.nodes
                   << ",\"generator_nodes\":" << searcher.generator_nodes << ",\"generated_rows\":" << searcher.generated_rows
-                  << ",\"duplicate_rows\":" << searcher.duplicate_rows << ",\"anchor_probes\":" << searcher.anchor_probes
+                  << ",\"duplicate_rows\":" << searcher.duplicate_rows
+                  << ",\"exact_pair_nodes\":" << searcher.exact_pair_nodes
+                  << ",\"exact_pair_rows\":" << searcher.exact_pair_rows
+                  << ",\"exact_pair_checks\":" << searcher.exact_pair_checks
+                  << ",\"anchor_probes\":" << searcher.anchor_probes
                   << ",\"gap_branches\":" << searcher.gap_branches << ",\"best_depth\":" << searcher.best_depth
                   << ",\"best_gaps\":" << searcher.best_gaps << ",\"stopped\":" << (searcher.stopped ? "true" : "false")
                   << ",\"target_reached\":" << (found ? "true" : "false")
@@ -330,6 +411,8 @@ int main(int argc, char** argv) {
             << "Method: dynamically generate rows from the current unused-difference mask; reject conflicts while adding marks; branch on sampled scarce anchors\n"
             << "Seed: " << options.seed << "; anchor probes: " << options.anchor_probe << "; samples per anchor: " << options.samples_per_anchor << "\n"
             << "Search nodes: " << searcher.nodes << "; generator nodes: " << searcher.generator_nodes << "; generated rows: " << searcher.generated_rows << "\n"
+            << "Exact-pair mode: " << (options.exact_pair ? "true" : "false") << "; exact-pair nodes: " << searcher.exact_pair_nodes
+            << "; exact-pair rows: " << searcher.exact_pair_rows << "; exact-pair checks: " << searcher.exact_pair_checks << "\n"
             << "Best depth: " << searcher.best_depth << "; best gaps: " << searcher.best_gaps << "; gap branches: " << searcher.gap_branches << "\n"
             << "Target reached: " << (found ? "true" : "false") << "\nRows: ";
         write_rows(raw, searcher.best_selected);
