@@ -42,8 +42,61 @@
     "research_tools/search_dts_ondemand.cpp"
   ],
   "raw_result": {
-    "status": "preregistered",
-    "target_reached": false
+    "status": "completed",
+    "target_reached": false,
+    "runs": [
+      {
+        "seed": 20260920,
+        "search_nodes": 4359,
+        "generator_nodes": 8897292,
+        "generated_rows": 24410,
+        "exact_pair_nodes": 512589,
+        "exact_pair_rows": 8,
+        "exact_pair_checks": 4,
+        "best_depth": 5,
+        "best_gaps": 6,
+        "elapsed_seconds": 60.0006923,
+        "target_reached": false,
+        "partial_rows": [[0, 2, 30, 75, 88, 111], [0, 5, 42, 57, 107, 110], [0, 7, 25, 39, 47, 108], [0, 4, 60, 71, 95, 104], [0, 21, 55, 72, 84, 103]],
+        "independent_partial_audit": {"row_count": 5, "unique_difference_count": 75, "duplicates": []},
+        "artifact_sha256": "E6032C19F4255F406FEE11C53326057A605F95903A96797DD0104D21AB1DBCDB",
+        "raw_sha256": "9E018C3C036183C65488EACDD52C6C6889A69BEAB5265C7D94CE896DA2A0201F"
+      },
+      {
+        "seed": 20260924,
+        "search_nodes": 5397,
+        "generator_nodes": 10520690,
+        "generated_rows": 28849,
+        "exact_pair_nodes": 598151,
+        "exact_pair_rows": 4,
+        "exact_pair_checks": 2,
+        "best_depth": 5,
+        "best_gaps": 6,
+        "elapsed_seconds": 60.0022302,
+        "target_reached": false,
+        "partial_rows": [[0, 1, 18, 60, 81, 111], [0, 2, 43, 46, 72, 108], [0, 5, 14, 24, 101, 109], [0, 12, 23, 50, 98, 102], [0, 6, 34, 67, 74, 89]],
+        "independent_partial_audit": {"row_count": 5, "unique_difference_count": 75, "duplicates": []},
+        "artifact_sha256": "BA8BEA2FE14D454B8E411A4D15E53F3F43211846CDFC5C7FC89ACDFA6CBF30CE",
+        "raw_sha256": "1F8AE161174519F0732AFF545E051678E272149F680F48D2A9ECBBB15A35B189"
+      },
+      {
+        "seed": 20260925,
+        "search_nodes": 3709,
+        "generator_nodes": 10470682,
+        "generated_rows": 16069,
+        "exact_pair_nodes": 297879,
+        "exact_pair_rows": 4,
+        "exact_pair_checks": 6,
+        "best_depth": 5,
+        "best_gaps": 6,
+        "elapsed_seconds": 60.0061699,
+        "target_reached": false,
+        "partial_rows": [[0, 1, 9, 43, 84, 111], [0, 3, 15, 21, 54, 109], [0, 7, 32, 79, 103, 108], [0, 17, 36, 40, 62, 99], [0, 14, 30, 78, 80, 91]],
+        "independent_partial_audit": {"row_count": 5, "unique_difference_count": 75, "duplicates": []},
+        "artifact_sha256": "A6F03623D74D43954F0A9F59AAA046E21383D45B4AC6558048346035E43154F4",
+        "raw_sha256": "58A7E93FC8142BEACBAC6B21C956D7F255D78CA4E2E7845CF577AD207BB5CD56"
+      }
+    ]
   },
   "baseline_comparison": {
     "frozen_scope": 112,
@@ -55,10 +108,10 @@
     "saved_six_row_completion": "zero compatible seventh rows in two exact checks",
     "expected_relation": "replace sampled sixth/seventh branching with exact pair completion after the same five-row state-conditioned prefix search"
   },
-  "evidence_level": 0,
-  "interpretation": "Preregistered bounded exact-completion experiment; no execution result is claimed until raw outputs are recorded.",
-  "failure_mode": null,
-  "what_was_learned": "Pending execution.",
-  "recommended_next_action": "Run the three declared seeds, independently validate any witness, and close this pair-completion policy if no disjoint final pair is found.",
+  "evidence_level": 1,
+  "interpretation": "The exact-pair policy reached only depth-five prefixes on all three declared seeds because terminal pair enumeration consumed the wall budget. It found 8, 4, and 4 compatible final rows respectively, with 4, 2, and 6 pair checks and no disjoint pair. The saved five-row prefixes independently audit to 75 unique differences each. This is finite methodological evidence only.",
+  "failure_mode": "exact-pair-completion-budget-exhausted-without-disjoint-final-pair",
+  "what_was_learned": "Making the last two rows exact removes terminal sampling uncertainty, but it sharply reduces prefix throughput and did not reveal a completion in the visited branches. The current state-conditioned DFS plus exact-pair policy is therefore not a productive witness route within the declared budget.",
+  "recommended_next_action": "Close this pair-completion policy. Do not increase the same terminal budget or repeat the same prefix search; any continuation must change the multi-row exploration mechanism or use a new structural construction hypothesis.",
   "repetition_justification": "This changes the terminal search operation from sampled row generation to exhaustive two-row completion over each visited depth-five prefix; it is not a seed or budget repeat of dts-ondemand-constrained-001."
 }

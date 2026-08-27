@@ -35,8 +35,30 @@
     "research_tools/search_dts_two_row_replacement.cpp"
   ],
   "raw_result": {
-    "status": "preregistered",
-    "target_reached": false
+    "status": "completed",
+    "target_reached": false,
+    "stopped": false,
+    "elapsed_seconds": 0.001271,
+    "consistent_cases": 6,
+    "inconsistent_cases": 15,
+    "nodes": 2940,
+    "complete_compatible_rows": 16,
+    "pair_checks": 20,
+    "consistent_pairs": [[0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6]],
+    "nodes_by_case": [434, 422, 535, 591, 477, 481],
+    "rows_by_case": [2, 2, 2, 6, 2, 2],
+    "disjoint_pairs_by_case": [0, 0, 0, 0, 0, 0],
+    "candidate": null,
+    "artifact_sha256": "33A48B717BACBBA8E379D2325601E4AE00DD241EB30EB2B1E56196A6C5B3A67E",
+    "raw_sha256": "07CDE875F99021370B8AF13E7A0BA25331E343F0B90814810803D592906CA50C",
+    "independent_recheck": {
+      "implementation": "standalone Python increasing-mark enumerator",
+      "consistent_cases": 6,
+      "nodes_by_case": [434, 422, 535, 591, 477, 481],
+      "rows_by_case": [2, 2, 2, 6, 2, 2],
+      "disjoint_pairs_by_case": [0, 0, 0, 0, 0, 0]
+    },
+    "independent_verifier": {"valid": false, "reason": "no candidate returned"}
   },
   "baseline_comparison": {
     "frozen_scope": 112,
@@ -48,10 +70,10 @@
     "on_demand_pair_completion": "no disjoint pair in sampled depth-five prefixes",
     "expected_relation": "exhaustive fixed-five complement extends the one-row test to coordinated two-row repair"
   },
-  "evidence_level": 0,
-  "interpretation": "Preregistered exact finite two-row repair decomposition; no execution result is claimed until raw output is recorded.",
-  "failure_mode": null,
-  "what_was_learned": "Pending execution.",
-  "recommended_next_action": "Execute once, validate any returned witness independently, then close or promote only this two-row repair family according to the finite result.",
+  "evidence_level": 1,
+  "interpretation": "All 21 omitted-row pairs were checked. Fifteen fixed-five cases were already inconsistent; the six consistent cases all omit row 0 and one other row. Exact enumeration found 16 compatible replacement rows in total and 20 unordered pair checks, with no disjoint pair. A standalone Python enumerator reproduced the per-case node, row, and zero-pair counts. This closes the two-row repair family around the clamped published witness but is not a global impossibility result.",
+  "failure_mode": "no-disjoint-two-row-replacement-in-full-scope-domain",
+  "what_was_learned": "The published construction cannot be repaired to scope 111 by changing at most two rows: every possible fixed-five complement was either already colliding or had no pair of mutually disjoint compatible rows. Any target construction must change at least three rows or use a different structural source.",
+  "recommended_next_action": "Close the published-witness repair basin through two rows. Do not expand this exact enumeration to three-row repair without a new structural reason; prioritize a genuinely different construction family or record the repository as awaiting new capability.",
   "repetition_justification": "This is not a repeat of one-row replacement or sampled pair completion: it exhausts all compatible row pairs around every consistent fixed-five subset of the clamped published witness."
 }
