@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import gc
 import json
 import multiprocessing as mp
 import runpy
@@ -17,7 +18,7 @@ DEFAULT_SOURCE = "/home/kserver/k-server-bench/examples/search_n7_async_pipeline
 DEFAULT_ARTIFACT = Path("artifacts/kserver-n7-shared-cache-001.json")
 
 
-def score_full_taxi(module: dict[str, object], coefs_list: list[tuple[int, ...]], started_at: float, deadline: float) -> list[dict[str, object]]:
+def score_full_taxi(module: dict[str, object], coefs_list: list[tuple[int, ...]], started_at: float, deadline: float, n_processes: int = 1) -> list[dict[str, object]]:
     if time.time() >= deadline:
         return []
     from kserver.evaluation import NumpyKServerInstance
@@ -51,7 +52,7 @@ def score_full_taxi(module: dict[str, object], coefs_list: list[tuple[int, ...]]
                 "stage_d",
                 candidate_id,
                 coefs,
-                1,
+                max(1, n_processes),
                 None,
                 _unwrap_potential_result,
                 _wf_key,
@@ -74,6 +75,8 @@ def main() -> int:
     parser.add_argument("--search-seconds", type=float, default=600.0)
     parser.add_argument("--wall-seconds", type=float, default=1200.0)
     parser.add_argument("--taxi-top", type=int, default=2)
+    parser.add_argument("--nested-processes", type=int, default=1)
+    parser.add_argument("--experiment-id", default="kserver-n7-shared-cache-001")
     parser.add_argument("--seed", type=int, default=20260827)
     args = parser.parse_args()
 
@@ -123,10 +126,14 @@ def main() -> int:
     full_results: list[dict[str, object]] = []
     if error is None and selected and time.time() < deadline:
         print(f"starting sequential full taxi evaluations count={len(selected)}", flush=True)
-        full_results = score_full_taxi(module, selected, started_at, deadline)
+        # The circle cache is no longer needed. Release it before starting the
+        # streaming taxi workers so the two memory profiles do not overlap.
+        del cache, distances, edges, mod, context
+        gc.collect()
+        full_results = score_full_taxi(module, selected, started_at, deadline, args.nested_processes)
 
     payload = {
-        "experiment_id": "kserver-n7-shared-cache-001",
+        "experiment_id": args.experiment_id,
         "status": "completed" if error is None else "runtime_failure",
         "started_at_unix": started_at,
         "finished_at_unix": time.time(),
