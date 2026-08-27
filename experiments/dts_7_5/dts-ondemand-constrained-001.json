@@ -1,0 +1,63 @@
+{
+  "record_type": "experiment",
+  "experiment_id": "dts-ondemand-constrained-001",
+  "problem_id": "dts_7_5",
+  "target_id": "dts_scope_leq_111",
+  "timestamp": "2026-08-27T09:20:14Z",
+  "parent_experiment_ids": ["dts-separated-catalog-exact-cover-001", "dts-difference-allocation-001", "dts-one-row-replacement-001"],
+  "git_commit_sha": "c7407c619ed8e9feed21d03462ee1d103997d3a0",
+  "hypothesis": "Generating each candidate row against the current used-difference mask, with incremental rejection during mark completion, will explore compatible exact-cover branches that static random catalogues miss and will reach a seven-row scope-111 DTS on at least one seed.",
+  "rationale": "The one-million-row static catalogue reached depth five despite fast construction, and single-anchor conditional catalogues also reached depth five. Those methods sample rows before the exact-cover state is known. This method makes the current state part of row generation itself, so every returned row is compatible with the branch and no catalogue-size assumption limits the candidate family.",
+  "expected_information_gain": "A verified witness would be true-objective progress from a new exact-cover representation. A repeatable depth-six or higher partial state would show that state-conditioned generation improves the search frontier even without a witness. A depth-five ceiling across the declared seeds would close this on-demand generator policy and leave coordinated structural decomposition as the remaining DTS route.",
+  "method": "Run research_tools/search_dts_ondemand.cpp for three fixed seeds. At each DFS node, probe the largest currently unused differences, dynamically construct normalized six-mark rows containing each anchor, reject every newly created difference that is used, explicitly gapped, duplicated, or outside 1..111 while marks are added, deduplicate only within the node, choose the anchor with the smallest sampled compatible set, and recurse over those rows with at most six explicit gaps. Preserve the deepest partial branch and independently validate any complete assignment with research_tools/verify_dts_independent.py.",
+  "metric": "target reach, deepest number of disjoint rows, search nodes, dynamic generator nodes, generated-row count, duplicate-row count, anchor probes, gap branches, and elapsed time per seed",
+  "metric_relation_to_true_objective": "Only a complete seven-row assignment accepted by the independent integer verifier is a scope<=111 true-objective witness. Depth, generated-row, and node counts are finite methodological evidence and must not be described as a DTS result.",
+  "configuration": {
+    "scope_limit": 111,
+    "seeds": [20260920, 20260924, 20260925],
+    "seconds_per_seed": 60,
+    "anchor_probe": 4,
+    "samples_per_anchor": 32,
+    "row_node_budget": 5000,
+    "node_limit": 100000,
+    "gap_budget": 6,
+    "row_generation": "state-conditioned incremental mark completion with random placement of the required anchor pair",
+    "verifier": "research_tools/verify_dts_independent.py"
+  },
+  "random_seeds": [20260920, 20260924, 20260925],
+  "compute_budget": {
+    "wall_time_seconds": 180,
+    "cpu": "one native C++ process per seed, sequential",
+    "memory_intent": "bounded per-node candidate vectors and two-word difference masks"
+  },
+  "kill_condition": "Stop a seed at 60 seconds, 100000 DFS nodes, or a complete independently validated witness; stop the experiment after the three declared seeds. Do not infer infeasibility from a sampled generator or finite timeout.",
+  "output_artifacts": [
+    "experiments/dts_7_5/raw/dts-ondemand-constrained-001-seed-20260920.txt",
+    "experiments/dts_7_5/raw/dts-ondemand-constrained-001-seed-20260924.txt",
+    "experiments/dts_7_5/raw/dts-ondemand-constrained-001-seed-20260925.txt",
+    "artifacts/dts-ondemand-constrained-001-seed-20260920.json",
+    "artifacts/dts-ondemand-constrained-001-seed-20260924.json",
+    "artifacts/dts-ondemand-constrained-001-seed-20260925.json",
+    "research_tools/search_dts_ondemand.cpp"
+  ],
+  "raw_result": {
+    "status": "preregistered",
+    "target_reached": false
+  },
+  "baseline_comparison": {
+    "frozen_scope": 112,
+    "target_scope": 111,
+    "expected_relation": "strict improvement only if complete and validator-valid"
+  },
+  "previous_best_comparison": {
+    "static_catalogue_depth": 5,
+    "single-anchor_conditional_catalogue_depth": 5,
+    "expected_relation": "state-conditioned generation should be compared by deepest exact-compatible row depth, not by catalogue size"
+  },
+  "evidence_level": 0,
+  "interpretation": "Preregistered search experiment; no execution result is claimed until all three raw outputs are recorded.",
+  "failure_mode": null,
+  "what_was_learned": "Pending execution.",
+  "recommended_next_action": "Run the three declared seeds, independently validate any witness, and close this policy if it does not exceed the prior depth-five frontier.",
+  "repetition_justification": "This is materially different from static catalogue, single-anchor catalogue, pair-conditioned catalogue, and greedy/block-deletion searches because row generation is conditioned on the exact recursive used/gap mask at every node and rejects conflicts before a row is complete."
+}
