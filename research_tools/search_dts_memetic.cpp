@@ -121,16 +121,7 @@ void collect_conflict_rows(const Chromosome& rows, std::vector<int>& conflict_ro
         for (int right = 1; right < kMarks && !conflict; ++right) {
             for (int left = 0; left < right; ++left) {
                 const int difference = rows[row_index][right] - rows[row_index][left];
-                int occurrences = 0;
-                for (const Row& other : rows) {
-                    if (!row_valid(other)) continue;
-                    for (int other_right = 1; other_right < kMarks; ++other_right) {
-                        for (int other_left = 0; other_left < other_right; ++other_left) {
-                            if (other[other_right] - other[other_left] == difference) ++occurrences;
-                        }
-                    }
-                }
-                if (occurrences > 1) {
+                if (difference >= 1 && difference <= kLimit && counts[difference] > 1) {
                     conflict = true;
                     break;
                 }
@@ -234,7 +225,6 @@ struct RunResult {
 
 RunResult run(std::uint64_t seed, double seconds, int population_size, int polish_steps) {
     const double started = now_seconds();
-    const double deadline = started + seconds;
     std::mt19937_64 rng(seed);
     std::vector<Individual> population;
     population.reserve(static_cast<std::size_t>(population_size));
@@ -243,12 +233,12 @@ RunResult run(std::uint64_t seed, double seconds, int population_size, int polis
     baseline.rows = kClampedBaseline;
     baseline.evaluation = evaluate(baseline.rows);
     population.push_back(baseline);
-    while (static_cast<int>(population.size()) < population_size && now_seconds() < deadline) {
+    while (static_cast<int>(population.size()) < population_size) {
         Individual individual = make_random_individual(rng);
         if ((rng() % 100ULL) < 20ULL) polish(individual, rng, polish_steps / 2);
         population.push_back(individual);
     }
-    while (static_cast<int>(population.size()) < population_size) population.push_back(make_random_individual(rng));
+    const double search_deadline = now_seconds() + seconds;
 
     Individual best = population.front();
     for (const Individual& individual : population) {
@@ -258,7 +248,7 @@ RunResult run(std::uint64_t seed, double seconds, int population_size, int polis
     std::uint64_t iterations = 0;
     std::uint64_t replacements = 0;
     std::uint64_t best_updates = 0;
-    while (now_seconds() < deadline) {
+    while (now_seconds() < search_deadline) {
         ++iterations;
         const int first_index = tournament(population, rng);
         const int second_index = tournament(population, rng);
