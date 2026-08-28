@@ -1,0 +1,707 @@
+{
+  "verification": "independent_decimal_all_220",
+  "precision_digits": 110,
+  "candidate_count": 6,
+  "baseline_source": "artifacts\\baselines\\heilbronn_exact_verification.json",
+  "structural_source": "artifacts\\heilbronn-experiment72-structural.json",
+  "candidates": [
+    {
+      "point_count": 12,
+      "triangle_count": 220,
+      "distinct_points": true,
+      "all_points_in_unit_square": true,
+      "zero_area_triangles": [],
+      "minimum_area_decimal": "0.0325988586918162349865789308931781609763340540383",
+      "baseline_decimal": "0.032598858691819698218764006623515408049241988379776913777741905474205601650786197",
+      "gap_from_exact_baseline_decimal": "-3.463232185075730337247072907934341476913777741905474205601650786197E-15",
+      "strictly_above_exact_baseline": false,
+      "active_triangles_tolerance_1e-12": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          2,
+          5
+        ],
+        [
+          0,
+          4,
+          6
+        ],
+        [
+          0,
+          5,
+          10
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          1,
+          3,
+          6
+        ],
+        [
+          1,
+          4,
+          5
+        ],
+        [
+          1,
+          6,
+          11
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          5,
+          7
+        ],
+        [
+          3,
+          6,
+          7
+        ],
+        [
+          4,
+          5,
+          8
+        ],
+        [
+          4,
+          6,
+          9
+        ],
+        [
+          5,
+          7,
+          11
+        ],
+        [
+          5,
+          8,
+          10
+        ],
+        [
+          6,
+          7,
+          10
+        ],
+        [
+          6,
+          9,
+          11
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          7,
+          8,
+          10
+        ],
+        [
+          7,
+          9,
+          11
+        ]
+      ],
+      "active_set_matches_baseline_with_tolerance": true,
+      "arm": "A",
+      "seed": 20260828
+    },
+    {
+      "point_count": 12,
+      "triangle_count": 220,
+      "distinct_points": true,
+      "all_points_in_unit_square": true,
+      "zero_area_triangles": [],
+      "minimum_area_decimal": "0.032598858691818875000000000000085",
+      "baseline_decimal": "0.032598858691819698218764006623515408049241988379776913777741905474205601650786197",
+      "gap_from_exact_baseline_decimal": "-8.23218764006623430408049241988379776913777741905474205601650786197E-16",
+      "strictly_above_exact_baseline": false,
+      "active_triangles_tolerance_1e-12": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          2,
+          5
+        ],
+        [
+          0,
+          4,
+          6
+        ],
+        [
+          0,
+          5,
+          10
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          1,
+          3,
+          6
+        ],
+        [
+          1,
+          4,
+          5
+        ],
+        [
+          1,
+          6,
+          11
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          5,
+          7
+        ],
+        [
+          3,
+          6,
+          7
+        ],
+        [
+          4,
+          5,
+          8
+        ],
+        [
+          4,
+          6,
+          9
+        ],
+        [
+          5,
+          7,
+          11
+        ],
+        [
+          5,
+          8,
+          10
+        ],
+        [
+          6,
+          7,
+          10
+        ],
+        [
+          6,
+          9,
+          11
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          7,
+          8,
+          10
+        ],
+        [
+          7,
+          9,
+          11
+        ]
+      ],
+      "active_set_matches_baseline_with_tolerance": true,
+      "arm": "A",
+      "seed": 20260829
+    },
+    {
+      "point_count": 12,
+      "triangle_count": 220,
+      "distinct_points": true,
+      "all_points_in_unit_square": true,
+      "zero_area_triangles": [],
+      "minimum_area_decimal": "0.032598858691818019531616432496566331407263043521",
+      "baseline_decimal": "0.032598858691819698218764006623515408049241988379776913777741905474205601650786197",
+      "gap_from_exact_baseline_decimal": "-1.678687147574126949076641978944858776913777741905474205601650786197E-15",
+      "strictly_above_exact_baseline": false,
+      "active_triangles_tolerance_1e-12": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          2,
+          5
+        ],
+        [
+          0,
+          4,
+          6
+        ],
+        [
+          0,
+          5,
+          10
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          1,
+          3,
+          6
+        ],
+        [
+          1,
+          4,
+          5
+        ],
+        [
+          1,
+          6,
+          11
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          5,
+          7
+        ],
+        [
+          3,
+          6,
+          7
+        ],
+        [
+          4,
+          5,
+          8
+        ],
+        [
+          4,
+          6,
+          9
+        ],
+        [
+          5,
+          7,
+          11
+        ],
+        [
+          5,
+          8,
+          10
+        ],
+        [
+          6,
+          7,
+          10
+        ],
+        [
+          6,
+          9,
+          11
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          7,
+          8,
+          10
+        ],
+        [
+          7,
+          9,
+          11
+        ]
+      ],
+      "active_set_matches_baseline_with_tolerance": true,
+      "arm": "B",
+      "seed": 20260830
+    },
+    {
+      "point_count": 12,
+      "triangle_count": 220,
+      "distinct_points": true,
+      "all_points_in_unit_square": true,
+      "zero_area_triangles": [],
+      "minimum_area_decimal": "0.0325988586918184160381340402937014747401100684146",
+      "baseline_decimal": "0.032598858691819698218764006623515408049241988379776913777741905474205601650786197",
+      "gap_from_exact_baseline_decimal": "-1.282180629966329813933309131919965176913777741905474205601650786197E-15",
+      "strictly_above_exact_baseline": false,
+      "active_triangles_tolerance_1e-12": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          2,
+          5
+        ],
+        [
+          0,
+          4,
+          6
+        ],
+        [
+          0,
+          5,
+          10
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          1,
+          3,
+          6
+        ],
+        [
+          1,
+          4,
+          5
+        ],
+        [
+          1,
+          6,
+          11
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          5,
+          7
+        ],
+        [
+          3,
+          6,
+          7
+        ],
+        [
+          4,
+          5,
+          8
+        ],
+        [
+          4,
+          6,
+          9
+        ],
+        [
+          5,
+          7,
+          11
+        ],
+        [
+          5,
+          8,
+          10
+        ],
+        [
+          6,
+          7,
+          10
+        ],
+        [
+          6,
+          9,
+          11
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          7,
+          8,
+          10
+        ],
+        [
+          7,
+          9,
+          11
+        ]
+      ],
+      "active_set_matches_baseline_with_tolerance": true,
+      "arm": "B",
+      "seed": 20260831
+    },
+    {
+      "point_count": 12,
+      "triangle_count": 220,
+      "distinct_points": true,
+      "all_points_in_unit_square": true,
+      "zero_area_triangles": [],
+      "minimum_area_decimal": "0.0325988586918184627437295932334080",
+      "baseline_decimal": "0.032598858691819698218764006623515408049241988379776913777741905474205601650786197",
+      "gap_from_exact_baseline_decimal": "-1.235475034413390107408049241988379776913777741905474205601650786197E-15",
+      "strictly_above_exact_baseline": false,
+      "active_triangles_tolerance_1e-12": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          2,
+          5
+        ],
+        [
+          0,
+          4,
+          6
+        ],
+        [
+          0,
+          5,
+          10
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          1,
+          3,
+          6
+        ],
+        [
+          1,
+          4,
+          5
+        ],
+        [
+          1,
+          6,
+          11
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          5,
+          7
+        ],
+        [
+          3,
+          6,
+          7
+        ],
+        [
+          4,
+          5,
+          8
+        ],
+        [
+          4,
+          6,
+          9
+        ],
+        [
+          5,
+          7,
+          11
+        ],
+        [
+          5,
+          8,
+          10
+        ],
+        [
+          6,
+          7,
+          10
+        ],
+        [
+          6,
+          9,
+          11
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          7,
+          8,
+          10
+        ],
+        [
+          7,
+          9,
+          11
+        ]
+      ],
+      "active_set_matches_baseline_with_tolerance": true,
+      "arm": "C",
+      "seed": 20260832
+    },
+    {
+      "point_count": 12,
+      "triangle_count": 220,
+      "distinct_points": true,
+      "all_points_in_unit_square": true,
+      "zero_area_triangles": [],
+      "minimum_area_decimal": "0.03259885869181724425545848930753145441780620493504",
+      "baseline_decimal": "0.032598858691819698218764006623515408049241988379776913777741905474205601650786197",
+      "gap_from_exact_baseline_decimal": "-2.453963305517315983953631435783444736913777741905474205601650786197E-15",
+      "strictly_above_exact_baseline": false,
+      "active_triangles_tolerance_1e-12": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          2,
+          5
+        ],
+        [
+          0,
+          4,
+          6
+        ],
+        [
+          0,
+          5,
+          10
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          1,
+          3,
+          6
+        ],
+        [
+          1,
+          4,
+          5
+        ],
+        [
+          1,
+          6,
+          11
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          5,
+          7
+        ],
+        [
+          3,
+          6,
+          7
+        ],
+        [
+          4,
+          5,
+          8
+        ],
+        [
+          4,
+          6,
+          9
+        ],
+        [
+          5,
+          7,
+          11
+        ],
+        [
+          5,
+          8,
+          10
+        ],
+        [
+          6,
+          7,
+          10
+        ],
+        [
+          6,
+          9,
+          11
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          7,
+          8,
+          10
+        ],
+        [
+          7,
+          9,
+          11
+        ]
+      ],
+      "active_set_matches_baseline_with_tolerance": true,
+      "arm": "C",
+      "seed": 20260833
+    }
+  ],
+  "all_candidates_valid": true,
+  "any_certified_improvement": false
+}

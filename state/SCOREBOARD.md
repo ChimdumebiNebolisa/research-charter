@@ -5,12 +5,20 @@ This is a derived summary, not the source of scientific truth. It is updated fro
 | Problem | Frozen baseline | Target | Foundation status |
 | --- | --- | --- | --- |
 | `dts_7_5` | scope `112` | scope `<=111` | baseline independently verified; no improving candidate; direct, local, global, FPGA, and tested structured families closed; search PAUSED |
-| `heilbronn_n12` | source-faithful `0.032598858691819698...` | certified minimum area strictly greater | foundation-v2 corrected; no improving candidate; direction eligible for future preregistered search |
+| `heilbronn_n12` | source-faithful `0.032598858691819698...` | certified minimum area strictly greater | foundation-v2 corrected; Experiment 72 orbit-escape hypothesis rejected; no improving candidate; search paused |
 | `kserver_k4_circle` | reported `3` violations on pinned `circle_taxi_k4_m6.pickle` | fewer than `3` | pinned evaluator independently reproduces `5` for upstream seed vector 0; target not reached; reported 3-vector absent |
 
 ## Director review — 2026-08-27
 
 No new experiment is justified. DTS is paused pending a new structural construction or stronger exact-search capability; Heilbronn is eligible after foundation-v2 but has no concrete materially different certified-search hypothesis; k-server is paused pending a compact mechanism that transfers beyond the finite taxi table. Allocation: `WAITING_FOR_CAPABILITY`, with no primary or hedge. There is no experiment 72.
+
+## Experiment 72 — Heilbronn orbit-relaxed homotopy — 2026-08-28
+
+- Structural audit found 20 exact baseline-minimum triangles in `D4` orbits of sizes `4`, `8`, and `8`.
+- The full boundary-aware first-order active cone had no nonzero feasible ascent direction; relaxing A, B, or C produced common doubled-area derivative margins `0.2582413089`, `0.7181761965`, and `0.3898334983`.
+- Six preregistered continuation chains (two per arm) used `lambda = [0.00, 0.10, 0.25, 0.50, 0.75, 0.90, 0.97, 1.00]`. All returned to the same Comellas-Yebra basin and the same 20-triangle active set at `lambda=1`.
+- Final true minima were within `3.5e-15` below the exact baseline; independent 110-digit Decimal evaluation found all six candidates valid and no strict improvement.
+- Conclusion: `HYPOTHESIS_REJECTED`; close this orbit-escape family and do not create Experiment 73 automatically.
 
 ## Phase 2 evidence after ten substantive experiments
 
