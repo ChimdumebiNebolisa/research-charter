@@ -76,10 +76,19 @@
     "research_tools/synthesize_kserver_experiment73.py"
   ],
   "raw_result": {
-    "status": "preregistered_not_executed",
+    "status": "timeout",
+    "result_classification": "BLOCKED",
     "teacher_gate": "passed_with_caveat",
     "teacher_structure": "moderate compact-feature correlation but no finite D6 row closure",
-    "nonlinear_synthesis": "not_started"
+    "nonlinear_synthesis": "no_declared_cegis_configuration_completed_before_900_second_budget",
+    "observed_wall_time_seconds": 958.0,
+    "trajectory_recorded": false,
+    "candidate": null,
+    "primary_evaluator_run": false,
+    "control_evaluation_run": false,
+    "termination": "process terminated after the declared wall-time boundary without emitting an artifact",
+    "artifact": "artifacts/kserver-experiment73-synthesis.json",
+    "raw_output": "experiments/kserver_k4_circle/raw/kserver-experiment73-synthesis.json.txt"
   },
   "baseline_comparison": {
     "frozen_metric": "circle_taxi_k4_m6.pickle",
@@ -94,10 +103,10 @@
     "kserver-finite-difference-relaxation-001": "arbitrary taxi-node table reached 0 taxi violations but failed circle transfer with 1491 fallback violations",
     "closed_families": "local coefficient perturbation, nearby index-matrix variation, low-dimensional and full-coordinate additive correction, hand-written envelope switches, and arbitrary finite table fitting are not repeated"
   },
-  "evidence_level": 0,
-  "interpretation": "Preregistered hypothesis test. Teacher diagnostics support a bounded compact feature experiment but do not establish a transferable potential or any benchmark improvement.",
-  "failure_mode": null,
-  "what_was_learned": "Before synthesis, the teacher residual is broadly structured by canonical/work-function statistics but the finite taxi node set is not symmetry-closed; the experiment therefore uses only metric-general features and a strict three-level piecewise grammar.",
-  "recommended_next_action": "Execute exactly the declared CEGIS hierarchy, preserve every candidate and counterexample trajectory, and use the pinned primary evaluator only for a compact target-eligible candidate.",
+  "evidence_level": 1,
+  "interpretation": "Preregistered bounded synthesis was blocked by the single-process implementation reaching the declared wall-time budget without completing a CEGIS configuration. The teacher diagnostics support the question but do not establish a transferable potential or any benchmark improvement.",
+  "failure_mode": "bounded synthesis execution timeout before a trajectory or candidate artifact was emitted",
+  "what_was_learned": "The teacher residual is broadly structured by canonical/work-function statistics but the finite taxi node set is not symmetry-closed. The declared compact feature grammar was therefore appropriate to test, but the current implementation cannot complete even one recorded CEGIS configuration within the 900-second budget.",
+  "recommended_next_action": "Do not expand the grammar or create Experiment 74 automatically. Resume only after a materially faster, independently checked implementation or a new capability is authorized and preregistered.",
   "repetition_justification": "This is a new bounded synthesis family: it treats the zero-violation table as a teacher for feature discovery, uses a piecewise/nonlinear max/min expression class, and enforces complete-circle controls throughout. It does not repeat coefficient, index-matrix, additive-linear, envelope-switch, or literal-table search."
 }
