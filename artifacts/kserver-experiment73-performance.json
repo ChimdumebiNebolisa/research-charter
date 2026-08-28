@@ -1,0 +1,34 @@
+{
+  "declared_wall_time_seconds": 900.0,
+  "equivalence_status": "passed",
+  "estimated_full_declared_configuration_seconds": 161.691708000144,
+  "initial_active_set": {
+    "circle_active_edges": 6006,
+    "circle_total_edges": 6006,
+    "taxi_active_edges": 128,
+    "taxi_total_edges": 7000602
+  },
+  "memory": {
+    "rss_after_mb": null,
+    "rss_before_mb": null,
+    "rss_delta_mb": null,
+    "tracemalloc_peak_mb": 115.17683410644531
+  },
+  "multi_branch_max_wall_seconds": {
+    "2-branch_max": 2.75162939997972,
+    "3-branch_max": 6.737154500006
+  },
+  "one_branch_max": {
+    "best_branch": [
+      1.0,
+      0.5,
+      0.0,
+      0.0
+    ],
+    "branches": 625,
+    "candidates_per_second": 958.1975950305239,
+    "wall_seconds": 0.6522663000214379
+  },
+  "overall_elapsed_seconds": 73.2193544000038,
+  "status": "passed"
+}

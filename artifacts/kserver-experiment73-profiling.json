@@ -1,0 +1,29 @@
+{
+  "experiment_id": "kserver-compact-piecewise-001",
+  "implementation": "pre-repair research_tools/synthesize_kserver_experiment73.py",
+  "profile_method": "deterministic wall-time measurements plus cProfile of one score_active call",
+  "initial_active_set": {
+    "taxi_edges": 128,
+    "circle_edges": 6006,
+    "taxi_total_edges": 7000602,
+    "circle_total_edges": 6006
+  },
+  "measurements": {
+    "metric_load_seconds": 73.864,
+    "initialization_seconds": 1.416,
+    "active_arrays_seconds": 0.251,
+    "one_score_seconds": 0.259,
+    "old_best_single_max_625_seconds": 147.046
+  },
+  "cprofile_one_score": {
+    "total_seconds": 0.176,
+    "score_active_cumulative_seconds": 0.176,
+    "active_arrays_cumulative_seconds": 0.174,
+    "edge_weight_calls": 2,
+    "edge_weight_cumulative_seconds": 0.164,
+    "astype_cumulative_seconds": 0.030,
+    "correction_cumulative_seconds": 0.002
+  },
+  "root_cause": "active_arrays rebuilt active feature views while edge_weight recomputed and cast the full approximately seven-million-edge taxi weight array for every candidate score; the active edge set itself was small.",
+  "evidence": "The two edge_weight calls dominated the profiled score; 625 repeated scores measured 147.046 seconds on the exact initial active set."
+}

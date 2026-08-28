@@ -171,3 +171,10 @@ No new experiment is justified. DTS is paused pending a new structural construct
 - Teacher preflight reproduced `0` taxi violations for the arbitrary finite table but `1491` complete-circle fallback violations; the canonical compact control remained at `3` taxi violations and `0` complete-circle violations. The finite teacher's residual had moderate work-function/canonical correlations but its taxi node set was not D6-closed.
 - The single-process bounded synthesis reached the declared `900`-second wall budget without emitting a trajectory, candidate, primary-evaluator result, or cross-discretization control. It was stopped at `958` seconds and classified `BLOCKED` as an execution/capability limitation, not as rejection of the grammar.
 - No true-objective movement or compact transferable potential is claimed. Current allocation remains `WAITING_FOR_CAPABILITY`; do not expand the grammar or create Experiment 74 automatically.
+
+## Experiment 73 resumed implementation result
+
+- Profiling identified repeated full taxi `edge_weight` allocation/casting inside `score_active`; the repaired implementation cached weights/base slacks, reused active-edge arrays, vectorized the 625 single-branch grid, and added atomic per-iteration checkpoints.
+- Reference-vs-optimized equivalence passed for max/min, one-/multi-branch corrections, active slacks, aggregate scores, and candidate rankings. The initial 625-branch max benchmark improved from `147.046 s` to `0.652 s` (`958 candidates/s`); the measured full hierarchy estimate was `161.692 s`, inside the frozen `900 s` budget.
+- The resumed frozen grammar completed 8 CEGIS iterations across all declared 2-, 3-, and 4-piece max/min families. Best direct result was `38,854` taxi violations and `426` complete-circle violations; no candidate approached the target `<3` taxi violations with zero circle violations.
+- Classify Experiment 73 as `HYPOTHESIS_REJECTED` at the declared grammar and finite metrics. No primary evaluator or m=8 control run was needed because no target-eligible candidate existed; do not create Experiment 74.

@@ -71,24 +71,39 @@
     "experiments/kserver_k4_circle/raw/kserver-experiment73-preflight.json.txt",
     "artifacts/kserver-experiment73-teacher-analysis.json",
     "artifacts/kserver-experiment73-synthesis.json",
+    "artifacts/kserver-experiment73-synthesis-resumed.json",
+    "experiments/kserver_k4_circle/raw/kserver-experiment73-synthesis-resumed.json.txt",
+    "artifacts/kserver-experiment73-profiling.json",
+    "artifacts/kserver-experiment73-equivalence.json",
+    "artifacts/kserver-experiment73-performance.json",
+    "artifacts/kserver-experiment73-trajectory-verification.json",
     "research_tools/reproduce_kserver_experiment73_preflight.py",
     "research_tools/analyze_kserver_teacher.py",
-    "research_tools/synthesize_kserver_experiment73.py"
+    "research_tools/synthesize_kserver_experiment73.py",
+    "research_tools/test_kserver_experiment73_equivalence.py",
+    "research_tools/benchmark_kserver_experiment73.py"
+    ,"research_tools/verify_kserver_experiment73_trajectory.py"
   ],
   "raw_result": {
-    "status": "timeout",
-    "result_classification": "BLOCKED",
+    "status": "completed",
+    "result_classification": "HYPOTHESIS_REJECTED",
     "teacher_gate": "passed_with_caveat",
     "teacher_structure": "moderate compact-feature correlation but no finite D6 row closure",
-    "nonlinear_synthesis": "no_declared_cegis_configuration_completed_before_900_second_budget",
-    "observed_wall_time_seconds": 958.0,
-    "trajectory_recorded": false,
+    "nonlinear_synthesis": "completed_all_declared_2_3_and_4_piece_max_min_families_without_target_candidate",
+    "first_attempt_observed_wall_time_seconds": 958.0,
+    "resumed_observed_wall_time_seconds": 56.419,
+    "trajectory_recorded": true,
+    "trajectory_steps": 8,
     "candidate": null,
     "primary_evaluator_run": false,
     "control_evaluation_run": false,
-    "termination": "process terminated after the declared wall-time boundary without emitting an artifact",
+    "termination": "resumed optimized implementation completed the declared hierarchy; no target-eligible candidate was produced",
+    "equivalence_gate": "passed",
+    "performance_gate": "passed",
     "artifact": "artifacts/kserver-experiment73-synthesis.json",
-    "raw_output": "experiments/kserver_k4_circle/raw/kserver-experiment73-synthesis.json.txt"
+    "raw_output": "experiments/kserver_k4_circle/raw/kserver-experiment73-synthesis.json.txt",
+    "resumed_artifact": "artifacts/kserver-experiment73-synthesis-resumed.json",
+    "resumed_raw_output": "experiments/kserver_k4_circle/raw/kserver-experiment73-synthesis-resumed.json.txt"
   },
   "baseline_comparison": {
     "frozen_metric": "circle_taxi_k4_m6.pickle",
@@ -104,9 +119,9 @@
     "closed_families": "local coefficient perturbation, nearby index-matrix variation, low-dimensional and full-coordinate additive correction, hand-written envelope switches, and arbitrary finite table fitting are not repeated"
   },
   "evidence_level": 1,
-  "interpretation": "Preregistered bounded synthesis was blocked by the single-process implementation reaching the declared wall-time budget without completing a CEGIS configuration. The teacher diagnostics support the question but do not establish a transferable potential or any benchmark improvement.",
-  "failure_mode": "bounded synthesis execution timeout before a trajectory or candidate artifact was emitted",
-  "what_was_learned": "The teacher residual is broadly structured by canonical/work-function statistics but the finite taxi node set is not symmetry-closed. The declared compact feature grammar was therefore appropriate to test, but the current implementation cannot complete even one recorded CEGIS configuration within the 900-second budget.",
-  "recommended_next_action": "Do not expand the grammar or create Experiment 74 automatically. Resume only after a materially faster, independently checked implementation or a new capability is authorized and preregistered.",
+  "interpretation": "After an implementation-only performance repair passed deterministic equivalence and performance gates, the complete preregistered bounded hierarchy ran to completion. Every tested compact max/min family retained substantial taxi and complete-circle violations; no transferable candidate or benchmark improvement was produced.",
+  "failure_mode": "declared compact feature grammar failed its frozen finite target/control screen; the original timeout was an implementation failure and the resumed implementation completed successfully",
+  "what_was_learned": "Caching edge weights/base slacks and vectorizing the 625 single-branch grid reduced the measured initial search from 147.046 seconds to 0.411 seconds and enabled the full hierarchy. The teacher's moderate residual correlations did not yield a transferable 2-, 3-, or 4-piece correction: the best resumed taxi count was 38,854 and the best circle count was 426, both far from the required control/target gate.",
+  "recommended_next_action": "Close this frozen compact grammar as HYPOTHESIS_REJECTED. Do not expand the feature vocabulary, coefficient grid, depth, branch count, or create Experiment 74 automatically.",
   "repetition_justification": "This is a new bounded synthesis family: it treats the zero-violation table as a teacher for feature discovery, uses a piecewise/nonlinear max/min expression class, and enforces complete-circle controls throughout. It does not repeat coefficient, index-matrix, additive-linear, envelope-switch, or literal-table search."
 }

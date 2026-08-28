@@ -1,0 +1,21 @@
+Experiment: kserver-compact-piecewise-001 resumed implementation
+Command: python research_tools/synthesize_kserver_experiment73.py
+Implementation gate: passed equivalence and performance tests
+Status: completed
+Elapsed: 56.419 seconds
+Initial active edges: taxi=128, circle=6006
+Final active edges: taxi=301, circle=6006
+
+CEGIS trajectory digest:
+2-piece_max i0: branches=[(1,.5,0,0)], active_min=-0.817460317, taxi=42370, circle=1020, added=(79,0)
+2-piece_max i1: same branch, active_min=-0.817460317, taxi=42370, circle=1020, added=(0,0)
+2-piece_min i0: branches=[(1,1,0,0)], active_min=-0.579365079, taxi=38854, circle=426, added=(94,0)
+2-piece_min i1: same branch, active_min=-0.579365079, taxi=38854, circle=426, added=(0,0)
+3-piece_max i0: branches=[(1,.5,0,0),(-1,-.5,0,1)], active_min=-0.817460317, taxi=44063, circle=1020, added=(0,0)
+3-piece_min i0: branches=[(1,1,0,0),(.5,.5,0,0)], active_min=-0.579365079, taxi=38854, circle=426, added=(0,0)
+4-piece_max i0: branches=[(1,.5,0,0),(-1,-.5,0,1),(-1,0,-.5,1)], active_min=-0.817460317, taxi=46229, circle=1020, added=(0,0)
+4-piece_min i0: branches=[(1,1,0,0),(.5,.5,0,0),(1,.5,0,1)], active_min=-0.579365079, taxi=38864, circle=426, added=(0,0)
+
+No target-eligible candidate was produced. The complete declared bounded grammar finished
+without improvement, so Experiment 73 is classified HYPOTHESIS_REJECTED. No primary
+evaluator or m=8 control run was required because no candidate passed the target gate.
