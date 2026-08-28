@@ -1,0 +1,51 @@
+{
+  "record_type": "capability_audit",
+  "problem_id": "dts_7_5",
+  "scope": 111,
+  "scientific_experiment_count_increment": 0,
+  "decision": "INTRACTABLE_CURRENT_CAPABILITY",
+  "question": "Can the exact complete valid six-mark ruler universe be enumerated and then packed into seven mutually difference-disjoint rows at scope 111 with current representations and hardware?",
+  "findings": {
+    "row_universe": "tractable",
+    "seven_row_packing": "not demonstrated tractable",
+    "global_infeasibility_claim": false,
+    "scientific_search_launched": false,
+    "experiment_74_created": false
+  },
+  "measurements": {
+    "raw_complete_choices": 128164707,
+    "valid_rows": 78787474,
+    "reflection_representatives": 39393737,
+    "catalogue_bytes": 1890899400,
+    "catalogue_sha256": "07088897F6640184B5B12516AF71E9C0CE7B3E362C78EA91265DF19A72D2E52E",
+    "enumeration_wall_seconds": 58.69,
+    "catalogue_peak_resident_set_kib": 1850240,
+    "bitset_index_bytes": 1093176840,
+    "bitset_index_build_seconds": 41.0686334,
+    "bitset_index_peak_resident_set_kib": 2918016,
+    "sampled_depth2_compatible_row_range": [516086, 6335467],
+    "sampled_depth3_compatible_row_range": [2041, 17361],
+    "sampled_depth4_compatible_row_range": [0, 0]
+  },
+  "validation": {
+    "small_scopes": [25, 35, 50],
+    "small_scope_reference": "exact Python combinations reference matched native marks and masks",
+    "full_catalogue_samples": 32,
+    "full_catalogue_sample_audit": "passed",
+    "canonical_scope112_baseline_repository_verifier": "passed"
+  },
+  "limitations": [
+    "The full 1.9 GB catalogue is preserved locally and represented in Git evidence by its size and SHA-256 manifest; it is not committed as a repository blob.",
+    "Packing measurements are controlled shallow scans, not a complete depth-seven search.",
+    "The result is a capability boundary for the measured representations and host, not a proof that no better exact decomposition exists."
+  ],
+  "evidence_references": [
+    "research_tools/enumerate_dts_rulers.cpp",
+    "research_tools/validate_dts_ruler_enumerator.py",
+    "research_tools/audit_dts_catalogue_samples.py",
+    "artifacts/dts-ruler-catalogue-manifest.json",
+    "artifacts/dts-packing-benchmark.json",
+    "artifacts/dts-index-benchmark.json",
+    "artifacts/dts-ruler-catalogue-sample-audit.json"
+  ]
+}

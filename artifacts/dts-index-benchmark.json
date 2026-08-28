@@ -1,0 +1,17 @@
+{
+  "status": "completed_bitset_index_benchmark",
+  "rows": 78787474,
+  "difference_columns": 111,
+  "words_per_column": 1231055,
+  "set_bits": 1181812110,
+  "expected_set_bits": 1181812110,
+  "index_bytes": 1093176840,
+  "index_representation": "111 row-bitsets, one bit per catalogue row per difference",
+  "build_seconds": 41.0686334,
+  "rows_per_second": 1918434.27641,
+  "peak_resident_set_kib": 2918016,
+  "wall_seconds_including_catalogue_load": 81.44,
+  "uint32_inverted_list_bytes_estimate": 4727248440,
+  "incidence_count": 1181812110,
+  "interpretation": "The bitset index is physically manageable on the measured 7.6 GiB WSL instance, but it does not remove the combinatorial depth-seven branching; a complete search would require an additional exact decomposition or substantially stronger hardware."
+}

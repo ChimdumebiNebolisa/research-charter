@@ -1,0 +1,406 @@
+{
+  "catalogue": "C:\\Users\\Chimdumebi\\Desktop\\research-charter\\artifacts\\dts-rulers-scope111.bin",
+  "catalogue_rows": 78787474,
+  "catalogue_scope": 111,
+  "repository_verifier": {
+    "canonical_scope112_baseline": {
+      "difference_count": 105,
+      "duplicate_set": [],
+      "errors": [],
+      "row_count": 7,
+      "scope": 112,
+      "unique_difference_count": 105,
+      "valid": true
+    },
+    "sample_rows": "row-level arithmetic and uniqueness fields passed; full valid is intentionally false because the verifier requires seven rows"
+  },
+  "sample_count": 32,
+  "samples": [
+    {
+      "index": 0,
+      "marks": [
+        0,
+        1,
+        3,
+        7,
+        12,
+        20
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 4169703,
+      "marks": [
+        0,
+        2,
+        8,
+        28,
+        61,
+        68
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 11650477,
+      "marks": [
+        0,
+        4,
+        17,
+        29,
+        49,
+        110
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 16080383,
+      "marks": [
+        0,
+        5,
+        39,
+        52,
+        53,
+        60
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 17484840,
+      "marks": [
+        0,
+        6,
+        14,
+        44,
+        72,
+        101
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 18429070,
+      "marks": [
+        0,
+        6,
+        26,
+        57,
+        69,
+        106
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 20118839,
+      "marks": [
+        0,
+        7,
+        11,
+        26,
+        63,
+        109
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 23746593,
+      "marks": [
+        0,
+        8,
+        22,
+        40,
+        52,
+        110
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 26969857,
+      "marks": [
+        0,
+        9,
+        31,
+        93,
+        94,
+        108
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 27412617,
+      "marks": [
+        0,
+        9,
+        42,
+        65,
+        73,
+        79
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 27883477,
+      "marks": [
+        0,
+        9,
+        65,
+        84,
+        90,
+        95
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 29404160,
+      "marks": [
+        0,
+        10,
+        30,
+        36,
+        86,
+        104
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 29653015,
+      "marks": [
+        0,
+        10,
+        35,
+        41,
+        48,
+        84
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 36175395,
+      "marks": [
+        0,
+        13,
+        25,
+        57,
+        74,
+        88
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 37587428,
+      "marks": [
+        0,
+        14,
+        16,
+        19,
+        61,
+        107
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 39393737,
+      "marks": [
+        0,
+        14,
+        56,
+        86,
+        88,
+        92
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 40026924,
+      "marks": [
+        0,
+        15,
+        20,
+        71,
+        81,
+        107
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 42145487,
+      "marks": [
+        0,
+        16,
+        23,
+        34,
+        49,
+        88
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 42290224,
+      "marks": [
+        0,
+        16,
+        25,
+        43,
+        94,
+        111
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 44390958,
+      "marks": [
+        0,
+        17,
+        29,
+        43,
+        77,
+        110
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 49892806,
+      "marks": [
+        0,
+        20,
+        37,
+        50,
+        78,
+        92
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 50253353,
+      "marks": [
+        0,
+        20,
+        50,
+        56,
+        67,
+        81
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 55890371,
+      "marks": [
+        0,
+        24,
+        42,
+        55,
+        83,
+        98
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 59452138,
+      "marks": [
+        0,
+        27,
+        38,
+        61,
+        68,
+        103
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 60410948,
+      "marks": [
+        0,
+        28,
+        34,
+        70,
+        80,
+        85
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 62263226,
+      "marks": [
+        0,
+        29,
+        77,
+        93,
+        107,
+        110
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 63750234,
+      "marks": [
+        0,
+        31,
+        43,
+        70,
+        73,
+        106
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 64959579,
+      "marks": [
+        0,
+        32,
+        57,
+        92,
+        105,
+        109
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 66393976,
+      "marks": [
+        0,
+        34,
+        46,
+        47,
+        53,
+        56
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 76260386,
+      "marks": [
+        0,
+        55,
+        57,
+        62,
+        78,
+        100
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 77745572,
+      "marks": [
+        0,
+        63,
+        66,
+        79,
+        87,
+        99
+      ],
+      "row_contract": "passed"
+    },
+    {
+      "index": 78787473,
+      "marks": [
+        0,
+        100,
+        103,
+        104,
+        109,
+        111
+      ],
+      "row_contract": "passed"
+    }
+  ],
+  "sampling": "deterministic pseudorandom indices plus boundary and midpoint controls",
+  "status": "passed"
+}
