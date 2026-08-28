@@ -164,3 +164,10 @@ No new experiment is justified. DTS is paused pending a new structural construct
 - Primary and independent integer verifiers both rejected the empty decode. This closes the exact sequential-counter encoding at the tested CPU-only budget; it is not a finite or global infeasibility result.
 - Heilbronn provenance audit: the 2025 global-optimization paper reaches `n=10`, and the 2026 exact-coordinate paper still lists Comellas–Yebra as the source of the best-known `n=12` construction. No newer explicit `n=12` candidate was found; no target comparison or novelty claim is made.
 - Current allocation: `WAITING_FOR_CAPABILITY`; DTS, Heilbronn, and k-server remain paused/blocked pending a genuinely different construction, transferable mechanism, stronger capability, or authorized foundation correction.
+
+## Phase 2 evidence after seventy-three substantive experiments
+
+- K-server Experiment 73 preregistered a three-feature, 2-/3-/4-piece max/min piecewise correction over the published canonical potential, with complete-circle edges in the initial CEGIS set and no node-specific or table-index features.
+- Teacher preflight reproduced `0` taxi violations for the arbitrary finite table but `1491` complete-circle fallback violations; the canonical compact control remained at `3` taxi violations and `0` complete-circle violations. The finite teacher's residual had moderate work-function/canonical correlations but its taxi node set was not D6-closed.
+- The single-process bounded synthesis reached the declared `900`-second wall budget without emitting a trajectory, candidate, primary-evaluator result, or cross-discretization control. It was stopped at `958` seconds and classified `BLOCKED` as an execution/capability limitation, not as rejection of the grammar.
+- No true-objective movement or compact transferable potential is claimed. Current allocation remains `WAITING_FOR_CAPABILITY`; do not expand the grammar or create Experiment 74 automatically.

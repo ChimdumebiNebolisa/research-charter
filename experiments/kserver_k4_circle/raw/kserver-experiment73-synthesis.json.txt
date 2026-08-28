@@ -1,0 +1,15 @@
+Experiment: kserver-compact-piecewise-001
+Command: python research_tools/synthesize_kserver_experiment73.py
+Declared wall budget: 900 seconds
+Started: 2026-08-28T02:02:32-05:00
+Stopped: 2026-08-28T02:18:30-05:00
+Observed wall time: 958 seconds
+Process: PID 20284
+
+The single native Python process produced no stdout, stderr, synthesis artifact,
+trajectory, candidate, primary-evaluator run, or control-evaluation result before
+the declared wall-time boundary. The process was terminated after the boundary.
+
+Classification: BLOCKED. This records an execution/capability limitation only;
+the compact feature grammar is not rejected because the declared CEGIS hierarchy
+did not complete.

@@ -1,0 +1,112 @@
+{
+  "record_type": "experiment",
+  "experiment_id": "kserver-compact-piecewise-001",
+  "problem_id": "kserver_k4_circle",
+  "target_id": "kserver_circle_taxi_m6_violations_lt_3",
+  "timestamp": "2026-08-28T07:01:12Z",
+  "parent_experiment_ids": [
+    "kserver-known3-reproduction-001",
+    "kserver-finite-difference-relaxation-001",
+    "kserver-residual-linear-repair-001",
+    "kserver-full-coordinate-linear-repair-001",
+    "kserver-envelope-switching-001",
+    "kserver-n7-index-matrix-local-orbits-001"
+  ],
+  "git_commit_sha": "5231211b82321d0ca3a0a475ad7fb3155e73475f",
+  "hypothesis": "The arbitrary finite zero-violation taxi table is overfit as a literal lookup, but its residual relative to the canonical 3-violation potential contains a lower-complexity pattern in transferable work-function statistics. A small symmetry-compatible piecewise/nonlinear correction can therefore preserve complete-circle controls and eliminate one or more canonical taxi violations without using node IDs or table indices.",
+  "rationale": "The required preflight reproduced the canonical potential at 3 taxi violations and 0 complete-circle violations, and reproduced the finite teacher at 0 taxi violations but 1491 complete-circle fallback violations with only 105/1001 circle nodes matched. Teacher analysis found residual correlations of -0.768 with the canonical value, -0.712 with work-function sum, -0.663 with maximum, and -0.726 with sum of squares; a six-feature affine residual fit had R2=0.607. The taxi node set is not closed under D6 transforms, so the teacher itself is not a symmetry-respecting transferable rule. These observations justify a deliberately small feature grammar but do not justify lookup-table reuse or unrestricted symbolic regression.",
+  "expected_information_gain": "Test whether a compact piecewise rule can transfer from the finite teacher to the complete-circle control and reduce the pinned taxi violation count below 3. Determine whether counterexamples stabilize a small expression or instead show that the teacher residual has no transferable low-complexity explanation.",
+  "method": "Run bounded counterexample-guided synthesis over the pinned taxi and complete-circle m=6 edge arrays. The active set starts with all 6006 complete-circle edges, the three canonical residual taxi edges [4766035,5594108,6193322], and the 128 lowest-slack canonical taxi edges. At each iteration synthesize the highest active-set margin candidate, evaluate all edges on both metrics, independently inspect returned violating edges, add up to the first 100 genuine violations from each metric, and repeat. Search the strict complexity hierarchy: one affine branch, then two, then three, each with both max and min orientation against a zero branch. The candidate is always Phi(w)=Phi_canonical(w)+piecewise_correction(features(w)); node IDs, hashes, table indices, and hard-coded evaluator states are unavailable to the expression. Any target-eligible candidate must then be frozen and run through the pinned primary evaluator, an independent implementation, controls, symmetry transforms, and available cross-discretization metrics.",
+  "metric": "Pinned circle_taxi_k4_m6 violations_k, complete-circle circle_k4_m6 violations_k, active-set minimum slack, and cross-metric control vectors for any promising candidate.",
+  "metric_relation_to_true_objective": "The primary true benchmark is the integer taxi violation count under the unmodified pinned evaluator; improvement requires violations_k < 3. Active-set and direct-array screens are synthesis diagnostics only. Complete-circle and cross-discretization controls test transferability. No finite benchmark result proves the full k-server conjecture.",
+  "configuration": {
+    "upstream_commit": "aea64346b846c967e4448f098d4b8b1748504d27",
+    "teacher_artifact": "artifacts/kserver-finite-difference-relaxation-001-drop_none.npz",
+    "base_potential": "published canonical n=5 potential with fixed index_matrix and coefficient vector from kserver_known3_potential.py",
+    "features": [
+      "wf_mean_centered = mean(wf_norm) - 4",
+      "wf_max_centered = max(wf_norm) - 7",
+      "wf_std_centered = std(wf_norm) - 1.5"
+    ],
+    "feature_count": 3,
+    "expression_class": "Phi_base + max(0,L1,...,Lk) or Phi_base + min(0,L1,...,Lk)",
+    "affine_branch": "L=c+a1*wf_mean_centered+a2*wf_max_centered+a3*wf_std_centered",
+    "coefficient_grid": [-1.0,-0.5,0.0,0.5,1.0],
+    "complexity_hierarchy": [
+      "2 total pieces: zero plus 1 affine branch",
+      "3 total pieces: zero plus 2 affine branches",
+      "4 total pieces: zero plus 3 affine branches"
+    ],
+    "max_expression_depth": 1,
+    "max_nonzero_branches": 3,
+    "max_feature_count": 3,
+    "node_specific_features": false,
+    "initial_active_edges": {
+      "circle_k4_m6.pickle": 6006,
+      "circle_taxi_k4_m6.pickle": 131
+    },
+    "cegis_iterations_per_mode_and_complexity": 4,
+    "counterexamples_added_per_metric_per_iteration": 100,
+    "cross_discretization_controls_after_target_gate": [
+      "circle_k4_m8.pickle",
+      "circle_taxi_k4_m8.pickle"
+    ],
+    "symmetry_check": "D6 rotation/reflection transforms of work-function vectors where supported"
+  },
+  "random_seeds": [],
+  "compute_budget": {
+    "complexity_levels": 3,
+    "orientations_per_level": 2,
+    "maximum_cegis_iterations_per_configuration": 4,
+    "maximum_configuration_steps": 24,
+    "full_direct_array_metrics_per_step": 2,
+    "wall_time_seconds": 900,
+    "cpu": "single native Python process",
+    "memory": "under 4 GB",
+    "primary_evaluator_budget": "only for a frozen target-eligible candidate; do not run broad full-evaluator sweeps"
+  },
+  "kill_condition": "Close this hypothesis if all bounded 2-, 3-, and 4-piece max/min families fail to reduce the direct taxi count below 3 while preserving circle controls, if every apparent improvement requires node-specific or table-index features, if cross-metric controls catastrophically regress, or if CEGIS counterexamples fail to stabilize a compact expression. Do not expand the feature vocabulary, coefficient grid, depth, or number of branches after these declared levels without a new research decision. Do not launch Experiment 74 automatically.",
+  "output_artifacts": [
+    "artifacts/kserver-experiment73-preflight.json",
+    "experiments/kserver_k4_circle/raw/kserver-experiment73-preflight.json.txt",
+    "artifacts/kserver-experiment73-teacher-analysis.json",
+    "artifacts/kserver-experiment73-synthesis.json",
+    "research_tools/reproduce_kserver_experiment73_preflight.py",
+    "research_tools/analyze_kserver_teacher.py",
+    "research_tools/synthesize_kserver_experiment73.py"
+  ],
+  "raw_result": {
+    "status": "timeout",
+    "result_classification": "BLOCKED",
+    "teacher_gate": "passed_with_caveat",
+    "teacher_structure": "moderate compact-feature correlation but no finite D6 row closure",
+    "nonlinear_synthesis": "no_declared_cegis_configuration_completed_before_900_second_budget",
+    "observed_wall_time_seconds": 958.0,
+    "trajectory_recorded": false,
+    "candidate": null,
+    "primary_evaluator_run": false,
+    "control_evaluation_run": false,
+    "termination": "process terminated after the declared wall-time boundary without emitting an artifact",
+    "artifact": "artifacts/kserver-experiment73-synthesis.json",
+    "raw_output": "experiments/kserver_k4_circle/raw/kserver-experiment73-synthesis.json.txt"
+  },
+  "baseline_comparison": {
+    "frozen_metric": "circle_taxi_k4_m6.pickle",
+    "canonical_violations_k": 3,
+    "canonical_circle_k4_m6_violations_k": 0,
+    "teacher_taxi_violations_k": 0,
+    "teacher_circle_k4_m6_fallback_violations_k": 1491,
+    "success_relation": "compact candidate primary taxi violations_k < 3 with no unacceptable control regression"
+  },
+  "previous_best_comparison": {
+    "kserver-known3-reproduction-001": "published/canonical compact potential reproduced at 3 taxi violations and 0 complete-circle violations",
+    "kserver-finite-difference-relaxation-001": "arbitrary taxi-node table reached 0 taxi violations but failed circle transfer with 1491 fallback violations",
+    "closed_families": "local coefficient perturbation, nearby index-matrix variation, low-dimensional and full-coordinate additive correction, hand-written envelope switches, and arbitrary finite table fitting are not repeated"
+  },
+  "evidence_level": 1,
+  "interpretation": "Preregistered bounded synthesis was blocked by the single-process implementation reaching the declared wall-time budget without completing a CEGIS configuration. The teacher diagnostics support the question but do not establish a transferable potential or any benchmark improvement.",
+  "failure_mode": "bounded synthesis execution timeout before a trajectory or candidate artifact was emitted",
+  "what_was_learned": "The teacher residual is broadly structured by canonical/work-function statistics but the finite taxi node set is not symmetry-closed. The declared compact feature grammar was therefore appropriate to test, but the current implementation cannot complete even one recorded CEGIS configuration within the 900-second budget.",
+  "recommended_next_action": "Do not expand the grammar or create Experiment 74 automatically. Resume only after a materially faster, independently checked implementation or a new capability is authorized and preregistered.",
+  "repetition_justification": "This is a new bounded synthesis family: it treats the zero-violation table as a teacher for feature discovery, uses a piecewise/nonlinear max/min expression class, and enforces complete-circle controls throughout. It does not repeat coefficient, index-matrix, additive-linear, envelope-switch, or literal-table search."
+}

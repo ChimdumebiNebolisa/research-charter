@@ -1,0 +1,19 @@
+{
+  "experiment_id": "kserver-compact-piecewise-001",
+  "status": "timeout",
+  "result_classification": "BLOCKED",
+  "command": "python research_tools/synthesize_kserver_experiment73.py",
+  "started_local": "2026-08-28T02:02:32-05:00",
+  "stopped_local": "2026-08-28T02:18:30-05:00",
+  "wall_time_seconds": 958.0,
+  "declared_wall_time_seconds": 900,
+  "process_id": 20284,
+  "termination": "terminated after the declared wall-time boundary; no synthesis output was emitted",
+  "trajectory_recorded": false,
+  "candidate": null,
+  "primary_evaluator_run": false,
+  "control_evaluation_run": false,
+  "interpretation": "The bounded implementation did not complete a declared CEGIS configuration before the compute ceiling. This is an execution/capability block, not evidence that the compact feature grammar is false.",
+  "preflight_reference": "artifacts/kserver-experiment73-preflight.json",
+  "teacher_analysis_reference": "artifacts/kserver-experiment73-teacher-analysis.json"
+}

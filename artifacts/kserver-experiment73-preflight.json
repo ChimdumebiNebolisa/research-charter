@@ -1,0 +1,79 @@
+{
+  "elapsed_seconds": 353.0044753551483,
+  "method": "independent_native_single_process_baseline_and_finite_table_reproduction",
+  "metrics": {
+    "circle_k4_m6.pickle": {
+      "canonical": {
+        "edges": 6006,
+        "first_violated_edge_indexes": [],
+        "min_slack": 0,
+        "nodes": 1001,
+        "potential_max": 30,
+        "potential_min": 9,
+        "violations_k": 0
+      },
+      "elapsed_seconds": 38.16190147399902,
+      "finite_table": {
+        "edges": 6006,
+        "first_violated_edge_indexes": [
+          293,
+          365,
+          370,
+          371,
+          383,
+          419,
+          437,
+          455,
+          461,
+          518,
+          662,
+          665,
+          759,
+          765,
+          771,
+          791,
+          794,
+          812,
+          818,
+          827
+        ],
+        "matched_nodes": 105,
+        "min_slack": -15,
+        "missing_nodes": 896,
+        "nodes": 1001,
+        "potential_max": 17,
+        "potential_min": 0,
+        "violations_k": 1491
+      }
+    },
+    "circle_taxi_k4_m6.pickle": {
+      "canonical": {
+        "edges": 7000602,
+        "first_violated_edge_indexes": [
+          4766035,
+          5594108,
+          6193322
+        ],
+        "min_slack": -1,
+        "nodes": 166681,
+        "potential_max": 30,
+        "potential_min": 3,
+        "violations_k": 3
+      },
+      "elapsed_seconds": 314.8425738811493,
+      "finite_table": {
+        "edges": 7000602,
+        "first_violated_edge_indexes": [],
+        "matched_nodes": 166681,
+        "min_slack": 0,
+        "missing_nodes": 0,
+        "nodes": 166681,
+        "potential_max": 17,
+        "potential_min": 0,
+        "violations_k": 0
+      }
+    }
+  },
+  "status": "completed",
+  "upstream_commit": "aea64346b846c967e4448f098d4b8b1748504d27"
+}
