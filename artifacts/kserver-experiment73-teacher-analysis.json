@@ -1,0 +1,137 @@
+{
+  "canonical_range": [
+    3,
+    30
+  ],
+  "elapsed_seconds": 264.56495213508606,
+  "feature_names": [
+    "canonical",
+    "canonical_second_gap",
+    "wf_max",
+    "wf_sum",
+    "wf_sum_squares",
+    "wf_count_at_max",
+    "canonical_argmin"
+  ],
+  "method": "teacher_residual_and_metric_general_feature_analysis",
+  "metric": "circle_taxi_k4_m6.pickle",
+  "nodes": 166681,
+  "residual_distribution": {
+    "-10": 20295,
+    "-11": 14532,
+    "-12": 10034,
+    "-13": 6247,
+    "-14": 3954,
+    "-15": 2419,
+    "-16": 1133,
+    "-17": 789,
+    "-18": 356,
+    "-19": 239,
+    "-20": 71,
+    "-21": 83,
+    "-22": 37,
+    "-23": 18,
+    "-25": 7,
+    "-26": 5,
+    "-3": 1449,
+    "-30": 1,
+    "-4": 3768,
+    "-5": 9771,
+    "-6": 16762,
+    "-7": 22708,
+    "-8": 26934,
+    "-9": 25069
+  },
+  "residual_edge_context": [
+    {
+      "canonical_from": 11,
+      "canonical_to": 12,
+      "edge_index": 4766035,
+      "from_node": 112856,
+      "from_wf_max": 6,
+      "from_wf_sum": 271,
+      "residual_from": -7,
+      "residual_to": -6,
+      "teacher_from": 4,
+      "teacher_to": 6,
+      "to_node": 80245,
+      "to_wf_max": 6,
+      "to_wf_sum": 324,
+      "weight": 2
+    },
+    {
+      "canonical_from": 11,
+      "canonical_to": 12,
+      "edge_index": 5594108,
+      "from_node": 143277,
+      "from_wf_max": 6,
+      "from_wf_sum": 257,
+      "residual_from": -8,
+      "residual_to": -7,
+      "teacher_from": 3,
+      "teacher_to": 5,
+      "to_node": 83548,
+      "to_wf_max": 6,
+      "to_wf_sum": 310,
+      "weight": 2
+    },
+    {
+      "canonical_from": 10,
+      "canonical_to": 11,
+      "edge_index": 6193322,
+      "from_node": 103387,
+      "from_wf_max": 5,
+      "from_wf_sum": 258,
+      "residual_from": -10,
+      "residual_to": -9,
+      "teacher_from": 0,
+      "teacher_to": 2,
+      "to_node": 149636,
+      "to_wf_max": 7,
+      "to_wf_sum": 312,
+      "weight": 2
+    }
+  ],
+  "residual_feature_correlations": {
+    "canonical": -0.7679562884267029,
+    "canonical_argmin": 0.14368806122084177,
+    "canonical_second_gap": 0.036107128911001374,
+    "wf_count_at_max": 0.12449083954346027,
+    "wf_max": -0.6625710296101572,
+    "wf_sum": -0.7119603417864904,
+    "wf_sum_squares": -0.726000476495153
+  },
+  "residual_quantiles": {
+    "0.0": -30.0,
+    "0.01": -16.0,
+    "0.1": -12.0,
+    "0.5": -9.0,
+    "0.9": -6.0,
+    "0.99": -4.0,
+    "1.0": -3.0
+  },
+  "residual_range": [
+    -30,
+    -3
+  ],
+  "six_feature_affine_residual_r2": 0.6069376014105314,
+  "status": "completed",
+  "symmetry_orbits": {
+    "group": "D6 rotations and reflections on six circle positions",
+    "mean_residual_by_orbit_size": {
+      "1": -8.83227842405553
+    },
+    "missing_transformed_rows": 1829927,
+    "orbit_size_histogram": {
+      "1": 166681
+    },
+    "std_residual_by_orbit_size": {
+      "1": 2.6987739221725557
+    }
+  },
+  "teacher_range": [
+    0,
+    17
+  ],
+  "upstream_commit": "aea64346b846c967e4448f098d4b8b1748504d27"
+}
