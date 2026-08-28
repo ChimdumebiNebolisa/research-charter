@@ -430,20 +430,35 @@ def main():
     output = args.output if args.output.is_absolute() else ROOT / args.output
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({
-        "minimum_triangle_count": result["minimum_triangle_count"],
-        "orbit_sizes": {key: len(value) for key, value in result["critical_orbits"].items()},
-        "full_nonzero_feasible": result["full_active_set"]["nonzero_feasible_direction"]["feasible"],
-        "full_margin": result["full_active_set"]["ascent_margin"]["common_doubled_area_derivative"],
-        "relaxed": {
-            key: {
-                "nonzero_feasible": value["nonzero_cone"]["feasible"],
-                "margin": value["ascent_margin"]["common_doubled_area_derivative"],
-            }
-            for key, value in result["relaxed_orbits"].items()
-        },
-        "output": str(output),
-    }, indent=2))
+    if args.structural:
+        summary = {
+            "minimum_triangle_count": result["minimum_triangle_count"],
+            "orbit_sizes": {key: len(value) for key, value in result["critical_orbits"].items()},
+            "full_nonzero_feasible": result["full_active_set"]["nonzero_feasible_direction"]["feasible"],
+            "full_margin": result["full_active_set"]["ascent_margin"]["common_doubled_area_derivative"],
+            "relaxed": {
+                key: {
+                    "nonzero_feasible": value["nonzero_cone"]["feasible"],
+                    "margin": value["ascent_margin"]["common_doubled_area_derivative"],
+                }
+                for key, value in result["relaxed_orbits"].items()
+            },
+        }
+    else:
+        summary = {
+            "best_arm": result["best_arm"],
+            "target_reached_float64": result["target_reached_float64"],
+            "final_minima": [
+                {
+                    "arm": arm["arm"],
+                    "seed": arm["seed"],
+                    "true_minimum_area_all_220": arm["final_true_minimum_area_all_220"],
+                }
+                for arm in result["arms"]
+            ],
+        }
+    summary["output"] = str(output)
+    print(json.dumps(summary, indent=2))
 
 
 if __name__ == "__main__":

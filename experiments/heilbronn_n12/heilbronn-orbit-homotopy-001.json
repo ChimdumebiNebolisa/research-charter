@@ -1,0 +1,102 @@
+{
+  "record_type": "experiment",
+  "experiment_id": "heilbronn-orbit-homotopy-001",
+  "problem_id": "heilbronn_n12",
+  "target_id": "heilbronn_n12_min_area_gt_comellas_yebra",
+  "timestamp": "2026-08-28T06:00:52Z",
+  "parent_experiment_ids": [
+    "heilbronn-baseline-reproduction-001",
+    "heilbronn-slsqp-001",
+    "heilbronn-de-global-001"
+  ],
+  "git_commit_sha": "f3bed2922ea63963ad943c0466f412b98b165bf5",
+  "hypothesis": "The exact n=12 Comellas-Yebra local optimum is locked by simultaneous activity of three D4 symmetry orbits of critical triangles. Relaxing one orbit creates a structurally derived escape direction into a different basin, and gradual restoration of that orbit may yield a configuration whose true minimum over all 220 triangles strictly exceeds the frozen baseline.",
+  "rationale": "An independent high-precision reconstruction found exactly 20 minimum triangles in D4 orbits A, B, and C of sizes 4, 8, and 8. The boundary-aware first-order cone has no nonzero feasible ascent direction with all 20 active, while removing each orbit individually produces a positive common ascent margin. This tests that specific geometric locking mechanism rather than repeating generic global DE or fixed-orientation SLSQP.",
+  "expected_information_gain": "Determine whether the orbit-specific first-order escape cones survive finite nonlinear continuation, whether restoring the omitted orbit changes the active-set combinatorial type, whether any arm reaches a distinct basin, and whether any final all-220 true minimum improves the exact Comellas-Yebra baseline.",
+  "method": "For each arm A/B/C, use its independently derived boundary-feasible LP direction and a 0.02 coordinate displacement from the exact baseline. Optimize 24 coordinates plus a lower-bound variable z by constrained SLSQP at lambda=[0.00,0.10,0.25,0.50,0.75,0.90,0.97,1.00], warm-starting every stage from the previous optimum. For every non-selected triangle impose s_t*det_t/2 >= z; for selected-orbit triangles impose s_t*det_t/2 >= lambda*z, where s_t is the baseline determinant sign. Thus lambda=0 softens the selected orbit to nonnegative signed area and lambda=1 restores all signed constraints. Run one primary chain and one small deterministic Gaussian-jitter robustness chain per arm. At every stage and at final lambda=1, independently compute the absolute area of all 220 triangles; the final judgment uses no relaxed constraints and no signed-area surrogate.",
+  "metric": "True minimum area over all 220 triangles at every continuation stage, final active triangle set, continuation lower bound z, and final gap from the exact frozen baseline; float64 search values are exploratory until independently reevaluated.",
+  "metric_relation_to_true_objective": "The final all-220 absolute minimum is the frozen true objective. The continuation lower bound is a search surrogate used only to create and restore the selected-orbit constraints; it is not a record metric. Any strict final excess requires high-precision, independent determinant evaluation, coordinate-bound checks, stability testing, and exact or certified comparison to the baseline.",
+  "configuration": {
+    "points": 12,
+    "triangles": 220,
+    "critical_triangle_count": 20,
+    "critical_orbits": {
+      "A": [[0,5,10],[1,6,11],[2,3,4],[7,8,9]],
+      "B": [[0,2,4],[0,2,5],[1,3,4],[1,3,6],[5,8,10],[6,9,11],[7,8,10],[7,9,11]],
+      "C": [[0,4,6],[1,4,5],[2,5,7],[3,6,7],[4,5,8],[4,6,9],[5,7,11],[6,7,10]]
+    },
+    "baseline_source": "artifacts/baselines/heilbronn_comellas_yebra.json",
+    "structural_audit": "artifacts/heilbronn-experiment72-structural.json",
+    "optimizer": "scipy.optimize.minimize SLSQP",
+    "objective_variables": "24 coordinates plus z",
+    "coordinate_bounds": "[0,1]^24",
+    "z_bounds": "[0,0.2]",
+    "relaxation_formulation": "selected orbit lower-bound multiplier lambda; all 220 constraints retained, with selected constraints restored at lambda=1",
+    "continuation_schedule": [0.0,0.1,0.25,0.5,0.75,0.9,0.97,1.0],
+    "initial_displacement": "0.02 times infinity-normalized LP escape direction",
+    "robustness": "one primary and one deterministic Gaussian-jitter chain per arm; jitter standard deviation 0.10 before infinity normalization and coordinate clipping",
+    "slsqp_maxiter_per_stage": 500,
+    "slsqp_ftol": 1e-12
+  },
+  "random_seeds": [
+    20260828,
+    20260829,
+    20260830,
+    20260831,
+    20260832,
+    20260833
+  ],
+  "compute_budget": {
+    "chains": 6,
+    "stages_per_chain": 8,
+    "maximum_slsqp_iterations_per_stage": 500,
+    "maximum_stage_solves": 48,
+    "wall_time_seconds": 1200,
+    "cpu": "single native Python process",
+    "memory": "under 4 GB"
+  },
+  "kill_condition": "Stop this hypothesis family after the declared six chains if all arms return to the Comellas-Yebra basin at lambda=1, no new active-set type appears, or all sensible arms fail the first-order mechanism. Stop any chain early for immediate independent verification if its final all-220 float64 minimum exceeds the exact baseline by at least 1e-8. Do not add hundreds of seeds or tune the same schedule after a negative result.",
+  "output_artifacts": [
+    "artifacts/heilbronn-experiment72-structural.json",
+    "artifacts/heilbronn-experiment72.json",
+    "experiments/heilbronn_n12/raw/heilbronn-experiment72.json.txt"
+  ],
+  "raw_result": {
+    "status": "completed",
+    "structural_gate": "passed",
+    "nonlinear_execution": "completed_six_chains_eight_stages_each",
+    "target_reached_float64": false,
+    "baseline_area_exact": "x/4 + x*y/2 - x^2/2",
+    "baseline_area_decimal": "0.032598858691819698218764006623515408049241988379776913777741905474205601650786197",
+    "arms": [
+      {"arm": "A", "seed": 20260828, "stage_true_minima": [0.000000000000000035,0.003622808121161391,0.008909678334327625,0.017316046872294346,0.025209909016793586,0.029702849709888325,0.031738294541502975,0.032598858691816231], "final_gap_float64": -3.469446951953614e-15, "final_active_triangle_count": 20, "active_set_changed": false},
+      {"arm": "A", "seed": 20260829, "stage_true_minima": [0.000000000000000056,0.003622808121160031,0.008909678334325889,0.017316046872294637,0.025209909016793593,0.029702849709888204,0.03173829454150262,0.032598858691818881], "final_gap_float64": -8.188e-16, "final_active_triangle_count": 20, "active_set_changed": false},
+      {"arm": "B", "seed": 20260830, "stage_true_minima": [0.027319982045339763,0.02731998204534002,0.027319982045339957,0.027319982045340026,0.028130367823593263,0.03096205950271557,0.03212641076918041,0.032598858691817993], "final_gap_float64": -1.707e-15, "final_active_triangle_count": 20, "active_set_changed": false},
+      {"arm": "B", "seed": 20260831, "stage_true_minima": [0.027319982045339666,0.027319982045340044,0.02731998204533996,0.027319982045339954,0.028130367823593915,0.03096205950271527,0.0321264107691806,0.032598858691818403], "final_gap_float64": -1.298e-15, "final_active_triangle_count": 20, "active_set_changed": false},
+      {"arm": "C", "seed": 20260832, "stage_true_minima": [0.0136597046914195,0.013659704691423802,0.01365970469142383,0.0200831418329689,0.026884051494075384,0.030420761502448004,0.031959206500878815,0.032598858691818472], "final_gap_float64": -1.228e-15, "final_active_triangle_count": 20, "active_set_changed": false},
+      {"arm": "C", "seed": 20260833, "stage_true_minima": [0.013659704691424426,0.013659704691423788,0.01365970469142376,0.02008314183296872,0.026884051494075217,0.030420761502446172,0.03195920650087769,0.032598858691817251], "final_gap_float64": -2.449e-15, "final_active_triangle_count": 20, "active_set_changed": false}
+    ],
+    "independent_verification": "artifacts/heilbronn-experiment72-independent-verification.json",
+    "independent_verification_status": "all six valid; no strict improvement; every final active set matches the 20-triangle baseline set within 1e-12",
+    "artifact_sha256": "C635FDDC6F2D24E028C7B1A297C874DD9ED84DEEA70D6D2E2B4CE6E2FCB1E739",
+    "raw_sha256": "C635FDDC6F2D24E028C7B1A297C874DD9ED84DEEA70D6D2E2B4CE6E2FCB1E739",
+    "independent_verification_sha256": "68B81CC55F6AB73A3698F5E5CABEF753955F7598A4AA9B8031ECCD31C79F50A6"
+  },
+  "baseline_comparison": {
+    "frozen_baseline_reference": "comellas_yebra_2002_exact_baseline",
+    "exact_value": "0.032598858691819698218764006623515408049241988379776913777741905474205601650786197...",
+    "success_relation": "final true minimum over all 220 triangles strictly greater than the exact baseline",
+    "structural_audit_relation": "baseline critical set reproduced independently"
+  },
+  "previous_best_comparison": {
+    "heilbronn-slsqp-001": "no float64 improvement from 12 fixed-orientation starts",
+    "heilbronn-de-global-001": "no float64 improvement from three full-coordinate DE runs plus polish",
+    "expected_relation": "structurally motivated continuation; not a repeat of either optimizer family"
+  },
+  "evidence_level": 1,
+  "interpretation": "All six structurally initialized continuation chains reached a lower true minimum while an orbit was relaxed, but restoration through lambda=1 returned every arm to the Comellas-Yebra basin within float64 noise. Independent 110-digit Decimal evaluation of all 220 triangles found no strict improvement and confirmed the same 20-triangle active set within tolerance. The orbit-specific escape mechanism is rejected at the preregistered budget.",
+  "failure_mode": "all_orbit_relaxed_arms_restore_to_comellas_yebra_active_set_without_improvement",
+  "what_was_learned": "The first-order escape cones are real at the tangent level: A, B, and C each have positive relaxed margins. They do not survive the declared finite nonlinear continuation; all arms restore the same active-set combinatorial type and finish slightly below the exact baseline because of rounded float64 coordinates.",
+  "recommended_next_action": "Close this orbit-relaxation hypothesis family, do not create Experiment 73 automatically, and return Heilbronn to director review for a materially different authorized hypothesis if desired.",
+  "repetition_justification": "This is authorized as one new bounded hypothesis test and is materially different from the prior fixed-orientation SLSQP local multistart and full-coordinate differential-evolution experiments because it uses a first-order orbit-specific escape mechanism and staged constraint restoration."
+}
