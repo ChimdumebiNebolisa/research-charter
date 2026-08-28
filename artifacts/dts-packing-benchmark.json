@@ -1,0 +1,28 @@
+{
+  "status": "completed_shallow_capability_benchmark",
+  "catalogue_rows": 78787474,
+  "scope_limit": 111,
+  "depth2": [
+    {"first_index": 0, "compatible_second_rows": 400338, "first_scan_seconds": 0.26157782, "first_second_index": 29046526},
+    {"first_index": 9848434, "compatible_second_rows": 6335467, "first_scan_seconds": 0.435844135, "first_second_index": 10585086},
+    {"first_index": 19696868, "compatible_second_rows": 4648350, "first_scan_seconds": 0.412879026, "first_second_index": 22613753},
+    {"first_index": 29545302, "compatible_second_rows": 3025682, "first_scan_seconds": 0.330837665, "first_second_index": 30632067},
+    {"first_index": 39393737, "compatible_second_rows": 2665967, "first_scan_seconds": 0.27008688, "first_second_index": 39646846},
+    {"first_index": 49242171, "compatible_second_rows": 786753, "first_scan_seconds": 0.109608747, "first_second_index": 50641560},
+    {"first_index": 59090605, "compatible_second_rows": 961651, "first_scan_seconds": 0.102215433, "first_second_index": 60133154},
+    {"first_index": 68939039, "compatible_second_rows": 516086, "first_scan_seconds": 0.082482021, "first_second_index": 69037999}
+  ],
+  "depth3": [
+    {"first_index": 0, "second_index": 29046526, "compatible_third_rows": 0, "scan_seconds": 0.164014947},
+    {"first_index": 19696868, "second_index": 22613753, "compatible_third_rows": 17361, "scan_seconds": 0.195685853},
+    {"first_index": 39393737, "second_index": 39646846, "compatible_third_rows": 8059, "scan_seconds": 0.133145818},
+    {"first_index": 59090605, "second_index": 60133154, "compatible_third_rows": 2041, "scan_seconds": 0.06746256}
+  ],
+  "depth4": [
+    {"first_index": 19696868, "second_index": 22613753, "third_index": 28432015, "compatible_fourth_rows": 0, "scan_seconds": 0.184309806},
+    {"first_index": 39393737, "second_index": 39646846, "third_index": 43970572, "compatible_fourth_rows": 0, "scan_seconds": 0.144962229}
+  ],
+  "peak_resident_set_kib": 1850496,
+  "wall_seconds_including_catalogue_load": 47.02,
+  "interpretation": "Controlled representative scans only; no depth-seven search was launched. Depth-two branching is in the hundreds of thousands to millions, and the sampled depth-four probes had zero compatible fourth rows."
+}
