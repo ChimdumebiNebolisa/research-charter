@@ -1,0 +1,28 @@
+{
+  "branch_cases": 4,
+  "checks": [
+    "correction_values",
+    "active_edge_slacks",
+    "minimum_slack",
+    "negative_slack_sum",
+    "single_branch_ranking",
+    "multi_branch_ranking"
+  ],
+  "elapsed_seconds": 60.26959650000208,
+  "metrics": {
+    "circle_k4_m6.pickle": {
+      "active_edges": 6,
+      "total_edges": 6006
+    },
+    "circle_taxi_k4_m6.pickle": {
+      "active_edges": 8,
+      "total_edges": 7000602
+    }
+  },
+  "modes": [
+    "max",
+    "min"
+  ],
+  "status": "passed",
+  "tolerance": 1e-12
+}

@@ -1,0 +1,81 @@
+{
+  "checks": [
+    "full taxi violation counts",
+    "full circle violation counts",
+    "taxi minimum slack",
+    "circle minimum slack"
+  ],
+  "elapsed_seconds": 50.91212510000332,
+  "metrics": {
+    "circle_k4_m6.pickle": 6006,
+    "circle_taxi_k4_m6.pickle": 7000602
+  },
+  "status": "passed",
+  "trajectory": [
+    {
+      "circle_min_slack": -0.8174603174603163,
+      "circle_violations": 1020,
+      "complexity": "2-piece_max",
+      "iteration": 0,
+      "taxi_min_slack": -0.8174603174603163,
+      "taxi_violations": 42370
+    },
+    {
+      "circle_min_slack": -0.8174603174603163,
+      "circle_violations": 1020,
+      "complexity": "2-piece_max",
+      "iteration": 1,
+      "taxi_min_slack": -0.8174603174603163,
+      "taxi_violations": 42370
+    },
+    {
+      "circle_min_slack": -0.4761904761904763,
+      "circle_violations": 426,
+      "complexity": "2-piece_min",
+      "iteration": 0,
+      "taxi_min_slack": -0.8174603174603181,
+      "taxi_violations": 38854
+    },
+    {
+      "circle_min_slack": -0.4761904761904763,
+      "circle_violations": 426,
+      "complexity": "2-piece_min",
+      "iteration": 1,
+      "taxi_min_slack": -0.8174603174603181,
+      "taxi_violations": 38854
+    },
+    {
+      "circle_min_slack": -0.8174603174603163,
+      "circle_violations": 1020,
+      "complexity": "3-piece_max",
+      "iteration": 0,
+      "taxi_min_slack": -0.8174603174603163,
+      "taxi_violations": 44063
+    },
+    {
+      "circle_min_slack": -0.4761904761904763,
+      "circle_violations": 426,
+      "complexity": "3-piece_min",
+      "iteration": 0,
+      "taxi_min_slack": -0.8174603174603181,
+      "taxi_violations": 38854
+    },
+    {
+      "circle_min_slack": -0.8174603174603163,
+      "circle_violations": 1020,
+      "complexity": "4-piece_max",
+      "iteration": 0,
+      "taxi_min_slack": -0.8174603174603163,
+      "taxi_violations": 46229
+    },
+    {
+      "circle_min_slack": -0.4761904761904763,
+      "circle_violations": 426,
+      "complexity": "4-piece_min",
+      "iteration": 0,
+      "taxi_min_slack": -0.8174603174603181,
+      "taxi_violations": 38864
+    }
+  ],
+  "trajectory_entries_checked": 8
+}
